@@ -14,25 +14,25 @@ end
 -- contains tables of the following structure: { node_name, probability (in percent, 100=always, 0=never), max_amount, repeat (for more than one stack) }
 mg_villages.random_chest_content = {};
 
-ADD_RCC({"default:pick_stone",             10,  1, 3, farm_tiny=1, farm_full=1, shed=1, lumberjack=1, hut=1, chest_work=1, lumberjack=1 }); 
-ADD_RCC({"default:pick_steel",              5,  1, 2, forge=1 }); 
-ADD_RCC({"default:pick_mese",               2,  1, 2, forge=1, lumberjack=1 }); 
-ADD_RCC({"default:shovel_stone",            5,  1, 3, farm_tiny=1, farm_full=1, shed=1, lumberjack=1, hut=1, chest_work=1 }); 
-ADD_RCC({"default:shovel_steel",            5,  1, 2, forge=1 }); 
-ADD_RCC({"default:axe_stone",               5,  1, 3, farm_tiny=1, farm_full=1, chest_work=1, lumberjack=1 }); 
-ADD_RCC({"default:axe_steel",               5,  1, 2, forge=1, lumberjack=1 }); 
-ADD_RCC({"default:sword_wood",              1,  1, 3, guard=1 }); 
-ADD_RCC({"default:sword_stone",             1,  1, 3, guard=1 }); 
-ADD_RCC({"default:sword_steel",             1,  1, 3, forge=1, guard=1 }); 
+ADD_RCC({"default:pick_stone",             10,  1, 3, farm_tiny=1, farm_full=1, shed=1, lumberjack=1, hut=1, chest_work=1, lumberjack=1 });
+ADD_RCC({"default:pick_steel",              5,  1, 2, forge=1 });
+ADD_RCC({"default:pick_mese",               2,  1, 2, forge=1, lumberjack=1 });
+ADD_RCC({"default:shovel_stone",            5,  1, 3, farm_tiny=1, farm_full=1, shed=1, lumberjack=1, hut=1, chest_work=1 });
+ADD_RCC({"default:shovel_steel",            5,  1, 2, forge=1 });
+ADD_RCC({"default:axe_stone",               5,  1, 3, farm_tiny=1, farm_full=1, chest_work=1, lumberjack=1 });
+ADD_RCC({"default:axe_steel",               5,  1, 2, forge=1, lumberjack=1 });
+ADD_RCC({"default:sword_wood",              1,  1, 3, guard=1 });
+ADD_RCC({"default:sword_stone",             1,  1, 3, guard=1 });
+ADD_RCC({"default:sword_steel",             1,  1, 3, forge=1, guard=1 });
 
-ADD_RCC({"default:stick",                  20, 40, 2, church=1, library=1, chest_private=1, shelf=5, shed=1, lumberjack=1, hut=1 }); 
+ADD_RCC({"default:stick",                  20, 40, 2, church=1, library=1, chest_private=1, shelf=5, shed=1, lumberjack=1, hut=1 });
 ADD_RCC({"default:torch",                  50, 10, 4, church=1, library=1, chest_private=1, shelf=1, shed=1, lumberjack=1, hut=1 });
 
 ADD_RCC({"default:book",                   60,  1, 2, church=1, library=1 });
 ADD_RCC({"default:paper",                  60,  6, 4, church=1, library=1 });
 ADD_RCC({"default:apple",                  50, 10, 2, chest_storage=4, chest_private=1, shelf=5});
 ADD_RCC({"default:ladder",                 20,  1, 2, church=1, library=1, shed=1, lumberjack=1, hut=1 });
-        
+
 ADD_RCC({"default:coal_lump",              80, 30, 1, forge=1, shed=1, lumberjack=1, hut=1});
 ADD_RCC({"default:steel_ingot",            30,  4, 2, forge=1 });
 ADD_RCC({"default:mese_crystal_fragment",  10,  3, 1, forge=1, chest_storage=1 });
@@ -123,7 +123,7 @@ ADD_RCC({"homedecor:candle",               50,  2,  1, church=2, library=1, ches
 ADD_RCC({"homedecor:candle_thin",          50,  2,  1, church=1, library=1, chest_private=1, chest_work=1, chest_storage=1 });
 ADD_RCC({"homedecor:copper_pans",          80,  1,  1, chest_work=1 });
 ADD_RCC({"homedecor:dardboard",            50,  1,  1, tavern=1});
-ADD_RCC({"homedecor:oil_extract",          80,  1,  3, church=1, library=1, chest_private=1, chest_work=1, chest_storage=1 }); 
+ADD_RCC({"homedecor:oil_extract",          80,  1,  3, church=1, library=1, chest_private=1, chest_work=1, chest_storage=1 });
 ADD_RCC({"homedecor:oil_lamp",             50,  2,  1, church=1, library=1, chest_private=1, chest_work=1, chest_storage=1 });
 ADD_RCC({"homedecor:torch_wall",           50,  2,  1, church=1, library=1, chest_private=1, chest_work=1, chest_storage=1 });
 
@@ -181,9 +181,9 @@ mg_villages.fill_chest_random = function( pos, pr, building_nr, building_typ )
 			if(     count<30 -- make sure it does not get too much and there is still room for a new stack
 			 and (v[ typ ] or (typ2 and v[ typ2 ]))
 			 and inv_size and inv_size > 0 and v[ 2 ] > pr:next( 1, 200 )) then
-	
+
 				--inv:add_item('main', v[ 1 ].." "..tostring( math.random( 1, tonumber(v[ 3 ]) )));
-				-- add itemstack at a random position in the chests inventory 
+				-- add itemstack at a random position in the chests inventory
 				inv:set_stack( 'main', pr:next( 1, inv:get_size( 'main' )), v[ 1 ].." "..tostring( pr:next( 1, tonumber(v[ 3 ]) )) );
 				count = count+1;
 			end
@@ -207,9 +207,9 @@ end]]
 					for i=1, inv:get_size("main") do
 						inv:set_stack("main", i, ItemStack(""))
 					end
-					local numitems = pr:next(3, 20) 
+					local numitems = pr:next(3, 20)
 					for i=1,numitems do
-						local ii = pr:next(1, #items) 
+						local ii = pr:next(1, #items)
 						local prob = items[ii]:get_count() % 2 ^ 8
 						local stacksz = math.floor(items[ii]:get_count() / 2 ^ 8)
 						if pr:next(0, prob) == 0 and stacksz>0 then
@@ -252,6 +252,17 @@ local chest_stuff = {
 	--{name="shears:shears", max = 1},
 	--{name="crops:melon_seed", max = 18},
 	--{name="mobs:saddle", max = 3},
+	{name="farming:carrot", max = 3},
+	{name="farming:corn", max = 3},
+	{name="farming:melon_slice", max = 3},
+	{name="farming:potato", max = 3},
+	{name="farming:raspberries", max = 3},
+	{name="farming:rhubarb", max = 3},
+	{name="farming:sugar", max = 3},
+	{name="farming:tomato", max = 3},
+	{name="farming:seed_wheat", max = 3},
+	{name="farming:cucumber", max = 3},
+	{name="farming:grapes", max = 3},
 }
 
 -- get some random content for a chest

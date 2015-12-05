@@ -678,14 +678,6 @@ minetest.register_craft({
 }
 })
 
-minetest.register_craft({
-	output = 'default:water_source',
-	recipe = {
-		{'default:cactus', 'default:cactus'},
-		{'default:cactus', 'default:cactus'},
-	}
-})
-
 
 --
 -- Crafting (tool repair)

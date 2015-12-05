@@ -233,3 +233,11 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'bucket:bucket_water',
+	recipe = {
+		{'default:cactus', 'default:cactus',''},
+		{'default:cactus', 'default:cactus',''},
+		{'','bucket:bucket_empty','' },
+	}
+})
