@@ -745,9 +745,19 @@ minetest.register_craft({
 	recipe = "default:clay_lump",
 })
 
+minetest.register_craft({
+	type = "cooking",
+	output = "default:coal_lump 3",
+	recipe = "default:dead_tree",
+})
+
+
 --
 -- Fuels
 --
+
+
+
 
 minetest.register_craft({
 	type = "fuel",
