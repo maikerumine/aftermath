@@ -63,6 +63,7 @@ TO GET WOOD:
 
 RADIATION:
 __________
+Radiation code was taken from the tehcnic mod: https://github.com/minetest-technic/technic
 *The dried lake beds are filled with radioactive water and mud.
 *The mud is very radioactive, you will be dead before you even touch it.
 *The glimmering green toxic water is dangerous, but you can scoop up with bucket to refine.
@@ -154,6 +155,16 @@ This one is tricky...  I have re-coded a few things for this game, specifically:
 --https://github.com/Sokomine/mobf_trader
 --https://github.com/Sokomine/village_gambit
 --https://github.com/Sokomine/village_towntest
+
+
+INSTALLATION:
+_____________
+Extract this game into your games folder and rename the folder to "holocaust"
+In the mods folder in holocaust:
+Minetest/games/mods
+extract the esmobs and bones to this directory.
+For some reason github won't let me inclust the folders to the game due to a conflict.
+
 
 
 
