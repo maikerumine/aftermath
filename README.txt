@@ -1,10 +1,10 @@
 -- Holocaust created by maikerumine and Aiden Garvin
 -- Minetest 0.4.13 game: "Holocaust"
 -- namespace: holocaust
--- (c) 2014-2015 by: maikerumine and Aiden Garvin
+-- (c) 2015 by: maikerumine and Aiden Garvin
 -- https://github.com/maikerumine
 -- LGPLv2.1  (SEE BOTTOM)
--- Inspired by Blockmen's Wasteland game.  https://github.com/BlockMen/Wasteland/releases/tag/0.5
+-- Inspired by Blockmen's Wasteland game[/size][/color][/b].  https://github.com/BlockMen/Wasteland/releases/tag/0.5
 =======================
 
 INTRODUCTION:
@@ -19,7 +19,8 @@ You must start again, from scratch, in a bombed out radioactive world.
 This is HOLOCAUST.
 
 
-          _______  _        _______  _______  _______           _______ _________
+
+		  _______  _        _______  _______  _______           _______ _________
 |\     /|(  ___  )( \      (  ___  )(  ____ \(  ___  )|\     /|(  ____ \\__   __/
 | )   ( || (   ) || (      | (   ) || (    \/| (   ) || )   ( || (    \/   ) (
 | (___) || |   | || |      | |   | || |      | (___) || |   | || (_____    | |
@@ -28,6 +29,7 @@ This is HOLOCAUST.
 | )   ( || (___) || (____/\| (___) || (____/\| )   ( || (___) |/\____) |   | |
 |/     \|(_______)(_______/(_______)(_______/|/     \|(_______)\_______)   )_(
 
+
 CREATED BY:
 ___________
 The great team at minetest.net for a collaboration of ideas, mods, and friendship.
@@ -35,7 +37,7 @@ Celeron C55: for creating minetest in his house back in 2010. http://wiki.minete
 Maikerumine: for the "hack-coding"
 Aiden Garvin: for the idea for gameplay
 Blockmen: for the original minetest concept in his Wasteland game
-And read the readme's in the mod section for all other contributers
+And read the readme's in the mod section for all other contributors
 
 NOTES:
 There are NO diamond or Mese tools in game.  Let's be realistic folks, any crystal would shatter and a complete diamond tool would be unrealistic.  Mese can be used to craft guns- see crafting guide in game.
@@ -59,11 +61,10 @@ TO GET WOOD:
 *chop using axe
 *craft four sticks to make wood planks
 *punch leaves for sticks
-*plant only on green grass, all other dirt is non growable.
+*plant only on green grass, all other dirt is non grow able.
 
 RADIATION:
 __________
-Radiation code was taken from the tehcnic mod: https://github.com/minetest-technic/technic
 *The dried lake beds are filled with radioactive water and mud.
 *The mud is very radioactive, you will be dead before you even touch it.
 *The glimmering green toxic water is dangerous, but you can scoop up with bucket to refine.
@@ -78,7 +79,7 @@ _______
 *Diamonds are used for protection blocks
 *gold_lump is used to pay npc for random item.
 
-Building:
+BUILDING:
 _________
 *This ain't minecraft.
 *This is MUCH harder.
@@ -86,7 +87,7 @@ _________
 *most dirt and clay must be dug with shovel
 *always keep one axe in your inventory or you will get stuck.  It might be wise to have a spawn function.
 
-Mobs:
+MOBS:
 _____
 Maikerumines smart mobs and blockmens creatures mobs (with changed texture) are what you will encounter here.
 *Monsters are bad.
@@ -97,8 +98,8 @@ Maikerumines smart mobs and blockmens creatures mobs (with changed texture) are 
 *Give bread or meat to heal them.
 *Give gold_lump to recieve random item.
 *Cook rotten flesh to make edible meat.
---https://github.com/maikerumine/esmobs
---https://github.com/BlockMen/creatures
+--[url]https://github.com/maikerumine/esmobs[/url]
+--[url]https://github.com/BlockMen/creatures[/url]
 
 
 FARMING:
@@ -107,16 +108,17 @@ Tenplus1's great farming mod.
 *Pretty awesome and incorporated into village chests, you will have food if you explore.
 *Use food in hand to plant seed of same food type except wheat and cotton.
 *You will never run out of food if you make a farm.
---https://github.com/tenplus1/farming
+--[url]https://github.com/tenplus1/farming[/url]
 
 HUD:
 ____
 THERE ARE SOME HUDS HERE...  This may be optimised in the future.
-http://repo.or.cz/w/minetest_hudbars.git
-https://github.com/BlockMen/hunger
-https://github.com/BlockMen/hud
+[url]http://repo.or.cz/w/minetest_hudbars.git[/url]
+[url]https://github.com/BlockMen/hunger[/url]
+[url]https://github.com/BlockMen/hud[/url]
 --Beware The Dark is renamed to Radiation, currently trying to get the radiation to show up  so this is WIP.
-https://forum.minetest.net/viewtopic.php?f=11&t=12845&hilit=beware+the+dark
+[url]https://forum.minetest.net/viewtopic.php?f=11&t=12845&hilit=beware+the+dark
+[/url]
 
 ARMOR:
 ______
@@ -130,12 +132,12 @@ This is a modified version from TenPlus1's protector redo mod.
 *Craft 8 stone around one diamond block.
 *Protection is r5.
 *You get Two protectors.
---https://github.com/tenplus1/protector
+--[url]https://github.com/tenplus1/protector[/url]
 
 GUNS!:
 ______
 A modified version of shooter:
---https://github.com/maikerumine/extreme_survival/tree/master/mods/shooter
+--[url]https://github.com/maikerumine/extreme_survival/tree/master/mods/shooter[/url]
 
 VILLAGES: A.K.A. SOKOMINE's amasing compilation with a few expert Minetest coders, please read the readme's.
 _________
@@ -148,29 +150,19 @@ This one is tricky...  I have re-coded a few things for this game, specifically:
 *Did I mention these villages are your bread and butter?
 *Make a base in a far away village for optimum safety against online players, however, if you got there, they will get there too.
 
---https://github.com/maikerumine/holocaust/tree/master/mods/mg_villages
---https://github.com/Sokomine/village_modern_houses
---https://github.com/Sokomine/cottages
---https://github.com/Sokomine/handle_schematics
---https://github.com/Sokomine/mobf_trader
---https://github.com/Sokomine/village_gambit
---https://github.com/Sokomine/village_towntest
+--[url]https://github.com/maikerumine/holocaust/tree/master/mods/mg_villages[/url]
+--[url]https://github.com/Sokomine/village_modern_houses[/url]
+--[url]https://github.com/Sokomine/cottages[/url]
+--[url]https://github.com/Sokomine/handle_schematics[/url]
+--[url]https://github.com/Sokomine/mobf_trader[/url]
+--[url]https://github.com/Sokomine/village_gambit[/url]
+--[url]https://github.com/Sokomine/village_towntest[/url]
 
-
-INSTALLATION:
-_____________
-Extract this game into your games folder and rename the folder to "holocaust"
-In the mods folder in holocaust:
-Minetest/games/mods
-extract the esmobs and bones to this directory.
-For some reason github won't let me inclust the folders to the game due to a conflict.
-
-
-
+LICENSE:
 
 License of source code:
 -----------------------
-LGPLv2.1 for holocaust game, based off of minetest_game (SEE BOTTOM FOR ORIGINAL LICENsE INFO.)
+LGPLv2.1 for holocaust game, based off of minetest_game (SEE BOTTOM FOR ORIGINAL LICENSE INFO.)
 WTFPL or otherwise stated in mods.
 
 License of media:
@@ -181,6 +173,12 @@ Maikerumine (CC BY-SA 3.0)
 INSERT LIST HERE
 
 or otherwise stated in mods included in this subgame.
+
+[b][color=#008000]Browse Code:[/color][/b]
+[url]https://github.com/maikerumine/holocaust[/url]
+
+[color=#008000][b]DOWNLOAD:[/b][/color]
+[url]https://github.com/maikerumine/holocaust/archive/master.zip[/url]
 
 
 
