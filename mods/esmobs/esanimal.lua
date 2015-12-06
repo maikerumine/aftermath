@@ -116,7 +116,11 @@ bp:register_mob("esmobs:sheep", {
 	end,
 })
 
+<<<<<<< HEAD
 bp:register_spawn("esmobs:sheep", {"default:dirt_with_grass","default:dirt_with_dry_grass", "default:dry:dirt", "ethereal:green_dirt"}, 18, -1, 6000, 2, 31000)
+=======
+bp:register_spawn("esmobs:sheep", {"default:dirt_with_grass","default:dry_grass",  "ethereal:green_dirt"}, 5, -1, 12000, 2, 31000)
+>>>>>>> origin/master
 
 --bp:register_egg("esmobs:sheep", "Sheep", "wool_white.png", 1)
 
