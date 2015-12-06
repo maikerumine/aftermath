@@ -1,6 +1,6 @@
--- Holocaust created by maikerumine and Aiden Garvin
--- Minetest 0.4.13 game: "Holocaust"
--- namespace: holocaust
+-- Nuclear Holocaust created by maikerumine and Aiden Garvin
+-- Minetest 0.4.13 game: "Nuclear Holocaust"
+-- namespace: nuclear_holocaust
 -- (c) 2015 by: maikerumine and Aiden Garvin
 -- https://github.com/maikerumine
 -- LGPLv2.1  (SEE BOTTOM)
@@ -16,9 +16,9 @@ Can you survive a night?
 Can you make it a week?
 Can your mind accept that this is life after the great war?
 You must start again, from scratch, in a bombed out radioactive world.
-This is HOLOCAUST.
+This is NUCLEAR HOLOCAUST.
 
-
+NUCLEAR
 
 		  _______  _        _______  _______  _______           _______ _________
 |\     /|(  ___  )( \      (  ___  )(  ____ \(  ___  )|\     /|(  ____ \\__   __/
@@ -162,7 +162,7 @@ LICENSE:
 
 License of source code:
 -----------------------
-LGPLv2.1 for holocaust game, based off of minetest_game (SEE BOTTOM FOR ORIGINAL LICENSE INFO.)
+LGPLv2.1 for nuclear_holocaust game, based off of minetest_game (SEE BOTTOM FOR ORIGINAL LICENSE INFO.)
 WTFPL or otherwise stated in mods.
 
 License of media:
@@ -175,10 +175,10 @@ INSERT LIST HERE
 or otherwise stated in mods included in this subgame.
 
 [b][color=#008000]Browse Code:[/color][/b]
-[url]https://github.com/maikerumine/holocaust[/url]
+[url]https://github.com/maikerumine/nuclear_holocaust[/url]
 
 [color=#008000][b]DOWNLOAD:[/b][/color]
-[url]https://github.com/maikerumine/holocaust/archive/master.zip[/url]
+[url]https://github.com/maikerumine/nuclear_holocaust/archive/master.zip[/url]
 
 
 
