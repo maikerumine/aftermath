@@ -13,7 +13,7 @@
 bp:register_mob("esmobs:sheep", {
 	type = "monster",
 	passive = false,
-	attack_type = "dogfight",,
+	attack_type = "dogfight",
 	hp_min = 32,
 	hp_max = 50,
 	armor = 100,
@@ -29,9 +29,10 @@ bp:register_mob("esmobs:sheep", {
 	gotten_mesh = "mobs_sheep_shaved.x",
 	makes_footstep_sound = true,
 	sounds = {
-		random = "mobs_sheep",
+		random = "mobs_stonemonster",
 	},
 	walk_velocity = 2.7,
+	run_velocity = 3.7,
 	jump = true,
 	drops = {
 		{name = "esmobs:meat_raw",
@@ -48,7 +49,7 @@ bp:register_mob("esmobs:sheep", {
 		walk_start = 81,		walk_end = 100,
 	},
 	follow = "farming:wheat",
-	view_range = 5,
+	view_range = 18,
 	replace_rate = 50,
 	replace_what = {"default:grass_3", "default:grass_4", "default:grass_5", "farming:wheat_8"},
 	replace_with = "air",
@@ -74,10 +75,9 @@ bp:register_mob("esmobs:sheep", {
 				self.object:set_properties({
 					textures = {"mobs_sheep.png"},
 					mesh = "mobs_sheep.x",
+					mesh = "mobs_sheep.x",
 				})
-	sounds = {
-		random = "mobs_stonemonster",
-	},
+				minetest.sound_play("mobs_stonemonster", {object = self.object,gain = 1.0,max_hear_distance = 32,loop = false,})
 			end
 			return
 		end
@@ -116,7 +116,7 @@ bp:register_mob("esmobs:sheep", {
 	end,
 })
 
-bp:register_spawn("esmobs:sheep", {"default:dirt_with_grass","default:dry_grass",  "ethereal:green_dirt"}, 20, 10, 12000, 2, 31000)
+bp:register_spawn("esmobs:sheep", {"default:dirt_with_grass","default:dry_grass",  "ethereal:green_dirt"}, 5, -1, 12000, 2, 31000)
 
 --bp:register_egg("esmobs:sheep", "Sheep", "wool_white.png", 1)
 
