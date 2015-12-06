@@ -71,13 +71,16 @@ minetest.register_on_joinplayer(function(player)
     end
 end)
 
-minetest.register_on_dieplayer(function(player)
+minetest.register_on_dieplayer(function(player)  --Problem crashing when exit
     local name = player:get_player_name()
     local pl = M.players[name]
     pl.pending_dmg = 0.0
-    local radiation = 20
+    local radiation = 0
     PPA.set_value(player, "radiation_radiation", radiation)
     M.hud_update(player, radiation)
+		if not pl then
+		return
+	end
 end)
 
 
@@ -142,9 +145,9 @@ minetest.register_globalstep(function(dtime)
     end
 end)
 
+]]
 
-
---ORIG CODE
+--NEW CODE
 
 minetest.register_globalstep(function(dtime)
 
@@ -165,13 +168,16 @@ minetest.register_globalstep(function(dtime)
             -- the middle of the block with the player's head
             pos.y = math.floor(pos_y) + 1.5
             local node = minetest.get_node(pos)
+			--local node = minetest.get_node_group(pos)			--local node = minetest.get_node_group(name, group)
+			--local radioactive = minetest.registered_nodes[node.name].groups.radioactive  --I AM DOING THIS WRONG
 
 --ADD RADIOACTIVE HERE    minetest.registered_nodes[node.name].groups.radioactive
 
-            local light_now   = minetest.get_node_light(pos) or 0
-            if node.name == 'ignore' then
+		--local light_now   = minetest.get_node_light(pos) or 0		--original
+		local light_now   = minetest.get_node_group(name, radioactive) or 0  --I BELIEVE I NEED TO ADD THE TECHNIC RADIATION CODE IN HERE AND REMOVE IT FROM THE DEFAULT SECTION.
+            if node.group == 'ignore' then
                 -- can happen while world loads, set to something innocent
-                light_now = 9
+				light_now = 0
             end
 
             local dps = C.damage_for_light[light_now]--change to radioactive group
@@ -182,13 +188,13 @@ minetest.register_globalstep(function(dtime)
 
 --END RADIOACTIVE HERE
 
-                radiation = radiation - dps
+                radiation = radiation + dps
                 --print("New radiation "..radiation)
-                if radiation < 0.0 and minetest.setting_getbool("enable_damage") then
-                    pl.pending_dmg = pl.pending_dmg - radiation
-                    radiation = 0.0
+                if radiation > 13 and minetest.setting_getbool("enable_damage") then
+                    pl.pending_dmg = pl.pending_dmg + radiation--MAKE THIS A + TO HURT PLAYER
+                    radiation = 10--START RAD
 
-                    if pl.pending_dmg > 0.0 then
+                    if pl.pending_dmg > 20.0 then
                         local dmg = math.floor(pl.pending_dmg)
                         --print("Deals "..dmg.." damage!")
                         pl.pending_dmg = pl.pending_dmg - dmg
@@ -204,4 +210,4 @@ minetest.register_globalstep(function(dtime)
     end
 end)
 
-]]
+
