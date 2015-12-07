@@ -1029,9 +1029,11 @@ end
 --
 -- Liquids
 --
-
+--[[
 --BUT FIRST WE ADD SOME RADIOACTIVITY FROM THE TECHNIC MOD
 --20151206  DECIDED TO EVENTUALLY MOVE THIS INTO THE RADIATION HUD.
+--MOVED AND TESTING NEW RADIATION HUD.
+--KEEPING THIS CODE FOR POSSIBLE HUD FAILURE.
 ----------------------------------------
 
 
@@ -1225,12 +1227,6 @@ local function node_radiation_resistance(nodename)
 end
 
 
-
-
-
-
-
-
 -- Radioactive nodes cause damage to nearby players.  The damage
 -- effect depends on the intrinsic strength of the radiation source,
 -- the distance between the source and the player, and the shielding
@@ -1309,8 +1305,7 @@ minetest.register_abm({
 		end
 	end,
 })
-
-
+]]
 
 
 
