@@ -1,9 +1,9 @@
 --[[
 
-Beware the Dark [bewarethedark]
+Radiation [radiation]
 ==========================
 
-A mod where darkness simply kills you outright.
+A mod where radiation simply kills you outright.
 
 Copyright (C) 2015 Ben Deutsch <ben@bendeutsch.de>
 
@@ -30,27 +30,32 @@ USA
 
 radiation = {
 
-    -- configuration in radiation.default.conf
+    -- configuration in radiation.default.conf and related files
 
     -- per-player-stash (not persistent)
     players = {
         --[[
         name = {
             pending_dmg = 0.0,
+            burn_factor = 1.0,
+            damage_factor = 1.0,
+            heal_factor = 1.0,
         }
         ]]
     },
 
+
+ 
     -- global things
     time_next_tick = 0.0,
 }
 local M = radiation
-
+radiation.rad = 0  --dmg_int works
 dofile(minetest.get_modpath('radiation')..'/configuration.lua')
-local C = radiation.config
+local C = M.config
 
 dofile(minetest.get_modpath('radiation')..'/persistent_player_attributes.lua')
-local PPA = persistent_player_attributes
+local PPA = M.persistent_player_attributes
 
 dofile(minetest.get_modpath('radiation')..'/hud.lua')
 
@@ -58,34 +63,10 @@ PPA.register({
     name = 'radiation_radiation',
     min  = 0,
     max  = 20,
-    default = 20,
+    default = 0,
 })
---problems
-minetest.register_on_joinplayer(function(player)
-    local name = player:get_player_name()
-    local pl = M.players[name]
-    if not pl then
-        M.players[name] = { pending_dmg = 0.0 }
-        pl = M.players[name]
-        M.hud_init(player)
-    end
-end)
 
-minetest.register_on_dieplayer(function(player)  --Problem crashing when exit
-    local name = player:get_player_name()
-    local pl = M.players[name]
-    pl.pending_dmg = 0.0
-    local radiation = 0
-    PPA.set_value(player, "radiation_radiation", radiation)
-    M.hud_update(player, radiation)
-		if not pl then --rewrite to ignore dropped players
-		return --
-	end
-end)
-
-
-
---ADD RADIATION HERE
+  --ADD RADIATION HERE
 --BUT FIRST WE ADD SOME RADIOACTIVITY FROM THE TECHNIC MOD
 --20151206  DECIDED TO EVENTUALLY MOVE THIS INTO THE RADIATION HUD.
 ----------------------------------------
@@ -322,9 +303,11 @@ end
 -- damage at all to the player.  This gives the player an opportunity
 -- to be safe, and limits the range at which source/player interactions
 -- need to be considered.
+--local dps = C.damage_for_radioactive[radioactive_now]
 
 local assumed_abdomen_offset = vector.new(0, 1, 0)
 local assumed_abdomen_offset_length = vector.length(assumed_abdomen_offset)
+
 minetest.register_abm({
 	nodenames = {"group:radioactive"},
 	interval = 1,
@@ -351,10 +334,16 @@ minetest.register_abm({
 					local dmg_int = math.floor(dmg_rate)
 					if math.random() < dmg_rate-dmg_int then
 						dmg_int = dmg_int + 1
+						radiation.rad = dmg_int
 					end
 					if dmg_int > 0 then
-						o:set_hp(math.max(o:get_hp() - dmg_int, 0))
+						o:set_hp(math.max(o:get_hp() - dmg_int, 0))--ORIG WORKS
 					end
+--					if dmg_int > 0 then			--PASS RETURN TO NEXT FUNCTION FOR HUD??radiation.rad needs to be like light, dynamicVery sloppy and does not return to zero.
+--						radiation.rad = dmg_int 	--radiation.rad+1
+--						return
+--					end						
+	
 				end
 			end
 		end
@@ -362,8 +351,33 @@ minetest.register_abm({
 })
 
 
---[[
---ORIG CODE From Beware the dark
+minetest.register_on_joinplayer(function(player)
+    local name = player:get_player_name()
+    local pl = M.players[name]
+    if not pl then
+        M.players[name] = {
+            pending_dmg = 0.0,
+            burn_factor = 1.0,
+            damage_factor = 1.0,
+            heal_factor = 1.0,
+        }
+        pl = M.players[name]
+        M.hud_init(player)
+    end
+end)
+
+minetest.register_on_dieplayer(function(player)
+    local name = player:get_player_name()
+    local pl = M.players[name]
+    pl.pending_dmg = 0.0
+    pl.burn_factor = 1.0
+    pl.damage_factor = 1.0
+    pl.heal_factor = 1.0
+    local burn = 0
+    PPA.set_value(player, "radiation_radiation", burn)
+    M.hud_update(player, burn)
+end)
+
 minetest.register_globalstep(function(dtime)
 
     M.time_next_tick = M.time_next_tick - dtime
@@ -372,7 +386,7 @@ minetest.register_globalstep(function(dtime)
         for _,player in ipairs(minetest.get_connected_players()) do
 
             if player:get_hp() <= 0 then
-                -- dead players don't fear the dark
+                -- dead players don't fear the RADIATION
                 break
             end
 
@@ -380,113 +394,108 @@ minetest.register_globalstep(function(dtime)
             local pl = M.players[name]
             local pos  = player:getpos()
             local pos_y = pos.y
+	    local dmg_int = dmg_int or 0
             -- the middle of the block with the player's head
             pos.y = math.floor(pos_y) + 1.5
             local node = minetest.get_node(pos)
-
-            local light_now   = minetest.get_node_light(pos) or 0
+--HERE ADD THE CODE TO CHANGE FROM LOOKING FOR LIGHT TO LOOKING FOR RADIATION
+            --local light_now   = minetest.get_node_light(pos) or 0
+	    local light_now   = radiation.rad or 0   --THIS IS RADIATION FROM UPPER CODE BROKEN
             if node.name == 'ignore' then
                 -- can happen while world loads, set to something innocent
-                light_now = 9
+                light_now = 0  --WAS 9
             end
 
-            local dps = C.damage_for_light[light_now]
-            --print("Standing in " .. node.name .. " at light " .. light_now .. " taking " .. dps);
+            local bps = C.radiation_for_light[light_now]
+            if bps > 0.0 then			--WAS 0
+                bps = bps * pl.burn_factor
+            else
+                bps = bps * pl.heal_factor
+            end
+            --print("Standing in " .. node.name .. " at light " .. light_now .. " taking " .. bps);
 
-            if dps ~= 0 then
-                local radiation = PPA.get_value(player, "radiation_radiation")
+            local burn = PPA.get_value(player, "radiation_radiation")
 
-                radiation = radiation - dps
-                --print("New radiation "..radiation)
-                if radiation < 0.0 and minetest.setting_getbool("enable_damage") then
-                    pl.pending_dmg = pl.pending_dmg - radiation
-                    radiation = 0.0
+            burn = burn + bps * C.tick_time;
+            if burn <  0 then burn =  0 end
+            if burn > 20 then burn = 20 end
+            --print("New burn "..burn)
+            PPA.set_value(player, "radiation_radiation", burn)
 
-                    if pl.pending_dmg > 0.0 then
-                        local dmg = math.floor(pl.pending_dmg)
-                        --print("Deals "..dmg.." damage!")
-                        pl.pending_dmg = pl.pending_dmg - dmg
-                        player:set_hp( player:get_hp() - dmg )
-                    end
+            M.hud_update(player, burn)
+
+            if burn > C.radiation_threshold  and minetest.setting_getbool("enable_damage") then
+                local burn_overrun = burn - C.radiation_threshold
+                local dps = burn_overrun * C.damage_per_radiation * pl.damage_factor
+                --print ("DPS: "..dps)
+                pl.pending_dmg = pl.pending_dmg + dps * C.tick_time
+                if pl.pending_dmg > 1.0 then
+                    local dmg = math.floor(pl.pending_dmg)
+                    --print("Deals "..dmg.." damage!")
+                    pl.pending_dmg = pl.pending_dmg - dmg
+                    --player:set_hp( player:get_hp() - dmg )  --HANDLED BY RADIATION
                 end
-
-                PPA.set_value(player, "radiation_radiation", radiation)
-
-                M.hud_update(player, radiation)
             end
         end
     end
 end)
+
+--[[
+
+API
+
 ]]
 
+function M.get_radiation(player)
+    return PPA.get_value(player, "radiation_radiation")
+end
+
+function M.set_radiation(player, burn)
+    PPA.set_value(player, "radiation_radiation", burn)
+    M.hud_update(player, burn)
+end
+
+function M.add_radiation(player, change)
+    local burn = PPA.get_value(player, "radiation_radiation") + change
+    PPA.set_value(player, "radiation_radiation", burn)
+    M.hud_update(player, burn)
+end
 
 
+function M.get_burn_factor(player)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    return pl.burn_factor
+end
 
---NEW CODE THAT DOES NOT WORK BECAUSE WE ARE TRYING TO CALL AN INVISIBLE VARIABLE THAT ONLY EXISTS AS THE ABOVE TECHNIC MOD.
---THEREFORE, MEASURING A NON MEASURABLE WILL BE TRICKY TO DO.
---THE TECHNIC RADIATION PART WILL NEED TO BE INSERTED HERE.
-minetest.register_globalstep(function(dtime)
-
-    M.time_next_tick = M.time_next_tick - dtime
-    while M.time_next_tick < 0.0 do
-        M.time_next_tick = M.time_next_tick + C.tick_time
-        for _,player in ipairs(minetest.get_connected_players()) do
-
-            if player:get_hp() <= 0 then
-                -- dead players don't fear radiation
-                break
-            end
-
-            local name = player:get_player_name()
-            local pl = M.players[name]
-            local pos  = player:getpos()
-            local pos_y = pos.y
-            -- the middle of the block with the player's head
-            pos.y = math.floor(pos_y) + 1.5
-            local node = minetest.get_node(pos)
-			--local node = minetest.get_node_group(pos)			--local node = minetest.get_node_group(name, group)
-			--local radioactive = minetest.registered_nodes[node.name].groups.radioactive  --I AM DOING THIS WRONG
-
---ADD RADIOACTIVE HERE    minetest.registered_nodes[node.name].groups.radioactive
---I BELIEVE I NEED TO ADD THE TECHNIC RADIATION CODE IN HERE AND REMOVE IT FROM THE DEFAULT SECTION.
-		--local radioactive_now   = minetest.get_node_radioactive(pos) or 0		--original  Now does not work: radiation\init.lua:176: attempt to call field 'get_node_radioactive' (a nil value)
-		--local radioactive_now   = minetest.get_node_group(name, radioactive) or 0  --Works but doesn't register
-		local radioactive_now   = minetest.registered_nodes[node.name].groups.radioactive or 0  --Works but doesn't register
+function M.set_burn_factor(player, factor)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    pl.burn_factor = factor
+end
 
 
-            if node.group == 'ignore' then
-                -- can happen while world loads, set to something innocent
-				radioactive_now = 0
-            end
+function M.get_damage_factor(player)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    return pl.damage_factor
+end
 
-            local dps = C.damage_for_radioactive[radioactive_now]--change to radioactive group
-            --print("Standing in " .. node.name .. " at light " .. radioactive_now .. " taking " .. dps);
-
-            if dps ~= 0 then
-                local radiation = PPA.get_value(player, "radiation_radiation")
-
---END RADIOACTIVE HERE
-
-                radiation = radiation + dps
-                --print("New radiation "..radiation)
-                if radiation > 13 and minetest.setting_getbool("enable_damage") then
-                    pl.pending_dmg = pl.pending_dmg + radiation--MAKE THIS A + TO HURT PLAYER
-                    radiation = 10--START RAD
-
-                    if pl.pending_dmg > 20.0 then
-                        local dmg = math.floor(pl.pending_dmg)
-                        --print("Deals "..dmg.." damage!")
-                        pl.pending_dmg = pl.pending_dmg - dmg
-                        player:set_hp( player:get_hp() - dmg )
-                    end
-                end
-
-                PPA.set_value(player, "radiation_radiation", radiation)
-
-                M.hud_update(player, radiation)
-            end
-        end
-    end
-end)
+function M.set_damage_factor(player, factor)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    pl.damage_factor = factor
+end
 
 
+function M.get_heal_factor(player)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    return pl.heal_factor
+end
+
+function M.set_heal_factor(player, factor)
+    local name = player:get_player_name()
+    local pl = M.players[name] or {}
+    pl.heal_factor = factor
+end

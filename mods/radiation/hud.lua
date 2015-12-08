@@ -1,25 +1,25 @@
 --[[
 
-HUD definitions for Beware the Dark
+HUD definitions for radiation
 
 Optionally from one of the supported mods
 
 Any hud needs to define the following functions:
 
-- bewarethedark.hud_init(player)
+- radiation.hud_init(player)
   Initialize the HUD for a new player.
 
-- bewarethedark.hud_update(player, value)
+- radiation.hud_update(player, value)
   Display the new value "value" for the given player. "value" is
   a floating point number, not necessarily bounded. You can use the
-  "bewarethedark.hud_clamp(value)" function to get an integer between 0
+  "radiation.hud_clamp(value)" function to get an integer between 0
   and 20.
 
 ]]
 
 local M   = radiation
-local C   = radiation.config
-local PPA = persistent_player_attributes
+local C   = M.config
+local PPA = M.persistent_player_attributes
 
 function M.hud_clamp(value)
     if value < 0 then
@@ -32,7 +32,7 @@ function M.hud_clamp(value)
 end
 
 if minetest.get_modpath("hudbars") then
-    hb.register_hudbar('radiation', 0x000000, "Radiation [WIP]", {
+    hb.register_hudbar('radiation', 0x000000, "radiation", {
         bar = 'radiation_hudbars_bar.png',
         icon = 'radiation_full.png'
     }, 20, 20, false)
@@ -46,13 +46,13 @@ if minetest.get_modpath("hudbars") then
     end
 elseif minetest.get_modpath("hud") then
     -- default positions follow [hud] defaults
-    local position = HUD_RADIATION_POS or { x=0.5, y=1 }
-    local offset   = HUD_RADIATION_OFFSET or { x=15, y=-133} -- above AIR
+    local position = HUD_radiation_POS or { x=0.5, y=1 }
+    local offset   = HUD_radiation_OFFSET or { x=15, y=-133} -- above AIR
     hud.register('radiation', {
         hud_elem_type = "statbar",
         position = position,
         text = "radiation_full.png",
-        background = "radiation_bad.png",
+        background = "radiation_bad_bg.png",
         number = 20,
         max = 20,
         size = HUD_SD_SIZE, -- by default { x=24, y=24 },
