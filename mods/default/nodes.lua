@@ -1029,7 +1029,7 @@ end
 --
 -- Liquids
 --
---[[
+
 --BUT FIRST WE ADD SOME RADIOACTIVITY FROM THE TECHNIC MOD
 --20151206  DECIDED TO EVENTUALLY MOVE THIS INTO THE RADIATION HUD.
 --MOVED AND TESTING NEW RADIATION HUD.
@@ -1305,7 +1305,7 @@ minetest.register_abm({
 		end
 	end,
 })
-]]
+
 
 
 
@@ -1352,7 +1352,7 @@ minetest.register_node("default:toxic_water_source", {
 	liquid_viscosity =3,
 	damage_per_second = 3*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 3 or 3),},
+	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 2 or 2),},
 })
 
 --NOTES:
@@ -1475,7 +1475,7 @@ minetest.register_node("default:mud", {
 	liquid_alternative_source = "default:mud",
 	liquid_viscosity = 18,
 	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 8 or 8),},
+	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 0.5 or 0.5),},
 })
 
 minetest.register_node("default:mud_flowing", {
@@ -1522,7 +1522,7 @@ minetest.register_node("default:mud_flowing", {
 	liquid_viscosity = 19,
 	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
-		not_in_creative_inventory = 1, radioactive = (state == "source" and 4 or 4),},
+		not_in_creative_inventory = 1, radioactive = (state == "source" and 0.5 or 0.5),},
 })
 
 

@@ -11,7 +11,7 @@ SHOOTER_ADMIN_WEAPONS = false
 SHOOTER_ENABLE_BLASTING = true
 SHOOTER_ENABLE_CROSSBOW = true
 SHOOTER_ENABLE_GUNS = true
-SHOOTER_ENABLE_FLARES = false
+SHOOTER_ENABLE_FLARES = true
 SHOOTER_ENABLE_HOOK = true
 SHOOTER_ENABLE_GRENADES = true
 SHOOTER_ENABLE_ROCKETS = true
@@ -104,6 +104,43 @@ SHOOTER_ENTITIES = {
 	"esmobs:goodnpc",
 	"esmobs:badnpc",
 	"esmobs:chickoboo",
+	"mobs_fallout:sheep", 
+	"mobs_fallout:Mr_Black",
+	"mobs_fallout:Mr_White",
+	"mobs_fallout:Mr_Pink",
+	"mobs_fallout:Bajan",
+	"mobs_fallout:John",
+	"mobs_fallout:Krock",
+	"mobs_fallout:Just_Test_Griefer", 
+	"mobs_fallout:SepiaSam",
+	"mobs_fallout:Hobo",
+	"mobs_fallout:Simon", 
+	"mobs_fallout:Infantry_man",
+	"mobs_fallout:Mage",
+	"mobs_fallout:Bajan",
+	"mobs_fallout:Calinou",
+	"mobs_fallout:Castaway",
+	"mobs_fallout:cx384", 
+	"mobs_fallout:FloatingWraith",
+	"mobs_fallout:Ghost",
+	"mobs_fallout:Zombie_Rex",
+	"mobs_fallout:Lovehart",
+	"mobs_fallout:Minetestian", 
+	"mobs_fallout:Andromeda",
+	"mobs_fallout:Phil",
+	"mobs_fallout:IvanbotXD", 
+	"mobs_fallout:Orc", 
+	"mobs_fallout:Luke",
+	"mobs_fallout:Seth_Rollins",
+	"mobs_fallout:Sgt_Prf",
+	"mobs_fallout:Willy_Rex",
+	"mobs_fallout:Zombie_Drogado_A",
+	"mobs_fallout:Zombie_Drogado_B",
+	"mobs_fallout:Zombie_Drogado_C",
+	"mobs_fallout:Zombie_Drogado_D",
+	"mobs_fallout:Zombie_Drogado_E",
+	"mobs_fallout:Zombie_Drogado_F",
+	
 }
 
 local singleplayer = minetest.is_singleplayer()

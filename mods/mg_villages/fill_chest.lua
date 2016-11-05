@@ -263,6 +263,16 @@ local chest_stuff = {
 	{name="farming:seed_wheat", max = 3},
 	{name="farming:cucumber", max = 3},
 	{name="farming:grapes", max = 3},
+	{name="shooter:grenade", max = 3},
+	{name="shooter:rocket_gun", max = 1},
+	{name="shooter:rocket", max = 2},
+	{name="shooter:pistol", max = 2},
+	{name="shooter:rifle", max = 1},
+	{name="shooter:shotgun", max = 1},
+	{name="shooter:machine_gun", max = 1},
+	{name="shooter:ammo", max = 5},
+	{name="shooter:grapple_hook", max = 1},
+	{name="shooter:grapple_gun", max = 1},
 }
 
 -- get some random content for a chest

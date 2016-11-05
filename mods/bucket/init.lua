@@ -3,7 +3,7 @@
 
 minetest.register_alias("bucket", "bucket:bucket_empty")
 minetest.register_alias("bucket_water", "bucket:bucket_water")
-minetest.register_alias("bucket_lava", "bucket:bucket_lava")
+--minetest.register_alias("bucket_lava", "bucket:bucket_lava")
 minetest.register_alias("bucket_toxic", "bucket:bucket_toxic_water")
 minetest.register_alias("bucket_clean", "bucket:bucket_clean_water")
 minetest.register_alias("bucket_mud", "bucket:bucket_mud")
@@ -203,7 +203,7 @@ bucket.register_liquid(
 	"River Water Bucket",
 	{water_bucket = 1}
 )
-
+--[[
 bucket.register_liquid(
 	"default:lava_source",
 	"default:lava_flowing",
@@ -211,14 +211,16 @@ bucket.register_liquid(
 	"bucket_lava.png",
 	"Lava Bucket"
 )
+]]
 
+--[[
 minetest.register_craft({
 	type = "fuel",
 	recipe = "bucket:bucket_lava",
 	burntime = 60,
 	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
 })
-
+]]
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 90,
@@ -240,4 +242,100 @@ minetest.register_craft({
 		{'default:cactus', 'default:cactus',''},
 		{'','bucket:bucket_empty','' },
 	}
+})
+
+
+--everamaza code 
+minetest.register_privilege("liquid", "Can place liquid source nodes.")
+minetest.register_privilege("mud", "Can use mud.")
+minetest.register_privilege("water", "Can use liquid.")
+
+
+--mud bucket
+local old_lava_bucket_place = minetest.registered_items["bucket:bucket_mud"].on_place
+
+minetest.override_item("bucket:bucket_mud", {
+	on_place = function(itemstack, placer, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{mud = true}) then
+			return itemstack
+		else
+			return old_lava_bucket_place(itemstack, placer, pointed_thing)
+		end
+	end,
+})
+
+
+--water bucket
+local old_water_bucket_place = minetest.registered_items["bucket:bucket_water"].on_place
+
+minetest.override_item("bucket:bucket_water", {
+	on_place = function(itemstack, placer, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{water = true}) then
+			return itemstack
+		else
+			return old_water_bucket_place(itemstack, placer, pointed_thing)
+		end
+	end,
+})
+
+--toxic water bucket
+local old_toxic_water_bucket_place = minetest.registered_items["bucket:bucket_toxic_water"].on_place
+
+minetest.override_item("bucket:bucket_toxic_water", {
+	on_place = function(itemstack, placer, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{mud = true}) then
+			return itemstack
+		else
+			return old_water_bucket_place(itemstack, placer, pointed_thing)
+		end
+	end,
+})
+
+--source blocks
+minetest.override_item("default:lava_source", {
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{liquid = true, lava = true}) then
+			minetest.remove_node(pos)
+		end
+	end,
+})
+
+minetest.override_item("default:mud", {
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{liquid = true, mud = true}) then
+			minetest.remove_node(pos)
+		end
+	end,
+})
+
+minetest.override_item("default:water_source", {
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{liquid = true}) then
+			minetest.remove_node(pos)
+		end
+	end,
+})
+
+minetest.override_item("default:toxic_water_source", {
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{liquid = true}) then
+			minetest.remove_node(pos)
+		end
+	end,
+})
+
+minetest.override_item("default:river_water_source", {
+	after_place_node = function(pos, placer, itemstack, pointed_thing)
+		if not minetest.check_player_privs(placer:get_player_name(),
+				{liquid = true}) then
+			minetest.remove_node(pos)
+		end
+	end,
 })
