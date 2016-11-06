@@ -8,7 +8,7 @@
 --REFERENCE
 --function (mod_name_here):spawn_specific(name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height)
 
-mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -20)
+mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -20)
 mobs:register_mob("mobs_fallout:Bajan", {
 	type = "monster",
 	hp_min = 35,
@@ -61,7 +61,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Calinou", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Calinou", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Calinou", {
 	type = "monster",
 	hp_min = 49,
@@ -114,7 +114,7 @@ mobs:register_mob("mobs_fallout:Calinou", {
 		attack = "default_punch3",
 		},
 })
-mobs:register_spawn("mobs_fallout:Castaway", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Castaway", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Castaway", {
 	type = "monster",
 	hp_min = 37,
@@ -122,7 +122,7 @@ mobs:register_mob("mobs_fallout:Castaway", {
 	collisionbox = {-0.3, -1.3, -0.3, 0.3, 0.8, 0.3},
 	visual = "mesh",
 	mesh = "3d_armor_character.b3d",
-	textures = {{"Castaway_by_Gold",
+	textures = {{"Castaway_by_Gold.png",
 			"3d_armor_trans.png",
 				minetest.registered_items["shooter:rifle"].inventory_image,
 			}},
@@ -168,7 +168,7 @@ mobs:register_mob("mobs_fallout:Castaway", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:cx384", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -100)
+mobs:register_spawn("mobs_fallout:cx384", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -100)
 mobs:register_mob("mobs_fallout:cx384", {
 	type = "monster",
 	hp_min = 130,
@@ -221,7 +221,7 @@ mobs:register_mob("mobs_fallout:cx384", {
 		attack = "default_punch3",
 		},
 })
-mobs:register_spawn("mobs_fallout:FloatingWraith", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:FloatingWraith", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:FloatingWraith", {
 	type = "monster",
 	hp_min = 37,
@@ -274,7 +274,7 @@ mobs:register_mob("mobs_fallout:FloatingWraith", {
 		attack = "mobs_oerkki_attack",
 		},
 })
-mobs:register_spawn("mobs_fallout:Ghost", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -250)
+mobs:register_spawn("mobs_fallout:Ghost", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -250)
 mobs:register_mob("mobs_fallout:Ghost", {
 	type = "monster",
 	hp_min = 157,
@@ -327,7 +327,7 @@ mobs:register_mob("mobs_fallout:Ghost", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -300)
+mobs:register_spawn("mobs_fallout:Zombie_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -300)
 mobs:register_mob("mobs_fallout:Zombie_Rex", {
 	type = "monster",
 	hp_min = 177,
@@ -380,7 +380,7 @@ mobs:register_mob("mobs_fallout:Zombie_Rex", {
 		attack = "default_punch3",
 		},
 })
-mobs:register_spawn("mobs_fallout:Lovehart", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -430)
+mobs:register_spawn("mobs_fallout:Lovehart", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -430)
 mobs:register_mob("mobs_fallout:Lovehart", {
 	type = "monster",
 	hp_min = 157,
@@ -433,7 +433,7 @@ mobs:register_mob("mobs_fallout:Lovehart", {
 		attack = "mobs_slash_attack",
 		},
 })
-mobs:register_spawn("mobs_fallout:Minetestian", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 100)
+mobs:register_spawn("mobs_fallout:Minetestian", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 100)
 mobs:register_mob("mobs_fallout:Minetestian", {
 	type = "monster",
 	hp_min = 49,
@@ -486,7 +486,7 @@ mobs:register_mob("mobs_fallout:Minetestian", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Andromeda", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Andromeda", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Andromeda", {
 	type = "monster",
 	hp_min = 57,
@@ -540,7 +540,7 @@ mobs:register_mob("mobs_fallout:Andromeda", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:Phil", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Phil", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Phil", {
 	type = "monster",
 	hp_min = 47,
@@ -594,7 +594,7 @@ mobs:register_mob("mobs_fallout:Phil", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:IvanbotXD", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:IvanbotXD", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:IvanbotXD", {
 	type = "monster",
 	hp_min = 48,
@@ -649,7 +649,7 @@ mobs:register_mob("mobs_fallout:IvanbotXD", {
 })
 
 
-mobs:register_spawn("mobs_fallout:Orc", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Orc", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Orc", {
 	type = "monster",
 	hp_min = 77,
@@ -707,7 +707,7 @@ mobs:register_mob("mobs_fallout:Orc", {
 	step = 1,
 
 })
-mobs:register_spawn("mobs_fallout:Luke", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -150)
+mobs:register_spawn("mobs_fallout:Luke", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -150)
 mobs:register_mob("mobs_fallout:Luke", {
 	type = "monster",
 	hp_min = 127,
@@ -760,7 +760,7 @@ mobs:register_mob("mobs_fallout:Luke", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Seth_Rollins", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -400)
+mobs:register_spawn("mobs_fallout:Seth_Rollins", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -400)
 mobs:register_mob("mobs_fallout:Seth_Rollins", {
 	type = "monster",
 	hp_min = 137,
@@ -813,7 +813,7 @@ mobs:register_mob("mobs_fallout:Seth_Rollins", {
 		attack = "default_punch3",
 		},
 })
-mobs:register_spawn("mobs_fallout:Sgt_Prf", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -120)
+mobs:register_spawn("mobs_fallout:Sgt_Prf", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -120)
 mobs:register_mob("mobs_fallout:Sgt_Prf", {
 	type = "monster",
 	hp_min = 100,
@@ -866,7 +866,7 @@ mobs:register_mob("mobs_fallout:Sgt_Prf", {
 		attack = "default_punch",
 		},
 })
-mobs:register_spawn("mobs_fallout:Willy_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Willy_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Willy_Rex", {
 	type = "monster",
 	hp_min = 73,
@@ -919,7 +919,7 @@ mobs:register_mob("mobs_fallout:Willy_Rex", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_A", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_A", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 	type = "monster",
 	hp_min = 99,
@@ -972,7 +972,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 		attack = "default_punch3",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_B", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_B", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 	type = "monster",
 	hp_min = 77,
@@ -1025,7 +1025,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 		attack = "default_punch",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_C", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -50)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_C", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -50)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 	type = "monster",
 	hp_min = 69,
@@ -1078,7 +1078,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 		attack = "default_punch2",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_D", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, -50)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_D", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow"}, 5, -1, 6000, 1, -50)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 	type = "monster",
 	hp_min = 137,

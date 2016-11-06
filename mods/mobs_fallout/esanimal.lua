@@ -116,7 +116,7 @@ mobs:register_mob("mobs_fallout:sheep", {
 	end,
 })
 
-mobs:register_spawn("mobs_fallout:sheep", {"default:dirt_with_grass","default:dirt_with_dry_grass", "default:dry:dirt", "ethereal:green_dirt"}, 18, -1, 6000, 2, 31000)
+mobs:register_spawn("mobs_fallout:sheep", {"default:dirt_with_grass","default:dirt_with_dry_grass", "default:grass", "ethereal:green_dirt", "default:dry_dirt", "default:snow"}, 18, -1, 6000, 2, 31000)
 
 --mobs:register_egg("mobs_fallout:sheep", "Sheep", "wool_white.png", 1)
 

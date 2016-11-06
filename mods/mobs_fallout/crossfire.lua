@@ -12,9 +12,9 @@
 
 mobs.npc_drops = { "default:pick_steel", "mobs_fallout:meat", "default:sword_steel", "default:shovel_steel", "farming:bread", "default:wood" }--Added 20151121
 
-mobs:register_spawn("mobs_fallout:Mr_Black", {"default:dirt_with_grass","default:desert_sand","default:sand","default:stonebrick","default:cobble"}, 14, -1, 8000, 1, 30)
-mobs:register_spawn("mobs_fallout:Mr_White", {"default:dirt_with_grass", "ethereal:green_dirt","default:grass","default:stonebrick","default:cobble"}, 14, -1, 8000, 1, 30)
-mobs:register_spawn("mobs_fallout:Mr_Pink", {"default:dirt_with_grass","default:desert_sand","default:sand","default:stonebrick","default:cobble"}, 14, -1, 8000, 1, 30)
+mobs:register_spawn("mobs_fallout:Mr_Black", {"default:dirt_with_grass","default:desert_sand","default:sand","default:stonebrick","default:cobble", "default:dry_dirt", "default:snow"}, 14, -1, 8000, 1, 30)
+mobs:register_spawn("mobs_fallout:Mr_White", {"default:dirt_with_grass", "ethereal:green_dirt","default:grass","default:stonebrick","default:cobble", "default:dry_dirt", "default:snow"}, 14, -1, 8000, 1, 30)
+mobs:register_spawn("mobs_fallout:Mr_Pink", {"default:dirt_with_grass","default:desert_sand","default:sand","default:stonebrick","default:cobble", "default:dry_dirt", "default:snow"}, 14, -1, 8000, 1, 30)
 
 mobs:register_mob("mobs_fallout:Mr_White", {
 	type = "npc",

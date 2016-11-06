@@ -265,7 +265,7 @@ minetest.override_item("bucket:bucket_mud", {
 	end,
 })
 
-
+--[[
 --water bucket
 local old_water_bucket_place = minetest.registered_items["bucket:bucket_water"].on_place
 
@@ -279,7 +279,7 @@ minetest.override_item("bucket:bucket_water", {
 		end
 	end,
 })
-
+]]
 --toxic water bucket
 local old_toxic_water_bucket_place = minetest.registered_items["bucket:bucket_toxic_water"].on_place
 
