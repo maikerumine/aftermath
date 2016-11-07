@@ -1,6 +1,6 @@
--- Nuclear Holocaust created by maikerumine and Aiden Garvin
--- Minetest 0.4.13 game: "Nuclear Holocaust"
--- namespace: nuclear_holocaust
+-- Aftermath created by maikerumine and Aiden Garvin
+-- Minetest 0.4.13 game: "Aftermath"
+-- namespace: aftermath
 -- (c) 2015 by: maikerumine and Aiden Garvin
 -- https://github.com/maikerumine
 -- LGPLv2.1  (SEE BOTTOM)
@@ -16,20 +16,10 @@ Can you survive a night?
 Can you make it a week?
 Can your mind accept that this is life after the great war?
 You must start again, from scratch, in a bombed out radioactive world.
-This is NUCLEAR HOLOCAUST.
+This is AFTERMATH.
 
-NUCLEAR
-
-		  _______  _        _______  _______  _______           _______ _________
-|\     /|(  ___  )( \      (  ___  )(  ____ \(  ___  )|\     /|(  ____ \\__   __/
-| )   ( || (   ) || (      | (   ) || (    \/| (   ) || )   ( || (    \/   ) (
-| (___) || |   | || |      | |   | || |      | (___) || |   | || (_____    | |
-|  ___  || |   | || |      | |   | || |      |  ___  || |   | |(_____  )   | |
-| (   ) || |   | || |      | |   | || |      | (   ) || |   | |      ) |   | |
-| )   ( || (___) || (____/\| (___) || (____/\| )   ( || (___) |/\____) |   | |
-|/     \|(_______)(_______/(_______)(_______/|/     \|(_______)\_______)   )_(
-
-
+AFTERMATH
+	
 CREATED BY:
 ___________
 The great team at minetest.net for a collaboration of ideas, mods, and friendship.
