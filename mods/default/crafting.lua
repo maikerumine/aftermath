@@ -73,7 +73,7 @@ minetest.register_craft({
 	output = 'default:pick_wood',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},
-		{'', 'group:stick', ''},
+		{'default:duct_tape', 'group:stick', ''},
 		{'', 'group:stick', ''},
 	}
 })
@@ -82,7 +82,7 @@ minetest.register_craft({
 	output = 'default:pick_stone',
 	recipe = {
 		{'group:stone', 'group:stone', 'group:stone'},
-		{'', 'group:stick', ''},
+		{'default:duct_tape', 'group:stick', ''},
 		{'', 'group:stick', ''},
 	}
 })
@@ -91,7 +91,7 @@ minetest.register_craft({
 	output = 'default:pick_steel',
 	recipe = {
 		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'', 'group:stick', ''},
+		{'default:duct_tape', 'group:stick', ''},
 		{'', 'group:stick', ''},
 	}
 })
@@ -101,7 +101,7 @@ minetest.register_craft({
 	recipe = {
 		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
 		{'', 'group:stick', ''},
-		{'', 'group:stick', ''},
+		{'default:duct_tape', 'group:stick', ''},
 	}
 })
 --[[
@@ -126,36 +126,36 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:shovel_wood',
 	recipe = {
-		{'group:wood'},
-		{'group:stick'},
-		{'group:stick'},
+		{'default:duct_tape','group:wood',''},
+		{'','group:stick',''},
+		{'','group:stick',''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:shovel_stone',
 	recipe = {
-		{'group:stone'},
-		{'group:stick'},
-		{'group:stick'},
+		{'default:duct_tape','group:stone',''},
+		{'','group:stick',''},
+		{'','group:stick',''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:shovel_steel',
 	recipe = {
-		{'default:steel_ingot'},
-		{'group:stick'},
-		{'group:stick'},
+		{'default:duct_tape','default:steel_ingot',''},
+		{'','group:stick',''},
+		{'','group:stick',''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:shovel_bronze',
 	recipe = {
-		{'default:bronze_ingot'},
-		{'group:stick'},
-		{'group:stick'},
+		{'default:duct_tape','default:bronze_ingot',''},
+		{'','group:stick',''},
+		{'','group:stick',''},
 	}
 })
 --[[
@@ -180,36 +180,36 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:axe_wood',
 	recipe = {
-		{'group:wood', 'group:wood'},
-		{'group:wood', 'group:stick'},
-		{'', 'group:stick'},
+		{'group:wood', 'group:wood',''},
+		{'group:wood', 'group:stick',''},
+		{'', 'group:stick','default:duct_tape'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_stone',
 	recipe = {
-		{'group:stone', 'group:stone'},
-		{'group:stone', 'group:stick'},
-		{'', 'group:stick'},
+		{'group:stone', 'group:stone',''},
+		{'group:stone', 'group:stick',''},
+		{'', 'group:stick','default:duct_tape'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_steel',
 	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', 'group:stick'},
-		{'', 'group:stick'},
+		{'default:steel_ingot', 'default:steel_ingot',''},
+		{'default:steel_ingot', 'group:stick',''},
+		{'', 'group:stick','default:duct_tape',},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_bronze',
 	recipe = {
-		{'default:bronze_ingot', 'default:bronze_ingot'},
-		{'default:bronze_ingot', 'group:stick'},
-		{'', 'group:stick'},
+		{'default:bronze_ingot', 'default:bronze_ingot',''},
+		{'default:bronze_ingot', 'group:stick',''},
+		{'', 'group:stick','default:duct_tape'},
 	}
 })
 --[[
@@ -234,36 +234,36 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:axe_wood',
 	recipe = {
-		{'group:wood', 'group:wood'},
-		{'group:stick', 'group:wood'},
-		{'group:stick',''},
+		{'','group:wood', 'group:wood'},
+		{'','group:stick', 'group:wood'},
+		{'default:duct_tape','group:stick',''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_stone',
 	recipe = {
-		{'group:stone', 'group:stone'},
-		{'group:stick', 'group:stone'},
-		{'group:stick', ''},
+		{'','group:stone', 'group:stone'},
+		{'','group:stick', 'group:stone'},
+		{'default:duct_tape','group:stick', ''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_steel',
 	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot'},
-		{'group:stick', 'default:steel_ingot'},
-		{'group:stick', ''},
+		{'','default:steel_ingot', 'default:steel_ingot'},
+		{'','group:stick', 'default:steel_ingot'},
+		{'default:duct_tape','group:stick', ''},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:axe_bronze',
 	recipe = {
-		{'default:bronze_ingot', 'default:bronze_ingot'},
-		{'group:stick', 'default:bronze_ingot'},
-		{'group:stick', ''},
+		{'','default:bronze_ingot', 'default:bronze_ingot'},
+		{'','group:stick', 'default:bronze_ingot'},
+		{'default:duct_tape','group:stick', ''},
 	}
 })
 --[[
@@ -286,38 +286,38 @@ minetest.register_craft({
 })
 ]]
 minetest.register_craft({
-	output = 'default:sword_wood',
+	output = 'default:bokken',
 	recipe = {
-		{'group:wood'},
-		{'group:wood'},
-		{'group:stick'},
+		{'','group:wood',''},
+		{'','group:wood',''},
+		{'default:duct_tape','group:stick',''},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:sword_stone',
+	output = 'default:club_stone',
 	recipe = {
-		{'group:stone'},
-		{'group:stone'},
-		{'group:stick'},
+		{'','group:stone',''},
+		{'','group:stone',''},
+		{'default:duct_tape','group:stick',''},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:sword_steel',
+	output = 'default:machete_steel',
 	recipe = {
-		{'default:steel_ingot'},
-		{'default:steel_ingot'},
-		{'group:stick'},
+		{'','default:steel_ingot',''},
+		{'','default:steel_ingot',''},
+		{'default:duct_tape','group:stick',''},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:sword_bronze',
+	output = 'default:machete_bronze',
 	recipe = {
-		{'default:bronze_ingot'},
-		{'default:bronze_ingot'},
-		{'group:stick'},
+		{'','default:bronze_ingot',''},
+		{'','default:bronze_ingot',''},
+		{'default:duct_tape','group:stick',''},
 	}
 })
 --[[
@@ -370,7 +370,7 @@ minetest.register_craft({
 	output = 'default:furnace',
 	recipe = {
 		{'group:stone', 'group:stone', 'group:stone'},
-		{'group:stone', '', 'group:stone'},
+		{'group:stone', 'default:torch', 'group:stone'},
 		{'group:stone', 'group:stone', 'group:stone'},
 	}
 })
@@ -556,7 +556,7 @@ minetest.register_craft({
 		{'group:stick', '', 'group:stick'},
 	}
 })
---[[
+
 minetest.register_craft({
 	output = 'default:mese',
 	recipe = {
@@ -572,7 +572,7 @@ minetest.register_craft({
 		{'default:mese'},
 	}
 })
-]]
+
 --Playing with a new mese recipie
 minetest.register_craft({
 	output = 'default:mese_crystal_fragment_stasis 1',
@@ -580,7 +580,14 @@ minetest.register_craft({
 		{'default:obsidian_shard', 'default:copper_ingot', 'default:glass'},
 	}
 })
-
+minetest.register_craft({
+	output = 'default:duct_tape',
+	recipe = {
+		{'default:glue','default:paper','default:glue'},
+		{'default:glue','default:glue','default:glue'},
+		{'default:glue','default:paper','default:glue'},
+	}
+})
 
 minetest.register_craft({
 	output = 'default:mese_crystal_fragment 9',
@@ -751,7 +758,25 @@ minetest.register_craft({
 	recipe = "default:dead_tree",
 })
 
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 90,
+	output = "default:machete_carbon_steel",
+	recipe = "default:machete_steel",
+})
 
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 90,
+	output = "default:pick_carbon_steel",
+	recipe = "default:pick_steel",
+})
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 15,
+	output = "default:glue 7",
+	recipe = "default:duct_tape",
+})
 --
 -- Fuels
 --

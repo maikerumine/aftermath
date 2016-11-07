@@ -12,3 +12,23 @@
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. You just DO WHAT THE FUCK YOU WANT TO. 
+
+
+License of textures
+--------------------------------------
+following Textures created by Fernando Zapata (CC BY-SA 3.0):
+  door_wood.png
+  door_wood_a.png
+  door_wood_a_r.png
+  door_wood_b.png
+  door_wood_b_r.png
+
+following Textures created by BlockMen (WTFPL):
+  door_trapdoor.png
+
+following textures created by sofar (CC-BY-SA-3.0)
+  doors_trapdoor_steel.png
+  doors_trapdoor_steel_side.png
+  door_trapdoor_side.png
+
+All other door textures (created by PilzAdam): WTFPL

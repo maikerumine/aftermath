@@ -8,11 +8,13 @@
 --REFERENCE
 --function (mod_name_here):spawn_specific(name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height)
 
-mobs.npc_drops = { "shooter:rocket_gun_loaded", "mobs_fallout:meat", "shooter:rifle", "default:shovel_steel", "farming:bread", "default:wood" }--Added 20151121
+mobs.npc_drops = { "shooter:rocket_gun_loaded", "mobs_fallout:meat 4", "shooter:rifle", "default:shovel_steel", "farming:bread", "default:wood","shooter:ammo","default:duct_tape 3", "default:health_kit" }--Added 20151121
 
 mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:Bajan", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 25,
 	hp_max = 35,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -37,7 +39,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 		chance = 2,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 13,
 			max=30,},
@@ -151,6 +153,8 @@ mobs:register_mob("mobs_fallout:Bajan", {
 mobs:register_spawn("mobs_fallout:John", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:John", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 27,
 	hp_max = 34,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -158,7 +162,7 @@ mobs:register_mob("mobs_fallout:John", {
 	mesh = "3d_armor_character.b3d",
 	textures = {{"Castaway_by_Gold.png",
 			"3d_armor_trans.png",
-				minetest.registered_items["default:sword_wood"].inventory_image,
+				minetest.registered_items["shooter:shotgun"].inventory_image,
 			}},
 	visual_size = {x=1, y=1},
 	makes_footstep_sound = true,
@@ -171,11 +175,11 @@ mobs:register_mob("mobs_fallout:John", {
 		chance = 1,
 		min = 1,
 		max = 5,},
-		{name = "default:sword_wood",
+		{name = "default:carbon_steel_sword",
 		chance = 1,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 13,
 			max=30,},
@@ -278,7 +282,7 @@ mobs:register_mob("mobs_fallout:John", {
 	sounds = {
 		war_cry = "mobs_die_yell",
 		death = "mobs_death2",
-		attack = "default_punch2",
+		attack = "shooter_shotgun",
 		},
 	attacks_monsters = true,
 	peaceful = true,
@@ -289,6 +293,8 @@ mobs:register_mob("mobs_fallout:John", {
 mobs:register_spawn("mobs_fallout:Krock", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:Krock", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 13,
 	hp_max = 15,
 	collisionbox = {-0.3, -0.8, -0.3, 0.3, 0.8, 0.3},
@@ -296,7 +302,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 	mesh = "3d_armor_character.b3d",
 	textures = {{"Red-brown-shirt-dude_by_Krock.png",
 			"3d_armor_trans.png",
-				minetest.registered_items["default:stick"].inventory_image,
+				minetest.registered_items["shooter:ammo"].inventory_image,
 			}},
 	visual_size = {x=1, y=.8},
 	makes_footstep_sound = true,
@@ -313,7 +319,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 		chance = 2,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 13,
 			max=30,},
@@ -433,6 +439,8 @@ mobs:register_mob("mobs_fallout:Krock", {
 mobs:register_spawn("mobs_fallout:Just_Test_Griefer", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 27,
 	hp_max = 45,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -457,7 +465,7 @@ mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 		chance = 2,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 1,
 			max=3,},
@@ -572,6 +580,8 @@ mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 mobs:register_spawn("mobs_fallout:SepiaSam", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:SepiaSam", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 47,
 	hp_max = 55,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -592,7 +602,7 @@ mobs:register_mob("mobs_fallout:SepiaSam", {
 		chance = 2,
 		min = 0,
 		max = 1,},
-		{name = "shooter:rifle",
+		{name = "shooter:ammo",
 		chance = 1,
 		min = 0,
 		max = 1,},
@@ -710,6 +720,8 @@ mobs:register_mob("mobs_fallout:SepiaSam", {
 mobs:register_spawn("mobs_fallout:Hobo", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:Hobo", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 37,
 	hp_max = 45,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -730,11 +742,11 @@ mobs:register_mob("mobs_fallout:Hobo", {
 		chance = 1,
 		min = 0,
 		max = 5,},
-		{name = "default:sword_wood",
+		{name = "default:machete_bronze",
 		chance = 1,
 		min = 1,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 4,
 			max=12,},
@@ -853,6 +865,8 @@ mobs:register_mob("mobs_fallout:Hobo", {
 mobs:register_spawn("mobs_fallout:Simon", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
 mobs:register_mob("mobs_fallout:Simon", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 28,
 	hp_max = 35,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -877,7 +891,7 @@ mobs:register_mob("mobs_fallout:Simon", {
 		chance = 1,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 13,
 			max=30,},
@@ -992,6 +1006,8 @@ mobs:register_mob("mobs_fallout:Simon", {
 mobs:register_spawn("mobs_fallout:Infantry_man", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, -10)
 mobs:register_mob("mobs_fallout:Infantry_man", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 92,
 	hp_max = 125,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -1016,7 +1032,7 @@ mobs:register_mob("mobs_fallout:Infantry_man", {
 		chance = 7,
 		min = 0,
 		max = 1,},
-		{name = "default:stick",
+		{name = "shooter:ammo",
 			chance = 2,
 			min = 1,
 			max=3,},
@@ -1131,6 +1147,8 @@ mobs:register_mob("mobs_fallout:Infantry_man", {
 mobs:register_spawn("mobs_fallout:Mage", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 15, -1,9000, 1, -50)
 mobs:register_mob("mobs_fallout:Mage", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 157,
 	hp_max = 180,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},

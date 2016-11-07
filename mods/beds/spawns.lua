@@ -1,66 +1,56 @@
-local world_path = minetest.get_worldpath()
-local org_file = world_path .. "/beds_spawns"
-local file = world_path .. "/beds_spawns"
-local bkwd = false
-local writing = true
-
--- check for PA's beds mod spawns
-local cf = io.open(world_path .. "/beds_player_spawns", "r")
-if cf ~= nil then
-	io.close(cf)
-	file = world_path .. "/beds_player_spawns"
-	bkwd = true
-end
-writing = false
-
+beds.world_path = minetest.get_worldpath()
+beds.beds_file = beds.world_path .. "/beds_spawns.json"
+beds.writing_file = false
 
 function beds.read_spawns()
-	while writing do
+	if beds.writing_file then
 		-- wait until spawns are safed
+        
+        return
 	end
-	local spawns = beds.spawn
-	local input = io.open(file, "r")
-	if input and not bkwd then
-		repeat
-		local x = input:read("*n")
-		if x == nil then
-            		break
-            	end
-		local y = input:read("*n")
-		local z = input:read("*n")
-		local name = input:read("*l")
-		spawns[name:sub(2)] = {x = x, y = y, z = z}
-		until input:read(0) == nil
-		io.close(input)
-	elseif input and bkwd then
-		beds.spawn = minetest.deserialize(input:read("*all"))
-		input:close()
-		beds.save_spawns()
-		os.rename(file, file .. ".backup")
-		file = org_file
-	else
-		spawns = {}
-	end
+
+    local file, err = io.open(beds.beds_file, "r")
+    if err then
+        beds.player_spawns = {}
+        return
+    end
+    beds.player_spawns = minetest.deserialize(file:read("*all"))
+    if type(beds.player_spawns) ~= "table" then
+        beds.player_spawns = {}
+    end
+    file:close()
 end
 
 function beds.save_spawns()
-	if not beds.spawn then
-		return
-	end
-	writing = true
-	local output = io.open(org_file, "w")
-	for i, v in pairs(beds.spawn) do
-		output:write(v.x.." "..v.y.." "..v.z.." "..i.."\n")
-	end
-	io.close(output)
-	writing = false
+    local datastring = minetest.serialize(beds.player_spawns)
+    
+    if not datastring then
+        return
+    end
+	beds.writing_file = true
+    local file, err = io.open(beds.beds_file, "w")
+    if err then
+        return
+    end
+    file:write(datastring)
+    file:close()
+	beds.writing_file = false
 end
 
 function beds.set_spawns()
-	for name,_ in pairs(beds.player) do
-		local player = minetest.get_player_by_name(name)
-		local p = player:getpos()
-		beds.spawn[name] = p
+	for name, pos in pairs(beds.player_sleeping) do
+        local spawn = minetest.pos_to_string(pos)
+		beds.player_spawns[name] = spawn
 	end
 	beds.save_spawns()
 end
+
+function beds.get_spawns()
+    beds.read_spawns()
+	for name, spawn in pairs(beds.player_spawns) do
+        local pos = minetest.string_to_pos(spawn)
+		beds.player_pos[name] = pos
+	end
+end
+
+beds.get_spawns()

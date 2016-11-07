@@ -31,7 +31,6 @@ minetest.register_alias("flowers:flower_dandelion_white", "flowers:dandelion_whi
 local function add_simple_flower(name, desc, box, f_groups)
 	-- Common flowers' groups
 	f_groups.snappy = 3
-	f_groups.flammable = 2
 	f_groups.flower = 1
 	f_groups.flora = 1
 	f_groups.attached_node = 1
@@ -46,6 +45,7 @@ local function add_simple_flower(name, desc, box, f_groups)
 		sunlight_propagates = true,
 		paramtype = "light",
 		walkable = false,
+		buildable_to = true,
 		stack_max = 99,
 		groups = f_groups,
 		sounds = default.node_sound_leaves_defaults(),
@@ -71,50 +71,53 @@ end
 
 
 -- Flower spread
+-- Public function to enable override by mods
 
-minetest.register_abm({
-	nodenames = {"group:flora"},
-	neighbors = {"default:dirt_with_grass", "default:desert_sand"},
-	interval = 50,
-	chance = 25,
-	action = function(pos, node)
-		pos.y = pos.y - 1
-		local under = minetest.get_node(pos)
-		pos.y = pos.y + 1
-		if under.name == "default:desert_sand" then
-			minetest.set_node(pos, {name = "default:dry_shrub"})
-		elseif under.name ~= "default:dirt_with_grass" then
-			return
-		end
+function flowers.flower_spread(pos, node)
+	pos.y = pos.y - 1
+	local under = minetest.get_node(pos)
+	pos.y = pos.y + 1
+	if under.name == "default:desert_sand" then
+		minetest.set_node(pos, {name = "default:dry_shrub"})
+		return
+	elseif under.name ~= "default:dirt_with_grass" and
+			under.name ~= "default:dirt_with_dry_grass" then
+		return
+	end
 
-		local light = minetest.get_node_light(pos)
+	local light = minetest.get_node_light(pos)
+	if not light or light < 13 then
+		return
+	end
+
+	local pos0 = vector.subtract(pos, 4)
+	local pos1 = vector.add(pos, 4)
+	if #minetest.find_nodes_in_area(pos0, pos1, "group:flora") > 3 then
+		return
+	end
+
+	local seedling = minetest.find_nodes_in_area_under_air(pos0, pos1,
+		{"default:dirt_with_grass", "default:dirt_with_dry_grass"})
+	if #seedling > 0 then
+		seedling = seedling[math.random(#seedling)]
+		seedling.y = seedling.y + 1
+		light = minetest.get_node_light(seedling)
 		if not light or light < 13 then
 			return
 		end
+		minetest.set_node(seedling, {name = node.name})
+	end
+end
 
-		local pos0 = {x = pos.x - 4, y = pos.y - 4, z = pos.z - 4}
-		local pos1 = {x = pos.x + 4, y = pos.y + 4, z = pos.z + 4}
-		if #minetest.find_nodes_in_area(pos0, pos1, "group:flora_block") > 0 then
-			return
-		end
-
-		local flowers = minetest.find_nodes_in_area(pos0, pos1, "group:flora")
-		if #flowers > 3 then
-			return
-		end
-
-		local seedling = minetest.find_nodes_in_area(pos0, pos1, "default:dirt_with_grass")
-		if #seedling > 0 then
-			seedling = seedling[math.random(#seedling)]
-			seedling.y = seedling.y + 1
-			light = minetest.get_node_light(seedling)
-			if not light or light < 13 then
-				return
-			end
-			if minetest.get_node(seedling).name == "air" then
-				minetest.set_node(seedling, {name = node.name})
-			end
-		end
+minetest.register_abm({
+	label = "Flower spread",
+	nodenames = {"group:flora"},
+	neighbors = {"default:dirt_with_grass", "default:dirt_with_dry_grass",
+		"default:desert_sand"},
+	interval = 13,
+	chance = 96,
+	action = function(...)
+		flowers.flower_spread(...)
 	end,
 })
 
@@ -123,116 +126,141 @@ minetest.register_abm({
 -- Mushrooms
 --
 
-local mushrooms_datas = {
-	{"brown", 2},
-	{"red", -6}
-}
+minetest.register_node("flowers:mushroom_red", {
+	description = "Red Mushroom",
+	tiles = {"flowers_mushroom_red.png"},
+	inventory_image = "flowers_mushroom_red.png",
+	wield_image = "flowers_mushroom_red.png",
+	drawtype = "plantlike",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, attached_node = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	on_use = minetest.item_eat(-5),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0, 0.3}
+	}
+})
 
-for _, m in pairs(mushrooms_datas) do
-	local name, nut = m[1], m[2]
-
-	-- Register fertile mushrooms
-
-	-- These are placed by mapgen and the growing ABM.
-	-- These drop an infertile mushroom, and 0 to 3 spore
-	-- nodes with an average of 1.25 per mushroom, for
-	-- a slow multiplication of mushrooms when farming.
-
-	minetest.register_node("flowers:mushroom_fertile_" .. name, {
-		description = string.sub(string.upper(name), 0, 1) ..
-			string.sub(name, 2) .. " Fertile Mushroom",
-		tiles = {"flowers_mushroom_" .. name .. ".png"},
-		inventory_image = "flowers_mushroom_" .. name .. ".png",
-		wield_image = "flowers_mushroom_" .. name .. ".png",
-		drawtype = "plantlike",
-		paramtype = "light",
-		sunlight_propagates = true,
-		walkable = false,
-		buildable_to = true,
-		groups = {snappy = 3, flammable = 3, attached_node = 1,
-			not_in_creative_inventory = 1},
-		drop = {
-			items = {
-				{items = {"flowers:mushroom_" .. name}},
-				{items = {"flowers:mushroom_spores_" .. name}, rarity = 4},
-				{items = {"flowers:mushroom_spores_" .. name}, rarity = 2},
-				{items = {"flowers:mushroom_spores_" .. name}, rarity = 2}
-			}
-		},
-		sounds = default.node_sound_leaves_defaults(),
-		on_use = minetest.item_eat(nut),
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.3, -0.5, -0.3, 0.3, 0, 0.3}
-		}
-	})
-
-	-- Register infertile mushrooms
-
-	-- These do not drop spores, to avoid the use of repeated digging
-	-- and placing of a single mushroom to generate unlimited spores.
-
-	minetest.register_node("flowers:mushroom_" .. name, {
-		description = string.sub(string.upper(name), 0, 1) ..
-			string.sub(name, 2) .. " Mushroom",
-		tiles = {"flowers_mushroom_" .. name .. ".png"},
-		inventory_image = "flowers_mushroom_" .. name .. ".png",
-		wield_image = "flowers_mushroom_" .. name .. ".png",
-		drawtype = "plantlike",
-		paramtype = "light",
-		sunlight_propagates = true,
-		walkable = false,
-		buildable_to = true,
-		groups = {snappy = 3, flammable = 3, attached_node = 1},
-		sounds = default.node_sound_leaves_defaults(),
-		on_use = minetest.item_eat(nut),
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.3, -0.5, -0.3, 0.3, 0, 0.3}
-		}
-	})
-
-	-- Register mushroom spores
-
-	minetest.register_node("flowers:mushroom_spores_" .. name, {
-		description = string.sub(string.upper(name), 0, 1) ..
-			string.sub(name, 2) .. " Mushroom Spores",
-		drawtype = "signlike",
-		tiles = {"flowers_mushroom_spores_" .. name .. ".png"},
-		inventory_image = "flowers_mushroom_spores_" .. name .. ".png",
-		wield_image = "flowers_mushroom_spores_" .. name .. ".png",
-		paramtype = "light",
-		paramtype2 = "wallmounted",
-		sunlight_propagates = true,
-		walkable = false,
-		buildable_to = true,
-		selection_box = {
-			type = "wallmounted",
-		},
-		groups = {dig_immediate = 3, attached_node = 1},
-	})
-end
+minetest.register_node("flowers:mushroom_brown", {
+	description = "Brown Mushroom",
+	tiles = {"flowers_mushroom_brown.png"},
+	inventory_image = "flowers_mushroom_brown.png",
+	wield_image = "flowers_mushroom_brown.png",
+	drawtype = "plantlike",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, attached_node = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	on_use = minetest.item_eat(1),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0, 0.3}
+	}
+})
 
 
--- Register growing ABM
+-- Mushroom spread and death
 
 minetest.register_abm({
-	nodenames = {"flowers:mushroom_spores_brown", "flowers:mushroom_spores_red"},
+	label = "Mushroom spread",
+	nodenames = {"flowers:mushroom_brown", "flowers:mushroom_red"},
 	interval = 11,
 	chance = 50,
 	action = function(pos, node)
-		local node_under = minetest.get_node_or_nil({x = pos.x,
-			y = pos.y - 1, z = pos.z})
+		if minetest.get_node_light(pos, nil) == 15 then
+			minetest.remove_node(pos)
+			return
+		end
+		local random = {
+			x = pos.x + math.random(-2, 2),
+			y = pos.y + math.random(-1, 1),
+			z = pos.z + math.random(-2, 2)
+		}
+		local random_node = minetest.get_node_or_nil(random)
+		if not random_node or random_node.name ~= "air" then
+			return
+		end
+		local node_under = minetest.get_node_or_nil({x = random.x,
+			y = random.y - 1, z = random.z})
 		if not node_under then
 			return
 		end
-		if minetest.get_item_group(node_under.name, "soil") ~= 0 and
-				minetest.get_node_light(pos, nil) <= 13 then
-			if node.name == "flowers:mushroom_spores_brown" then
-				minetest.set_node(pos, {name = "flowers:mushroom_fertile_brown"})
-			elseif node.name == "flowers:mushroom_spores_red" then
-				minetest.set_node(pos, {name = "flowers:mushroom_fertile_red"})
+
+		if (minetest.get_item_group(node_under.name, "soil") ~= 0 or
+				minetest.get_item_group(node_under.name, "tree") ~= 0) and
+				minetest.get_node_light(pos, 0.5) <= 3 and
+				minetest.get_node_light(random, 0.5) <= 3 then
+			minetest.set_node(random, {name = node.name})
+		end
+	end
+})
+
+
+-- These old mushroom related nodes can be simplified now
+
+minetest.register_alias("flowers:mushroom_spores_brown", "flowers:mushroom_brown")
+minetest.register_alias("flowers:mushroom_spores_red", "flowers:mushroom_red")
+minetest.register_alias("flowers:mushroom_fertile_brown", "flowers:mushroom_brown")
+minetest.register_alias("flowers:mushroom_fertile_red", "flowers:mushroom_red")
+minetest.register_alias("mushroom:brown_natural", "flowers:mushroom_brown")
+minetest.register_alias("mushroom:red_natural", "flowers:mushroom_red")
+
+
+--
+-- Waterlily
+--
+
+minetest.register_node("flowers:waterlily", {
+	description = "Waterlily",
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {"flowers_waterlily.png", "flowers_waterlily.png"},
+	inventory_image = "flowers_waterlily.png",
+	wield_image = "flowers_waterlily.png",
+	liquids_pointable = true,
+	walkable = false,
+	buildable_to = true,
+	sunlight_propagates = true,
+	floodable = true,
+	groups = {snappy = 3, flower = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	node_placement_prediction = "",
+	node_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.46875, 0.5}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5}
+	},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local pos = pointed_thing.above
+		local node = minetest.get_node(pointed_thing.under).name
+		local def = minetest.registered_nodes[node]
+		local player_name = placer:get_player_name()
+
+		if def and def.liquidtype == "source" and
+				minetest.get_item_group(node, "water") > 0 then
+			if not minetest.is_protected(pos, player_name) then
+				minetest.set_node(pos, {name = "flowers:waterlily",
+					param2 = math.random(0, 3)})
+				if not minetest.setting_getbool("creative_mode") then
+					itemstack:take_item()
+				end
+			else
+				minetest.chat_send_player(player_name, "Node is protected")
+				minetest.record_protection_violation(pos, player_name)
 			end
 		end
+
+		return itemstack
 	end
 })

@@ -63,6 +63,7 @@ end
 
 if minetest.get_modpath("default") ~= nil then
 	overwrite("default:apple", 2)
+	overwrite("default:health_kit", 30,"",0,30)
 end
 if minetest.get_modpath("farming") ~= nil then
 	overwrite("farming:bread", 4)

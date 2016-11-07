@@ -1,7 +1,7 @@
 ARMOR_MOD_NAME = minetest.get_current_modname()
 dofile(minetest.get_modpath(ARMOR_MOD_NAME).."/armor.lua")
 dofile(minetest.get_modpath(ARMOR_MOD_NAME).."/admin.lua")
-
+--[[
 if ARMOR_MATERIALS.wood then
 	minetest.register_tool("3d_armor:helmet_wood", {
 		description = "Wood Helmet",
@@ -55,7 +55,7 @@ if ARMOR_MATERIALS.cactus then
 		wear = 0,
 	})
 end
-
+]]
 if ARMOR_MATERIALS.steel then
 	minetest.register_tool("3d_armor:helmet_steel", {
 		description = "Steel Helmet",
@@ -87,25 +87,25 @@ if ARMOR_MATERIALS.bronze then
 	minetest.register_tool("3d_armor:helmet_bronze", {
 		description = "Bronze Helmet",
 		inventory_image = "3d_armor_inv_helmet_bronze.png",
-		groups = {armor_head=10, armor_heal=6, armor_use=250},
+		groups = {armor_head=15, armor_heal=8, armor_use=650},
 		wear = 0,
 	})
 	minetest.register_tool("3d_armor:chestplate_bronze", {
 		description = "Bronze Chestplate",
 		inventory_image = "3d_armor_inv_chestplate_bronze.png",
-		groups = {armor_torso=15, armor_heal=6, armor_use=250},
+		groups = {armor_torso=20, armor_heal=8, armor_use=650},
 		wear = 0,
 	})
 	minetest.register_tool("3d_armor:leggings_bronze", {
 		description = "Bronze Leggings",
 		inventory_image = "3d_armor_inv_leggings_bronze.png",
-		groups = {armor_legs=15, armor_heal=6, armor_use=250},
+		groups = {armor_legs=20, armor_heal=8, armor_use=650},
 		wear = 0,
 	})
 	minetest.register_tool("3d_armor:boots_bronze", {
 		description = "Bronze Boots",
 		inventory_image = "3d_armor_inv_boots_bronze.png",
-		groups = {armor_feet=10, armor_heal=6, armor_use=250},
+		groups = {armor_feet=15, armor_heal=8, armor_use=650},
 		wear = 0,
 	})
 end

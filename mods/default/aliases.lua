@@ -5,6 +5,7 @@ minetest.register_alias("default:leaves", "default:air")
 minetest.register_alias("default:acacia_leaves", "default:air")
 minetest.register_alias("default:pine_needles", "default:air")
 minetest.register_alias("default:snow", "default:air")
+minetest.register_alias("creatures:rotten_flesh", "mobs:meat")
 
 
 
@@ -66,6 +67,14 @@ minetest.register_alias("SteelAxe", "default:axe_steel")
 minetest.register_alias("WSword", "default:sword_wood")
 minetest.register_alias("STSword", "default:sword_stone")
 minetest.register_alias("SteelSword", "default:sword_steel")
+
+minetest.register_alias("default:sword_steel", "default:machete_steel")
+minetest.register_alias("default:sword_bronze", "default:machete_bronze")
+minetest.register_alias("default:sword_stone", "default:club_stone")
+minetest.register_alias("default:sword_wood", "default:bokken")
+
+
+
 
 minetest.register_alias("Stick", "default:stick")
 minetest.register_alias("paper", "default:paper")

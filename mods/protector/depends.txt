@@ -1,2 +1,3 @@
 default
-doors
+doors?
+mobs?

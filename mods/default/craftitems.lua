@@ -1,3 +1,21 @@
+
+minetest.register_craftitem("default:duct_tape", {
+	description = "Duct Tape",
+	inventory_image = "default_duct_tape.png",
+	groups = {sticky=1},
+})
+minetest.register_craftitem("default:glue", {
+	description = "Glue",
+	inventory_image = "default_glue.png",
+	groups = {sticky=1},
+})
+--[[
+minetest.register_craftitem("default:health_kit", {
+	description = "Healing Kit",
+	inventory_image = "default_health_kit.png",
+	--groups = {sticky=1},
+})
+]]
 -- mods/default/craftitems.lua
 
 minetest.register_craftitem("default:stick", {

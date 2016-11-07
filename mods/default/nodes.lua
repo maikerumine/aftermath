@@ -842,7 +842,14 @@ minetest.register_node("default:mese_crystal_fragment_stasis", {
 	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_glass_defaults(),
 })
-
+minetest.register_node("default:mese", {
+	description = "Mese Block",
+	tiles = {"default_mese_block.png"},
+	paramtype = "light",
+	groups = {cracky = 1, level = 2},
+	sounds = default.node_sound_stone_defaults(),
+	light_source = 3,
+})
 
 --
 -- Plantlife (non-cubic)
@@ -1352,7 +1359,7 @@ minetest.register_node("default:toxic_water_source", {
 	liquid_viscosity =3,
 	damage_per_second = 3*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 2 or 2),},
+	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = 2},
 })
 
 --NOTES:
@@ -1405,7 +1412,7 @@ minetest.register_node("default:toxic_water_flowing", {
 	damage_per_second = 2*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
-		not_in_creative_inventory = 1, radioactive = (state == "source" and 2 or 2),},
+		not_in_creative_inventory = 1, radioactive = 2},
 })
 
 --[[--FOR REF
@@ -1475,7 +1482,7 @@ minetest.register_node("default:mud", {
 	liquid_alternative_source = "default:mud",
 	liquid_viscosity = 18,
 	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 0.5 or 0.5),},
+	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = 0.5},
 })
 
 minetest.register_node("default:mud_flowing", {
@@ -1522,7 +1529,7 @@ minetest.register_node("default:mud_flowing", {
 	liquid_viscosity = 19,
 	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
-		not_in_creative_inventory = 1, radioactive = (state == "source" and 0.5 or 0.5),},
+		not_in_creative_inventory = 1, radioactive = 0.5},
 })
 
 
@@ -2291,4 +2298,31 @@ minetest.register_node("default:nyancat_rainbow", {
 	groups = {cracky = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_defaults(),
+})
+
+--SPECIAL
+minetest.register_node("default:health_kit", {
+	description = "Health Kit",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_health_kit.png"},
+	inventory_image = "default_health_kit.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+	},
+	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
+		leafdecay = 3, leafdecay_drop = 1},
+	on_use = minetest.item_eat(30),
+	sounds = default.node_sound_leaves_defaults(),
+
+	after_place_node = function(pos, placer, itemstack)
+		if placer:is_player() then
+			minetest.set_node(pos, {name = "default:health_kit", param2 = 1})
+		end
+	end,
 })

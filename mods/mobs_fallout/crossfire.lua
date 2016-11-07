@@ -18,6 +18,8 @@ mobs:register_spawn("mobs_fallout:Mr_Pink", {"default:dirt_with_grass","default:
 
 mobs:register_mob("mobs_fallout:Mr_White", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 35,
 	hp_max = 65,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -139,7 +141,9 @@ mobs:register_mob("mobs_fallout:Mr_White", {
 
 
 	--attack_type = "dogfight",
-	attack_type = "shoot",
+	attack_type = "dogshoot",
+	dogshoot_switch = 1,
+	dogshoot_count_max = 10,
 	arrow = "mobs_fallout:bullet",
 	shoot_interval = 2.5,
 	animation = {
@@ -157,6 +161,8 @@ mobs:register_mob("mobs_fallout:Mr_White", {
 
 mobs:register_mob("mobs_fallout:Mr_Black", {
 	type = "monster",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 35,
 	hp_max = 65,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -195,7 +201,9 @@ mobs:register_mob("mobs_fallout:Mr_Black", {
 	lava_damage = 50,
 	light_damage = 0,
 	--attack_type = "dogfight",
-	attack_type = "shoot",
+	attack_type = "dogshoot",
+	dogshoot_switch = 1,
+	dogshoot_count_max = 10,
 	arrow = "mobs_fallout:bullet",
 	shoot_interval = 2.5,
 
@@ -293,6 +301,8 @@ mobs:register_mob("mobs_fallout:Mr_Black", {
 
 mobs:register_mob("mobs_fallout:Mr_Pink", {
 	type = "npc",
+	group_attack = true,
+	pathfinding = true,
 	hp_min = 35,
 	hp_max = 65,
 	collisionbox = {-0.3, -1.0, -0.3, 0.3, 0.8, 0.3},
@@ -332,6 +342,8 @@ mobs:register_mob("mobs_fallout:Mr_Pink", {
 	light_damage = 0,
 	--attack_type = "dogfight",
 	attack_type = "dogshoot",
+	dogshoot_switch = 1,
+	dogshoot_count_max = 10,
 	arrow = "mobs_fallout:bullet",
 	shoot_interval = 0.5,
 	shoot_offset = 1,

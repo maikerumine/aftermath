@@ -11,6 +11,9 @@
 -- Sheep by PilzAdam
 
 mobs:register_mob("mobs_fallout:sheep", {
+	docile_by_day = true,
+	group_attack = true,
+	pathfinding = true,
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
@@ -116,10 +119,10 @@ mobs:register_mob("mobs_fallout:sheep", {
 	end,
 })
 
-mobs:register_spawn("mobs_fallout:sheep", {"default:dirt_with_grass","default:dirt_with_dry_grass", "default:grass", "ethereal:green_dirt", "default:dry_dirt", "default:snow"}, 18, -1, 6000, 2, 31000)
+mobs:register_spawn("mobs_fallout:sheep", {"default:dirt_with_grass","default:dirt_with_dry_grass", "default:grass", "ethereal:green_dirt", "default:dry_dirt"}, 6, -1, 8000, 2, 31000)
 
 --mobs:register_egg("mobs_fallout:sheep", "Sheep", "wool_white.png", 1)
-
+--[[
 --shears (right click sheep to shear wool)
 minetest.register_tool("mobs_fallout:shears", {
 	description = "Steel Shears (right-click sheep to shear)",
@@ -133,6 +136,6 @@ minetest.register_craft({
 		{'', 'group:stick', 'default:steel_ingot'},
 	}
 })
-
+]]
 
 

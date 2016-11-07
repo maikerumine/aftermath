@@ -273,6 +273,18 @@ local chest_stuff = {
 	{name="shooter:ammo", max = 5},
 	{name="shooter:grapple_hook", max = 1},
 	{name="shooter:grapple_gun", max = 1},
+	{name="default:duct_tape", max = 12},
+	{name="default:glue", max = 6},
+	{name="default:health_kit", max = 4},
+	{name="flowers:tulip", max = 3},
+	{name="flowers:dandelion_white", max = 3},
+	{name="flowers:dandelion_yellow", max = 3},
+	{name="flowers:rose", max = 3},
+	{name="flowers:geranium", max = 3},
+	{name="flowers:viola", max = 3},
+	{name="flowers:mushroom_red", max = 3},
+	{name="flowers:mushroom_brown", max = 3},
+	{name="flowers:waterlily", max = 3},
 }
 
 -- get some random content for a chest
