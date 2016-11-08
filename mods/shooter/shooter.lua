@@ -140,6 +140,7 @@ SHOOTER_ENTITIES = {
 	"mobs_fallout:Zombie_Drogado_D",
 	"mobs_fallout:Zombie_Drogado_E",
 	"mobs_fallout:Zombie_Drogado_F",
+	"mobs_fallout:radbug",
 	
 }
 
