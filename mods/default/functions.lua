@@ -95,6 +95,19 @@ function default.node_sound_glass_defaults(table)
 	return table
 end
 
+function default.node_sound_metal_defaults(table)
+	table = table or {}
+	table.footstep = table.footstep or
+			{name = "default_metal_footstep", gain = 0.5}
+	table.dig = table.dig or
+			{name = "default_dig_metal", gain = 0.5}
+	table.dug = table.dug or
+			{name = "default_dug_metal", gain = 0.5}
+	table.place = table.place or
+			{name = "default_place_node_metal", gain = 0.5}
+	default.node_sound_defaults(table)
+	return table
+end
 
 --
 -- Lavacooling
@@ -348,47 +361,36 @@ minetest.register_abm({
 	label = "Grass spread",
 	nodenames = {"default:dirt"},
 	neighbors = {
-		"default:dirt_with_grass",
-		"default:dirt_with_dry_grass",
-		"default:dirt_with_snow",
+		"air",
 		"group:grass",
 		"group:dry_grass",
 		"default:snow",
 	},
 	interval = 6,
-	chance = 67,
+	chance = 50,
 	catch_up = false,
 	action = function(pos, node)
-		-- Most likely case, half the time it's too dark for this.
+		-- Check for darkness: night, shadow or under a light-blocking node
+		-- Returns if ignore above
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
 		if (minetest.get_node_light(above) or 0) < 13 then
 			return
 		end
 
-		-- Look for likely neighbors.
-		local p2 = minetest.find_node_near(pos, 1, {"default:dirt_with_grass",
-				"default:dirt_with_dry_grass", "default:dirt_with_snow"})
+		-- Look for spreading dirt-type neighbours
+		local p2 = minetest.find_node_near(pos, 1, "group:spreading_dirt_type")
 		if p2 then
-			-- But the node needs to be under air in this case.
-			local n2 = minetest.get_node(above)
-			if n2 and n2.name == "air" then
-				local n3 = minetest.get_node(p2)
-				minetest.set_node(pos, {name = n3.name})
-				return
-			end
-		end
-
-		-- Anything on top?
-		local n2 = minetest.get_node(above)
-		if not n2 then
+			local n3 = minetest.get_node(p2)
+			minetest.set_node(pos, {name = n3.name})
 			return
 		end
 
-		local name = n2.name
-		-- Snow check is cheapest, so comes first.
+		-- Else, any seeding nodes on top?
+		local name = minetest.get_node(above).name
+		-- Snow check is cheapest, so comes first
 		if name == "default:snow" then
 			minetest.set_node(pos, {name = "default:dirt_with_snow"})
-		-- Most likely case first.
+		-- Most likely case first
 		elseif minetest.get_item_group(name, "grass") ~= 0 then
 			minetest.set_node(pos, {name = "default:dirt_with_grass"})
 		elseif minetest.get_item_group(name, "dry_grass") ~= 0 then
@@ -404,11 +406,7 @@ minetest.register_abm({
 
 minetest.register_abm({
 	label = "Grass covered",
-	nodenames = {
-		"default:dirt_with_grass",
-		"default:dirt_with_dry_grass",
-		"default:dirt_with_snow",
-	},
+	nodenames = {"group:spreading_dirt_type"},
 	interval = 8,
 	chance = 50,
 	catch_up = false,
@@ -486,3 +484,19 @@ function default.intersects_protection(minp, maxp, player_name, interval)
 
 	return false
 end
+
+
+--
+-- Coral death near air
+--
+
+minetest.register_abm({
+	nodenames = {"default:coral_brown", "default:coral_orange"},
+	neighbors = {"air"},
+	interval = 17,
+	chance = 5,
+	catch_up = false,
+	action = function(pos, node)
+		minetest.set_node(pos, {name = "default:coral_skeleton"})
+	end,
+})

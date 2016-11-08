@@ -46,7 +46,10 @@ if(minetest.get_modpath("farming")~=nil) then
 		{name="default:diamond", max = 1},
 		{name="default:pick_steel", max = 1},
 		{name="default:pick_bronze", max = 1},
-		{name="default:mese_crystal", max = 1}
+		{name="default:mese_crystal", max = 1},
+		{name="default:acacia_sapling", max = 1},
+		{name="default:pine_sapling", max = 1},
+		{name="default:aspen_sapling", max = 1}
 	}
 else
 	chest_stuff = {
@@ -56,7 +59,10 @@ else
 		{name="default:diamond", max = 1},
 		{name="default:pick_steel", max = 1},
 		{name="default:pick_bronze", max = 1},
-		{name="default:mese_crystal", max = 1}
+		{name="default:mese_crystal", max = 1},
+		{name="default:acacia_sapling", max = 1},
+		{name="default:pine_sapling", max = 1},
+		{name="default:aspen_sapling", max = 1}
 	}
 end
 

@@ -384,7 +384,7 @@ function check_for_death(self)
 	-- default death function
 	self.object:remove()
 
-	effect(pos, 20, "tnt_smoke.png")
+	effect(pos, 20, "tnt_smoke.png")  --maikerumine added local
 
 	return true
 end
@@ -1099,9 +1099,9 @@ local npc_attack = function(self)
 		if obj
 		and obj.type == "monster" then
 
-			p = obj.object:getpos()
+			local p = obj.object:getpos()  --maikerumine added local
 
-			dist = get_distance(p, s)
+			local dist = get_distance(p, s)  --maikerumine added local
 
 			if dist < min_dist then
 				min_dist = dist

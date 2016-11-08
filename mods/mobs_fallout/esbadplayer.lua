@@ -279,7 +279,7 @@ mobs:register_mob("mobs_fallout:FloatingWraith", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell2",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_yeti_death",
 		attack = "shooter_shotgun",
 		},
@@ -334,7 +334,7 @@ mobs:register_mob("mobs_fallout:Ghost", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell1",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_barbarian_death",
 		attack = "shooter_shotgun",
 		},
@@ -389,7 +389,7 @@ mobs:register_mob("mobs_fallout:Zombie_Rex", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell1",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_barbarian_death",
 		attack = "shooter_shotgun",
 		},
@@ -444,7 +444,7 @@ mobs:register_mob("mobs_fallout:Lovehart", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell1",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_fireball",
 		attack = "shooter_pistol",
 		},
@@ -723,7 +723,7 @@ mobs:register_mob("mobs_fallout:Orc", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_die_yell",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_death2",
 		attack = "shooter_pistol",
 		},
@@ -1003,7 +1003,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell2",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_barbarian_death",
 		attack = "shooter_shotgun",
 		},
@@ -1058,7 +1058,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell1",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_barbarian_death",
 		attack = "shooter_pistol",
 		},
@@ -1113,7 +1113,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_eerie",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_yeti_death",
 		attack = "shooter_shotgun",
 		},
@@ -1168,7 +1168,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell2",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_howl",
 		attack = "shooter_pistol",
 		},
@@ -1224,7 +1224,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_E", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell2",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_howl",
 		attack = "shooter_pistol",
 		},
@@ -1282,7 +1282,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_F", {
 		punch_start = 200,		punch_end = 219,
 	},
 	sounds = {
-		war_cry = "mobs_barbarian_yell1",
+		war_cry = "mobs_stonemonster",
 		death = "mobs_barbarian_death",
 		attack = "shooter_pistol",
 		},

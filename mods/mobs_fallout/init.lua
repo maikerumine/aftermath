@@ -2,13 +2,16 @@
 --maikerumine
 --made for Nuclear_Holocaust game
 
+
 local path = minetest.get_modpath("mobs_fallout")
 
 dofile(minetest.get_modpath("mobs_fallout").."/esnpc.lua")
 dofile(minetest.get_modpath("mobs_fallout").."/esbadplayer.lua")
 dofile(minetest.get_modpath("mobs_fallout").."/esanimal.lua")
+dofile(minetest.get_modpath("mobs_fallout").."/radbug.lua")
 dofile(minetest.get_modpath("mobs_fallout").."/crafts.lua")
 dofile(minetest.get_modpath("mobs_fallout").."/crossfire.lua")
+dofile(minetest.get_modpath("mobs_fallout").."/alias.lua")
 
 --IN CASE BONES IS NOT INSTALLED, THIS OVERRIDES NODES SO YOU HAVE THEM FOR MOBS.
 if not bones then

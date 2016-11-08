@@ -83,6 +83,36 @@ if ARMOR_MATERIALS.steel then
 	})
 end
 
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "3d_armor:helmet_steel",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 4",
+	recipe = "3d_armor:chestplate_steel",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 3",
+	recipe = "3d_armor:leggings_steel",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "3d_armor:boots_steel",
+})
+
+
+
 if ARMOR_MATERIALS.bronze then
 	minetest.register_tool("3d_armor:helmet_bronze", {
 		description = "Bronze Helmet",
@@ -109,6 +139,35 @@ if ARMOR_MATERIALS.bronze then
 		wear = 0,
 	})
 end
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 2",
+	recipe = "3d_armor:helmet_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 4",
+	recipe = "3d_armor:chestplate_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 3",
+	recipe = "3d_armor:leggings_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 2",
+	recipe = "3d_armor:boots_bronze",
+})
+
 --[[
 if ARMOR_MATERIALS.diamond then
 	minetest.register_tool("3d_armor:helmet_diamond", {
@@ -163,6 +222,35 @@ if ARMOR_MATERIALS.gold then
 		wear = 0,
 	})
 end
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:gold_ingot 2",
+	recipe = "3d_armor:helmet_gold",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:gold_ingot 4",
+	recipe = "3d_armor:chestplate_gold",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:gold_ingot 3",
+	recipe = "3d_armor:leggings_gold",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:gold_ingot 2",
+	recipe = "3d_armor:boots_gold",
+})
+
 --[[
 if ARMOR_MATERIALS.mithril then
 	minetest.register_tool("3d_armor:helmet_mithril", {

@@ -1,15 +1,5 @@
 -- mods/default/aliases.lua
 
-minetest.register_alias("default:jungleleaves", "default:air")
-minetest.register_alias("default:leaves", "default:air")
-minetest.register_alias("default:acacia_leaves", "default:air")
-minetest.register_alias("default:pine_needles", "default:air")
-minetest.register_alias("default:snow", "default:air")
-minetest.register_alias("creatures:rotten_flesh", "mobs:meat")
-
-
-
-
 -- Aliases to support loading worlds using nodes following the old naming convention
 -- These can also be helpful when using chat commands, for example /giveme
 minetest.register_alias("stone", "default:stone")
@@ -42,7 +32,8 @@ minetest.register_alias("water_source", "default:air")
 minetest.register_alias("lava_flowing", "default:lava_flowing")
 minetest.register_alias("lava_source", "default:lava_source")
 minetest.register_alias("torch", "default:torch")
-minetest.register_alias("sign_wall", "default:sign_wall")
+minetest.register_alias("sign_wall", "default:sign_wall_wood")
+minetest.register_alias("default:sign_wall", "default:sign_wall_wood")
 minetest.register_alias("furnace", "default:furnace")
 minetest.register_alias("chest", "default:chest")
 minetest.register_alias("locked_chest", "default:chest_locked")
@@ -92,3 +83,10 @@ minetest.register_alias("default:mese_block", "default:mese")
 -- Aliases for corrected pine node names
 minetest.register_alias("default:pinetree", "default:dead_tree")
 minetest.register_alias("default:pinewood", "default:pine_wood")
+
+
+-- Legacy
+minetest.register_alias("default:nyancat", "default:obsidian")
+minetest.register_alias("default:nyancat_rainbow", "default:mese_lamp")
+minetest.register_alias("nyancat", "default:obsidian")
+minetest.register_alias("nyancat_rainbow", "default:mese_lamp")
