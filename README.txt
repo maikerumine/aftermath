@@ -1,5 +1,5 @@
 -- Aftermath created by maikerumine and Aiden Garvin
--- Minetest 0.4.13 game: "Aftermath"
+-- Minetest 0.4.14 game: "Aftermath"
 -- namespace: aftermath
 -- (c) 2015 by: maikerumine and Aiden Garvin
 -- https://github.com/maikerumine
@@ -10,8 +10,8 @@
 INTRODUCTION:
 _____________
 
-You awaken in the centre of a rustic village after a long while, time seems to have forgotten about you, as you did it.  You realise there was a great war, a total catastrophy, nothing is as it seems.  There are killers out at night to raid and loot your things, as well as an unidentified creature of some sort..  You look in yout inventory and find an assortment of items, some of which are firearms and wood.
-The realisation that you have to survuve at all costs is awakening, your adreneline starts to pump as you make haste to the nearest abandoned building to look for things for this epic adventure.
+You awaken in the centre of a rustic village after a long while, time seems to have forgotten about you, as you did it.  You realize there was a great war, a total catastrophe, nothing is as it seems.  There are killers out at night to raid and loot your things, as well as an unidentified creature of some sort..  You look in your inventory and find an assortment of items, some of which are firearms and wood.
+The realization that you have to survive at all costs is awakening, your adrenaline starts to pump as you make haste to the nearest abandoned building to look for things for this epic adventure.
 Can you survive a night?
 Can you make it a week?
 Can your mind accept that this is life after the great war?
@@ -19,7 +19,8 @@ You must start again, from scratch, in a bombed out radioactive world.
 This is AFTERMATH.
 
 AFTERMATH
-	
+
+
 CREATED BY:
 ___________
 The great team at minetest.net for a collaboration of ideas, mods, and friendship.
