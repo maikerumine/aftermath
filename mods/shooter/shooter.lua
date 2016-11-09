@@ -572,3 +572,94 @@ if not singleplayer and SHOOTER_ADMIN_WEAPONS then
 		end
 	end)
 end
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "shooter:rifle",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:pistol",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "shooter:machine_gun",
+})
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:grenade",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "shooter:shotgun",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:copper_ingot",
+	recipe = "shooter:ammo",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:hook",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:grapple_hook",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:grapple_gun",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 2",
+	recipe = "shooter:rocket_gun_loaded",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 3",
+	recipe = "shooter:rocket_gun",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot",
+	recipe = "shooter:flare_gun",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "shooter:crossbow",
+})
+

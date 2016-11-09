@@ -16,7 +16,8 @@ PPA.register({
 })
 
 function thirsty.on_joinplayer(player)
-    local name = player:get_player_name()
+    local name = player:get_player_name(); if not name then return end  --mm added
+    if name==""  then return end -- no mob killers/victims
     -- default entry for new players
     if not thirsty.players[name] then
         local pos = player:getpos()
@@ -31,7 +32,8 @@ function thirsty.on_joinplayer(player)
 end
 
 function thirsty.on_dieplayer(player)
-    local name = player:get_player_name()
+    local name = player:get_player_name(); if not name then return end  --mm added
+    if name==""  then return end -- no mob killers/victims
     local pl   = thirsty.players[name]
     -- reset after death
     PPA.set_value(player, 'thirsty_hydro', 20)

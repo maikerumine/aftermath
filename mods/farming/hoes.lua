@@ -137,3 +137,17 @@ farming.register_hoe(":farming:hoe_diamond", {
 	max_uses = 500,
 	material = "default:diamond"
 })]]
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:bronze_ingot 2",
+	recipe = "farming:hoe_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "farming:hoe_steel",
+})

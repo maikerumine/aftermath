@@ -1423,16 +1423,18 @@ minetest.register_abm({
 	end,
 })
 
+--=====================================
+--=====================================
+--=====================================
 
-
-
+--ES CUSTOM LIQUIDS:
 minetest.register_node("default:toxic_water_source", {
 	description = "Toxic_Water Source",
 	inventory_image = minetest.inventorycube("default_toxic_water.png"),
 	drawtype = "liquid",
 	tiles = {
 		{
-			name = "default_toxic_water_source_animated.png^[colorize:black:110",
+			name = "default_toxic_water_source_animated.png",
 			animation = {
 				type = "vertical_frames",
 				aspect_w = 16,
@@ -1444,7 +1446,7 @@ minetest.register_node("default:toxic_water_source", {
 	special_tiles = {
 		-- New-style water source material (mostly unused)
 		{
-			name = "default_toxic_water_source_animated.png^[colorize:black:110",
+			name = "default_toxic_water_source_animated.png",
 			animation = {
 				type = "vertical_frames",
 				aspect_w = 16,
@@ -1456,11 +1458,13 @@ minetest.register_node("default:toxic_water_source", {
 	},
 	alpha = 240,
 	paramtype = "light",
-	--light_source = default.LIGHT_MAX - 5,
+	light_source = default.LIGHT_MAX - 1,
 	walkable = false,
 	pointable = false,
 	diggable = false,
 	buildable_to = true,
+	liquid_renewable = false,
+	liquid_range = 1,
 	is_ground_content = false,
 	drop = "",
 	drowning = 1,
@@ -1470,14 +1474,13 @@ minetest.register_node("default:toxic_water_source", {
 	liquid_viscosity =3,
 	damage_per_second = 3*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
+	--groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 2 or 2),},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = 2},
 })
 
 --NOTES:
 --		radioactive = (state == "source" and 32 or 16),
 --THIS IS DEFAULT SETTING FROM TECHNIC
-
-
 
 minetest.register_node("default:toxic_water_flowing", {
 	description = "Toxic_Flowing Water",
@@ -1486,7 +1489,7 @@ minetest.register_node("default:toxic_water_flowing", {
 	tiles = {"default_toxic_water.png"},
 	special_tiles = {
 		{
-			name = "default_toxic_water_flowing_animated.png^[colorize:black:110",
+			name = "default_toxic_water_flowing_animated.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -1496,7 +1499,7 @@ minetest.register_node("default:toxic_water_flowing", {
 			},
 		},
 		{
-			name = "default_toxic_water_flowing_animated.png^[colorize:black:110",
+			name = "default_toxic_water_flowing_animated.png",
 			backface_culling = true,
 			animation = {
 				type = "vertical_frames",
@@ -1508,12 +1511,13 @@ minetest.register_node("default:toxic_water_flowing", {
 	},
 	alpha = 240,
 	paramtype = "light",
-	--light_source = default.LIGHT_MAX - 5,
+	light_source = default.LIGHT_MAX - 1,
 	paramtype2 = "flowingliquid",
 	walkable = false,
 	pointable = false,
 	diggable = false,
 	buildable_to = true,
+	liquid_renewable = false,
 	is_ground_content = false,
 	drop = "",
 	drowning = 1,
@@ -1524,87 +1528,39 @@ minetest.register_node("default:toxic_water_flowing", {
 	damage_per_second = 2*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
-		not_in_creative_inventory = 1, radioactive = 2},
+		--not_in_creative_inventory = 1, radioactive = (state == "source" and 2 or 2),},
+		not_in_creative_inventory = 1, radioactive =2},
 })
-
---[[--FOR REF
+--FOR REF
 -- Quicksand (old style, sinking inside shows black instead of yellow effect,
 -- works ok with noclip enabled though)
-minetest.register_node("ethereal:quicksand", {
-	description = "Quicksand",
-	tiles = {"default_sand.png"},
-	drop = "default:sand",
-	liquid_viscosity = 15,
+minetest.register_node("default:mud", {
+	description = "Mud",
+	tiles = {"default_mud.png"},
+	--drop = "es:mud",
+	liquid_viscosity = 19,
 	liquidtype = "source",
-	liquid_alternative_flowing = "ethereal:quicksand",
-	liquid_alternative_source = "ethereal:quicksand",
+	liquid_alternative_flowing = "default:mud",
+	liquid_alternative_source = "default:mud",
 	liquid_renewable = false,
 	liquid_range = 0,
-	drowning = 1,
+	drowning = 3,
 	walkable = false,
 	climbable = false,
-	post_effect_color = { r=230, g=210, b=160, a=245 },
+	liquid_renewable = false,
+	post_effect_color = { a = 255, r = 43, g = 23, b = 9 },
 	groups = {crumbly=3, falling_node=1, sand=1, liquid=3, disable_jump=1},
 	sounds = default.node_sound_sand_defaults(),
 })
 
-]]
-
-minetest.register_node("default:mud", {
-	description = "Mud Source",
-	inventory_image = minetest.inventorycube("default_mud.png"),
-	drawtype = "liquid",
-		tiles = {"default_mud.png"},
---[[	tiles = {
-		{
-			name = "default_mud_source_animated.png",
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 2.0,
-			},
-		},
-	},
-	special_tiles = {
-		-- New-style water source material (mostly unused)
-		{
-			name = "default_mud_source_animated.png",
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 2.0,
-			},
-			backface_culling = false,
-		},
-	},]]
-	alpha = 255,
-	paramtype = "light",
-	walkable = false,
-	pointable = false,
-	diggable = false,
-	buildable_to = true,
-	is_ground_content = false,
-	drop = "",
-	drowning = 1,
-	damage_per_second = 3*2,
-	liquidtype = "source",
-	liquid_alternative_flowing = "default:mud_flowing",
-	liquid_alternative_source = "default:mud",
-	liquid_viscosity = 18,
-	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = 0.5},
-})
-
 minetest.register_node("default:mud_flowing", {
 	description = "Flowing  mud",
-	inventory_image = minetest.inventorycube("default_mud.png"),
-	drawtype = "liquid",--change to liquid for a solid look
+	--drawtype = "liquid",--change to liquid for a solid look
+	drawtype = "flowingliquid",
 	tiles = {"default_mud.png"},
 	special_tiles = {
 		{
-			name = "default_mud_flowing_animated.png",
+			name = "default_mud.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -1614,7 +1570,7 @@ minetest.register_node("default:mud_flowing", {
 			},
 		},
 		{
-			name = "default_mud_flowing_animated.png",
+			name = "default_mud.png",
 			backface_culling = true,
 			animation = {
 				type = "vertical_frames",
@@ -1624,6 +1580,7 @@ minetest.register_node("default:mud_flowing", {
 			},
 		},
 	},
+
 	alpha = 250,
 	paramtype = "light",
 	paramtype2 = "flowingliquid",
@@ -1632,18 +1589,24 @@ minetest.register_node("default:mud_flowing", {
 	diggable = false,
 	buildable_to = true,
 	is_ground_content = false,
+	liquid_renewable = false,
 	drop = "",
 	drowning = 1,
-	damage_per_second = 3*2,
 	liquidtype = "flowing",
 	liquid_alternative_flowing = "default:mud_flowing",
 	liquid_alternative_source = "default:mud",
-	liquid_viscosity = 19,
+	liquid_viscosity = 7,
 	post_effect_color = {a = 255, r = 43, g = 23, b = 9},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
-		not_in_creative_inventory = 1, radioactive = 0.5},
+		not_in_creative_inventory = 1, },
 })
 
+
+
+
+--=====================================
+--=====================================
+--=====================================
 
 
 

@@ -47,3 +47,8 @@ for _, row in ipairs(wool.dyes) do
 	end
 end
 
+minetest.register_craft({
+	type = "fuel",
+	recipe = "group:wool",
+	burntime = 17,
+})

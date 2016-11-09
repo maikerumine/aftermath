@@ -848,6 +848,20 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
+	cooktime = 90,
+	output = "default:bronze_ingot 2",
+	recipe = "default:sword_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 90,
+	output = "default:bronze_ingot 2",
+	recipe = "default:pick_bronze",
+})
+
+minetest.register_craft({
+	type = "cooking",
 	cooktime = 15,
 	output = "default:glue 7",
 	recipe = "default:duct_tape",

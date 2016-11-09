@@ -383,7 +383,7 @@ minetest.register_craft({
 	}
 })
 
---[[doors.register_door("doors:door_glass", {
+doors.register_door("doors:door_glass", {
 	description = "Glass Door",
 	inventory_image = "doors_glass.png",
 	groups = {snappy=1,cracky=1,oddly_breakable_by_hand=3,door=1},
@@ -500,4 +500,22 @@ minetest.register_craft({
 		{'', '', ''},
 	}
 })
-]]
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "doors:trapdoor",
+	burntime = 26,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "doors:door_wood",
+	burntime = 26,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "doors:steel_ingot 4",
+	recipe = "doors:door_steel",
+})

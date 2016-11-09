@@ -339,3 +339,10 @@ minetest.override_item("default:river_water_source", {
 		end
 	end,
 })
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 60,
+	output = "default:steel_ingot 2",
+	recipe = "bucket:bucket_empty",
+})

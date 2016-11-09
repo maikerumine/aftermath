@@ -539,3 +539,10 @@ dofile(minetest.get_modpath("protector") .. "/pvp.lua")
 dofile(minetest.get_modpath("protector") .. "/admin.lua")
 
 print ("[MOD] Protector Redo loaded")
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 180,
+	output = "default:mese_crystal 8",
+	recipe = "protector:protect",
+})
