@@ -53,7 +53,7 @@ elseif minetest.get_modpath("hud") then
         background = "thirsty_cup_0_24.png",
         number = 20,
         max = 20,
-        size = HUD_SD_SIZE, -- by default { x=24, y=24 },
+        size = HUD_SB_SIZE, -- by default { x=24, y=24 },
         offset = offset,
     })
     function thirsty.hud_init(player)

@@ -69,11 +69,16 @@ if minetest.get_modpath("farming") ~= nil then
 	overwrite("farming:bread", 4)
 end
 
+if minetest.get_modpath("mobs_fallout") ~= nil then
+		overwrite("mobs_fallout:meat", 8)
+		overwrite("mobs_fallout:meat_raw", 4,"",3)
+end
+
 if minetest.get_modpath("mobs") ~= nil then
 	if mobs.mod ~= nil and mobs.mod == "redo" then
 		overwrite("mobs:cheese", 4)
 		overwrite("mobs:meat", 8)
-		overwrite("mobs:meat_raw", 4)
+		overwrite("mobs:meat_raw", 4,"",4)
 		overwrite("mobs:rat_cooked", 4)
 		overwrite("mobs:honey", 2)
 		overwrite("mobs:pork_raw", 3, "", 3)

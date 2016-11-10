@@ -285,6 +285,19 @@ local chest_stuff = {
 	{name="flowers:mushroom_red", max = 3},
 	{name="flowers:mushroom_brown", max = 3},
 	{name="flowers:waterlily", max = 3},
+	{name="rangedweapons:375", max = 30},
+	{name="rangedweapons:375", max = 30},
+	{name="rangedweapons:10mm", max = 30},
+	{name="rangedweapons:shell", max = 30},
+	{name="rangedweapons:9mm", max = 30},
+	{name="rangedweapons:boomstick", max = 1},
+	{name="rangedweapons:bereta", max = 1},
+	{name="rangedweapons:steel_shuriken", max = 10},
+	{name="mobs_futuremobs:sword_hotium", max = 1},
+	{name="mobs_futuremobs:sword_zanium", max = 1},
+	{name="'mobs_futuremobs:laser", max = 23},
+	{name="'3d_armor:chestplate_steel", max = 1},
+	{name="'3d_armor:leggings_bronze", max = 1},
 }
 
 -- get some random content for a chest

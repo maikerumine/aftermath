@@ -20,7 +20,7 @@ mobs:register_mob("mobs_fallout:sheep", {
 	hp_min = 32,
 	hp_max = 50,
 	armor = 100,
-	damage = 8,
+	damage = 6,
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1, 0.4},
 	visual = "mesh",
 	mesh = "mobs_sheep.x",

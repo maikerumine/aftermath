@@ -737,7 +737,7 @@ mg_villages.grow_a_tree = function( pos, plant_id, minp, maxp, data, a, cid, pr,
 	end
 	return false;
 end
-
+--[[
 --
 -- places trees and plants at empty spaces
 mg_villages.village_area_fill_with_plants = function( village_area, villages, minp, maxp, data, param2_data, a, cid )
@@ -861,7 +861,7 @@ mg_villages.village_area_fill_with_plants = function( village_area, villages, mi
 end
 
 --
-
+]]
 
 time_elapsed = function( t_last, msg )
 	mg_villages.t_now = minetest.get_us_time();
@@ -1066,8 +1066,8 @@ mg_villages.place_villages_via_voxelmanip = function( villages, minp, maxp, vm, 
 
 
 -------------------------------------
-	mg_villages.village_area_fill_with_plants( village_area, villages, tmin, tmax, data, param2_data, a, cid );
-	t1 = time_elapsed( t1, 'fill_with_plants' );
+	--mg_villages.village_area_fill_with_plants( village_area, villages, tmin, tmax, data, param2_data, a, cid );
+	--t1 = time_elapsed( t1, 'fill_with_plants' );
 -----------------------------------------------
 ------------------------------------------------
 	if( mg_villages.CREATE_HIGHLANDPOOLS ) then

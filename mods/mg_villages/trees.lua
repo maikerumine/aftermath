@@ -6,7 +6,7 @@ local c_tree = minetest.get_content_id("default:tree")
 local c_leaves = minetest.get_content_id("default:leaves")
 local c_sapling = minetest.get_content_id("default:sapling");
 local c_junglesapling = minetest.get_content_id("default:junglesapling");
-local c_snow = minetest.get_content_id("default:inv");
+local c_snow = minetest.get_content_id("default:snow");
 local c_msnow_top = minetest.get_content_id( 'moresnow:snow_top' );
 
 local c_msnow_leaves1 = minetest.get_content_id( 'default:leaves' );

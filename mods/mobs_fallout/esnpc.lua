@@ -10,7 +10,7 @@
 
 mobs.npc_drops = { "shooter:rocket_gun_loaded", "mobs_fallout:meat 4", "shooter:rifle", "default:shovel_steel", "farming:bread", "default:wood","shooter:ammo","default:duct_tape 3", "default:health_kit" }--Added 20151121
 
-mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Bajan", {
 	type = "npc",
 	group_attack = true,
@@ -150,7 +150,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:John", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:John", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:John", {
 	type = "npc",
 	group_attack = true,
@@ -290,7 +290,7 @@ mobs:register_mob("mobs_fallout:John", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:Krock", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Krock", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Krock", {
 	type = "npc",
 	group_attack = true,
@@ -436,7 +436,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 
 
 
-mobs:register_spawn("mobs_fallout:Just_Test_Griefer", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Just_Test_Griefer", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 	type = "npc",
 	group_attack = true,
@@ -577,7 +577,7 @@ mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 	step = 1,
 
 })
-mobs:register_spawn("mobs_fallout:SepiaSam", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:SepiaSam", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:SepiaSam", {
 	type = "npc",
 	group_attack = true,
@@ -717,7 +717,7 @@ mobs:register_mob("mobs_fallout:SepiaSam", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:Hobo", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Hobo", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Hobo", {
 	type = "npc",
 	group_attack = true,
@@ -862,7 +862,7 @@ mobs:register_mob("mobs_fallout:Hobo", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Simon", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Simon", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Simon", {
 	type = "npc",
 	group_attack = true,
@@ -1003,7 +1003,7 @@ mobs:register_mob("mobs_fallout:Simon", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Infantry_man", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 9000, 1, -10)
+mobs:register_spawn("mobs_fallout:Infantry_man", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, -10)
 mobs:register_mob("mobs_fallout:Infantry_man", {
 	type = "npc",
 	group_attack = true,
@@ -1144,7 +1144,7 @@ mobs:register_mob("mobs_fallout:Infantry_man", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Mage", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 15, -1,9000, 1, -50)
+mobs:register_spawn("mobs_fallout:Mage", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 15, -1,11000, 1, -50)
 mobs:register_mob("mobs_fallout:Mage", {
 	type = "npc",
 	group_attack = true,

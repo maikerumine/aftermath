@@ -108,6 +108,19 @@ minetest.register_tool("default:pick_diamond", {
 	},
 })
 ]]
+--moreores
+minetest.register_tool("default:pick_mithril", {
+	description = "Mithril Pickaxe",
+	inventory_image = "moreores_tool_mithrilpick.png",
+	tool_capabilities = {
+		full_punch_interval = 0.45,
+		max_drop_level=3,
+		groupcaps={
+			cracky = {times = {[1] = 2.25, [2] = 0.55, [3] = 0.35}, uses = 200, maxlevel= 1}
+		},
+		damage_groups = {fleshy=9},
+	},
+})
 --
 -- Shovels
 --
@@ -363,3 +376,20 @@ minetest.register_tool("default:sword_diamond", {
 	}
 })
 ]]
+--moreores
+minetest.register_tool("default:sword_mithril", {
+	description = "Mithril Sword",
+	inventory_image = "moreores_tool_mithrilsword.png",
+	tool_capabilities = {
+		full_punch_interval = 0.45,
+		max_drop_level=1,
+		groupcaps={
+			sword = {
+				fleshy = {times = {[2] = 0.65, [3] = 0.25}, uses = 200, maxlevel= 1},
+				snappy = {times = {[2] = 0.70, [3] = 0.25}, uses = 200, maxlevel= 1},
+				choppy = {times = {[3] = 0.65}, uses = 200, maxlevel= 0}
+			}
+		},
+		damage_groups = {fleshy=9},
+	},
+})

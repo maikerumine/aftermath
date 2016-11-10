@@ -3,7 +3,7 @@ Thirsty [thirsty]
 
 A Minetest mod that adds a "thirst" mechanic.
 
-Version: 0.10.1
+Version: 0.10.2
 
 License:
   Code: LGPL 2.1 (see included LICENSE file)

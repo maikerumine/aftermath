@@ -11,7 +11,7 @@
 -- radbug by PilzAdam
 
 mobs:register_mob("mobs_fallout:radbug", {
-	docile_by_day = false,
+	docile_by_day =true,
 	group_attack = true,
 	pathfinding = true,
 	type = "monster",

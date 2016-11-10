@@ -137,6 +137,17 @@ minetest.register_craft({
 	}
 })
 ]]
+--moreores
+minetest.register_craft({
+	output = 'default:pick_mithril',
+	recipe = {
+		{'default:mithril_ingot', 'default:mithril_ingot', 'default:mithril_ingot'},
+		{'', 'group:stick', ''},
+		{'default:duct_tape', 'group:stick', ''},
+	}
+})
+
+
 minetest.register_craft({
 	output = 'default:shovel_wood',
 	recipe = {
@@ -353,6 +364,17 @@ minetest.register_craft({
 	}
 })
 ]]
+--moreores
+minetest.register_craft({
+	output = 'default:sword_mithril',
+	recipe = {
+		{'','default:mithril_ingot',''},
+		{'','default:mithril_ingot',''},
+		{'default:duct_tape','group:stick',''},
+	}
+})
+
+
 minetest.register_craft({
 	output = 'default:rail 24',
 	recipe = {
@@ -497,6 +519,61 @@ minetest.register_craft({
 	}
 })
 
+--moreores
+minetest.register_craft({
+	output = 'default:tinblock',
+	recipe = {
+		{'default:tin_ingot', 'default:tin_ingot', 'default:tin_ingot'},
+		{'default:tin_ingot', 'default:tin_ingot', 'default:tin_ingot'},
+		{'default:tin_ingot', 'default:tin_ingot', 'default:tin_ingot'},
+	}
+})
+minetest.register_craft({
+	output = 'default:tin_ingot 9',
+	recipe = {
+		{'default:tinblock'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:silverblock',
+	recipe = {
+		{'default:silver_ingot', 'default:silver_ingot', 'default:silver_ingot'},
+		{'default:silver_ingot', 'default:silver_ingot', 'default:silver_ingot'},
+		{'default:silver_ingot', 'default:silver_ingot', 'default:silver_ingot'},
+	}
+})
+minetest.register_craft({
+	output = 'default:silver_ingot 9',
+	recipe = {
+		{'default:silverblock'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:mithrilblock',
+	recipe = {
+		{'default:mithril_ingot', 'default:mithril_ingot', 'default:mithril_ingot'},
+		{'default:mithril_ingot', 'default:mithril_ingot', 'default:mithril_ingot'},
+		{'default:mithril_ingot', 'default:mithril_ingot', 'default:mithril_ingot'},
+	}
+})
+minetest.register_craft({
+	output = 'default:mithril_ingot 9',
+	recipe = {
+		{'default:mithrilblock'},
+	}
+})
+
+
+
+
+
+
+
+
+
+--stones
 minetest.register_craft({
 	output = 'default:sandstone',
 	recipe = {
@@ -817,6 +894,23 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:gold_ingot",
 	recipe = "default:gold_lump",
+})
+
+--moreores
+minetest.register_craft({
+	type = "cooking",
+	output = "default:tin_ingot",
+	recipe = "default:tin_lump",
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "default:silver_ingot",
+	recipe = "default:silver_lump",
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "default:mithril_ingot",
+	recipe = "default:mithril_lump",
 })
 
 minetest.register_craft({

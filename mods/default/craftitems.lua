@@ -16,6 +16,37 @@ minetest.register_craftitem("default:health_kit", {
 	--groups = {sticky=1},
 })
 ]]
+
+--moreores
+minetest.register_craftitem("default:tin_lump", {
+	description = "Tin Lump",
+	inventory_image = "moreores_tin_lump.png",
+})
+minetest.register_craftitem("default:silver_lump", {
+	description = "Tin Lump",
+	inventory_image = "moreores_silver_lump.png",
+})
+minetest.register_craftitem("default:mithril_lump", {
+	description = "Mithril Lump",
+	inventory_image = "moreores_mithril_lump.png",
+})
+
+
+minetest.register_craftitem("default:tin_ingot", {
+	description = "Tin Ingot",
+	inventory_image = "moreores_tin_ingot.png",
+})
+minetest.register_craftitem("default:silver_ingot", {
+	description = "Silver Ingot",
+	inventory_image = "moreores_silver_ingot.png",
+})
+minetest.register_craftitem("default:mithril_ingot", {
+	description = "Mithril Ingot",
+	inventory_image = "moreores_mithril_ingot.png",
+})
+
+
+
 -- mods/default/craftitems.lua
 
 minetest.register_craftitem("default:stick", {
