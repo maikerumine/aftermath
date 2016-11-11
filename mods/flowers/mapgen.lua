@@ -164,10 +164,11 @@ end
 
 -- Mods using singlenode mapgen can call these functions to enable
 -- the use of minetest.generate_ores or minetest.generate_decorations
-
+--[[
 local mg_name = minetest.get_mapgen_setting("mg_name")
 if mg_name == "v6" then
 	flowers.register_mgv6_decorations()
 elseif mg_name ~= "singlenode" then
 	flowers.register_decorations()
 end
+]]

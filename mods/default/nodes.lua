@@ -2081,8 +2081,14 @@ end
 
 minetest.register_node("default:chest", {
 	description = "Chest",
-	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
-		"default_chest_side.png", "default_chest_side.png", "default_chest_front.png"},
+	tiles = {
+		"scifi_nodes_box_top.png",
+		"scifi_nodes_box_top.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png"
+	},
 	paramtype2 = "facedir",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	legacy_facedir_simple = true,
@@ -2126,8 +2132,14 @@ minetest.register_node("default:chest", {
 
 minetest.register_node("default:chest_locked", {
 	description = "Locked Chest",
-	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
-		"default_chest_side.png", "default_chest_side.png", "default_chest_lock.png"},
+	tiles = {
+		"scifi_nodes_box_top.png",
+		"scifi_nodes_box_top.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png",
+		"scifi_nodes_box.png^protector_logo.png" --LOCK
+	},
 	paramtype2 = "facedir",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	legacy_facedir_simple = true,

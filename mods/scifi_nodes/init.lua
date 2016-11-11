@@ -24,6 +24,7 @@ minetest.register_node("scifi_nodes:rfloor", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 10,
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -51,6 +52,7 @@ minetest.register_node("scifi_nodes:stripes2", {
 		"scifi_nodes_stripes2.png"
 	},
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -208,6 +210,7 @@ minetest.register_node("scifi_nodes:white_base", {
 	},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -225,6 +228,7 @@ minetest.register_node("scifi_nodes:grnpipe", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	on_place = minetest.rotate_node
 })
 
@@ -243,6 +247,7 @@ minetest.register_node("scifi_nodes:grnpipe2", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	on_place = minetest.rotate_node
 })
 
@@ -338,6 +343,7 @@ for _, row in ipairs(node.types) do
 		tiles = {"scifi_nodes_"..name..".png"},
 		groups = {cracky=1},
 		paramtype = "light",
+		sounds = default.node_sound_metal_defaults(),
 		light_source = light,
 	})
 end
@@ -401,7 +407,7 @@ minetest.register_node("scifi_nodes:crate", {
 	groups = {cracky = 1, oddly_breakable_by_hand = 2, fuel = 8},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default.node_sound_metal_defaults(),
 
 	after_dig_node = drop_chest_stuff(),
 	on_construct = function(pos)
@@ -440,7 +446,7 @@ minetest.register_node("scifi_nodes:box", {
 	groups = {cracky = 1, oddly_breakable_by_hand = 2, fuel = 8},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default.node_sound_metal_defaults(),
 
 	after_dig_node = drop_chest_stuff(),
 	on_construct = function(pos)

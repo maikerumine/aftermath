@@ -233,6 +233,7 @@ local chest_stuff = {
 	{name="default:apple", max = 3},
 	{name="farming:bread", max = 3},
 	{name="default:steel_ingot", max = 2},
+	{name="default:bronze_ingot", max = 2},
 	{name="default:gold_ingot", max = 2},
 	{name="default:axe_steel", max = 1},
 	--{name="default:emerald", max = 5},
@@ -273,8 +274,8 @@ local chest_stuff = {
 	{name="shooter:ammo", max = 5},
 	{name="shooter:grapple_hook", max = 1},
 	{name="shooter:grapple_gun", max = 1},
-	{name="default:duct_tape", max = 12},
-	{name="default:glue", max = 6},
+	{name="default:duct_tape", max = 2},
+	{name="default:glue", max = 2},
 	{name="default:health_kit", max = 4},
 	{name="flowers:tulip", max = 3},
 	{name="flowers:dandelion_white", max = 3},
@@ -286,7 +287,7 @@ local chest_stuff = {
 	{name="flowers:mushroom_brown", max = 3},
 	{name="flowers:waterlily", max = 3},
 	{name="rangedweapons:375", max = 30},
-	{name="rangedweapons:375", max = 30},
+	{name="rangedweapons:beretta", max = 1},
 	{name="rangedweapons:10mm", max = 30},
 	{name="rangedweapons:shell", max = 30},
 	{name="rangedweapons:9mm", max = 30},
@@ -296,8 +297,6 @@ local chest_stuff = {
 	{name="mobs_futuremobs:sword_hotium", max = 1},
 	{name="mobs_futuremobs:sword_zanium", max = 1},
 	{name="'mobs_futuremobs:laser", max = 23},
-	{name="'3d_armor:chestplate_steel", max = 1},
-	{name="'3d_armor:leggings_bronze", max = 1},
 }
 
 -- get some random content for a chest
