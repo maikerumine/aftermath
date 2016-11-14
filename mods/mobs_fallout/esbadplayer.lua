@@ -59,7 +59,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 	},
 	sounds = {
 		war_cry = "mobs_barbarian_yell1",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })
@@ -335,7 +335,7 @@ mobs:register_mob("mobs_fallout:Ghost", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_shotgun",
 		},
 })
@@ -390,7 +390,7 @@ mobs:register_mob("mobs_fallout:Zombie_Rex", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_shotgun",
 		},
 })
@@ -784,7 +784,7 @@ mobs:register_mob("mobs_fallout:Luke", {
 	},
 	sounds = {
 		war_cry = "mobs_barbarian_yell1",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })
@@ -1008,7 +1008,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_shotgun",
 		},
 })
@@ -1063,7 +1063,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })
@@ -1118,7 +1118,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_yeti_death",
+		death = "mummy_death",
 		attack = "shooter_shotgun",
 		},
 })
@@ -1173,7 +1173,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_howl",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })
@@ -1229,7 +1229,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_E", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_howl",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })
@@ -1287,7 +1287,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_F", {
 	},
 	sounds = {
 		war_cry = "mobs_stonemonster",
-		death = "mobs_barbarian_death",
+		death = "mummy_death",
 		attack = "shooter_pistol",
 		},
 })

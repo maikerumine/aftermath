@@ -138,6 +138,7 @@ farming.register_hoe(":farming:hoe_diamond", {
 	material = "default:diamond"
 })]]
 
+--[[
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 60,
@@ -151,3 +152,4 @@ minetest.register_craft({
 	output = "default:steel_ingot 2",
 	recipe = "farming:hoe_steel",
 })
+]]

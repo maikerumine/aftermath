@@ -924,7 +924,7 @@ minetest.register_craft({
 	output = "default:coal_lump 3",
 	recipe = "default:dead_tree",
 })
-
+--[[
 --CUSTOM
 minetest.register_craft({
 	type = "cooking",
@@ -1002,7 +1002,7 @@ minetest.register_craft({
 	output = "default:bronze_ingot 2",
 	recipe = "default:axe_bronze",
 })
-
+]]
 --
 -- Fuels
 --

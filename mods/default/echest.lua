@@ -69,7 +69,7 @@ minetest.register_abm({
 		)
 	end,
 })
-
+--[[
 --crafting
 minetest.register_craft({
 	output = 'enderchest:enderchest',
@@ -88,3 +88,4 @@ minetest.register_craft({
 		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
 	}
 })
+]]

@@ -64,6 +64,7 @@ minetest.register_alias("default:sword_steel", "default:machete_steel")
 minetest.register_alias("default:sword_bronze", "default:machete_bronze")
 minetest.register_alias("default:sword_stone", "default:club_stone")
 minetest.register_alias("default:sword_wood", "default:bokken")
+minetest.register_alias("default:carbon_steel_sword", "default:carbon_steelsword")
 
 
 

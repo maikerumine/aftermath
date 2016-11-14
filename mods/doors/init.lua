@@ -500,7 +500,7 @@ minetest.register_craft({
 		{'', '', ''},
 	}
 })
-
+--[[
 minetest.register_craft({
 	type = "fuel",
 	recipe = "doors:trapdoor",
@@ -519,3 +519,4 @@ minetest.register_craft({
 	output = "doors:steel_ingot 4",
 	recipe = "doors:door_steel",
 })
+]]

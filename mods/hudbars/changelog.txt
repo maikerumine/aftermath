@@ -85,3 +85,8 @@ as of version 2.0.0 of the standard <http://semver.org/>.
 1.5.0
 -----
 - Portuguese translation by BrunoMine
+
+1.5.1
+-----
+- Fix critical bug: Mod does not work with both intllib and mod security enabled
+- Update screenshot to use new 3:2 aspect ratio

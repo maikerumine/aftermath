@@ -112,10 +112,12 @@ minetest.register_alias("screwdriver:screwdriver2", "screwdriver:screwdriver")
 minetest.register_alias("screwdriver:screwdriver3", "screwdriver:screwdriver")
 minetest.register_alias("screwdriver:screwdriver4", "screwdriver:screwdriver")
 
-
+--[[
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 60,
 	output = "default:steel_ingot",
 	recipe = "screwdriver:screwdriver",
 })
+
+]]

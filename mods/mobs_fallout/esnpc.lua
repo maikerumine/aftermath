@@ -175,7 +175,7 @@ mobs:register_mob("mobs_fallout:John", {
 		chance = 1,
 		min = 1,
 		max = 5,},
-		{name = "default:carbon_steel_sword",
+		{name = "default:carbon_steelsword",
 		chance = 1,
 		min = 0,
 		max = 1,},
