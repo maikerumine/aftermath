@@ -2380,7 +2380,7 @@ minetest.register_abm({
 		)
 	end,
 })
-
+--[[
 --crafting
 minetest.register_craft({
 	output = 'default:chest_universal',
@@ -2399,6 +2399,7 @@ minetest.register_craft({
 		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
 	}
 })
+]]
 --================================
 
 

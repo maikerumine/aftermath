@@ -29,7 +29,8 @@ minetest.register_on_joinplayer(function(player)
 			text = "sprint_stamina_icon.png",
 			number = 20,
 			alignment = {x=0,y=1},
-			offset = {x=-263, y=-110},
+			--offset = {x=-263, y=-110},
+			offset = {x=-122, y=-130},
 			}
 		)
 	end
