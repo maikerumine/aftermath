@@ -252,7 +252,7 @@ minetest.register_privilege("water", "Can use liquid.")
 
 
 --mud bucket
-local old_lava_bucket_place = minetest.registered_items["bucket:bucket_mud"].on_place
+local old_mud_bucket_place = minetest.registered_items["bucket:bucket_mud"].on_place
 
 minetest.override_item("bucket:bucket_mud", {
 	on_place = function(itemstack, placer, pointed_thing)
@@ -260,7 +260,7 @@ minetest.override_item("bucket:bucket_mud", {
 				{mud = true}) then
 			return itemstack
 		else
-			return old_lava_bucket_place(itemstack, placer, pointed_thing)
+			return old_mud_bucket_place(itemstack, placer, pointed_thing)
 		end
 	end,
 })
@@ -289,7 +289,7 @@ minetest.override_item("bucket:bucket_toxic_water", {
 				{mud = true}) then
 			return itemstack
 		else
-			return old_water_bucket_place(itemstack, placer, pointed_thing)
+			return old_toxic_water_bucket_place(itemstack, placer, pointed_thing)
 		end
 	end,
 })
