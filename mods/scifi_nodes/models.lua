@@ -33,6 +33,7 @@ minetest.register_node("scifi_nodes:slope_"..name, {
 	paramtype2 = "facedir",
 	light_source = light,
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	on_place = minetest.rotate_node
 })
 end

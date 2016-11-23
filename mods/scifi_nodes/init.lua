@@ -13,6 +13,7 @@ minetest.register_node("scifi_nodes:light", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_glass_defaults(),
 	groups = {cracky=1}
 })
 
@@ -36,6 +37,7 @@ minetest.register_node("scifi_nodes:bfloor", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 10,
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -56,6 +58,55 @@ minetest.register_node("scifi_nodes:stripes2", {
 	groups = {cracky=1}
 })
 
+minetest.register_node("scifi_nodes:gblock", {
+	description = "Green metal block",
+	sunlight_propagates = false,
+	tiles = {
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock.png"
+	},
+	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
+	groups = {cracky=1}
+})
+
+minetest.register_node("scifi_nodes:gblock2", {
+	description = "Green metal block 2",
+	sunlight_propagates = false,
+	tiles = {
+		"scifi_nodes_gblock2_top.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock2.png",
+		"scifi_nodes_gblock2_fx.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock2_front1.png"
+	},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	sounds = default.node_sound_metal_defaults(),
+	groups = {cracky=1}
+})
+
+minetest.register_node("scifi_nodes:gblock3", {
+	description = "Green metal block 3",
+	sunlight_propagates = false,
+	tiles = {
+		"scifi_nodes_gblock2_top.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock2.png",
+		"scifi_nodes_gblock2_fx.png",
+		"scifi_nodes_gblock.png",
+		"scifi_nodes_gblock2_screen.png"
+	},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	sounds = default.node_sound_metal_defaults(),
+	groups = {cracky=1}
+})
 
 
 
@@ -72,6 +123,7 @@ minetest.register_node("scifi_nodes:green_light", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_glass_defaults(),
 	groups = {cracky=1}
 })
 
@@ -88,6 +140,7 @@ minetest.register_node("scifi_nodes:red_light", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_glass_defaults(),
 	groups = {cracky=1}
 })
 
@@ -129,6 +182,7 @@ minetest.register_node("scifi_nodes:blink", {
 	}},
 	paramtype = "light",
 	groups = {cracky=1},
+	sounds = default.node_sound_glass_defaults(),
 	light_source = 5,
 })
 
@@ -152,6 +206,7 @@ minetest.register_node("scifi_nodes:black_screen", {
 	}},
 	paramtype = "light",
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	light_source = 1,
 })
 
@@ -164,6 +219,7 @@ minetest.register_node("scifi_nodes:screen", {
 	}},
 	paramtype = "light",
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	light_source = 5,
 })
 
@@ -176,6 +232,7 @@ minetest.register_node("scifi_nodes:screen2", {
 	}},
 	paramtype = "light",
 	groups = {cracky=1},
+	sounds = default.node_sound_metal_defaults(),
 	light_source = 5,
 })
 
@@ -194,6 +251,7 @@ minetest.register_node("scifi_nodes:white_pad", {
 	},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -327,15 +385,14 @@ node.types = {
 	{"doomengine",      "Doom engine wall",       "doomengine"},
 	{"monitorwall",      "Wall monitors",       "monitorwall"},
 	{"screen3",      "Wall monitor",       "screen3"},
-	{"doomlight",      "Doom light",       "doomlight", "12"},
-	{"bluwllight",      "Blue wall light",       "capsule3", "20"},
+	{"doomlight",      "Doom light",       "doomlight", 12},
+	{"bluwllight",      "Blue wall light",       "capsule3", 20},
 	{"fan",      "Fan",       "fan"},
 }
 
 for _, row in ipairs(node.types) do
 	local name = row[1]
 	local desc = row[2]
-	local craft_color_group = row[3]
 	local light = row[4]
 	-- Node Definition
 	minetest.register_node("scifi_nodes:"..name, {
@@ -344,6 +401,49 @@ for _, row in ipairs(node.types) do
 		groups = {cracky=1},
 		paramtype = "light",
 		sounds = default.node_sound_metal_defaults(),
+		light_source = light,
+	})
+end
+
+node.plants = {
+	{"flower1", "Glow Flower", 1,0, 50},
+	{"flower2", "Pink Flower", 1.5,0, 10},
+	{"flower3", "Triffid", 2,5, 0},
+	{"flower4", "Weeping flower", 1.5,0, 0},
+	{"plant1", "Bulb Plant", 1,0, 0},
+	{"plant2", "Trap Plant", 1.5,0, 30},
+	{"plant3", "Blue Jelly Plant", 1.2,0, 10},
+	{"plant4", "Green Jelly Plant", 1.2,0, 10},
+	{"plant5", "Fern Plant", 1.7,0, 0},
+	{"plant6", "Curly Plant", 1,0, 10},
+	{"plant7", "Egg weed", 1,0, 0},
+}
+
+for _, row in ipairs(node.plants) do
+	local name = row[1]
+	local desc = row[2]
+	local size = row[3]
+	local dmg = row[4]
+	local light = row[5]
+	-- Node Definition
+	minetest.register_node("scifi_nodes:"..name, {
+		description = desc,
+		tiles = {"scifi_nodes_"..name..".png"},
+		drawtype = "plantlike",
+		inventory_image = {"scifi_nodes_"..name..".png"},
+		groups = {snappy=1, oddly_breakable_by_hand=1, dig_immediate=3, flora=1},
+		paramtype = "light",
+		visual_scale = size,
+		buildable_to = true,
+		walkable = false,
+		damage_per_second = dmg,
+		selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3, -0.5, -0.3, 0.3, 0.5, 0.3},
+		}
+		},
+		is_ground_content = false,
 		light_source = light,
 	})
 end
@@ -407,7 +507,7 @@ minetest.register_node("scifi_nodes:crate", {
 	groups = {cracky = 1, oddly_breakable_by_hand = 2, fuel = 8},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
-	sounds = default.node_sound_metal_defaults(),
+	sounds = default.node_sound_wood_defaults(),
 
 	after_dig_node = drop_chest_stuff(),
 	on_construct = function(pos)
@@ -485,6 +585,7 @@ minetest.register_node("scifi_nodes:blumetlight", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -497,6 +598,7 @@ minetest.register_node("scifi_nodes:lightstp", {
 	},
 	light_source = 20,
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -508,6 +610,7 @@ minetest.register_node("scifi_nodes:blklt2", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -519,6 +622,7 @@ minetest.register_node("scifi_nodes:blumetstr", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 
@@ -531,6 +635,7 @@ minetest.register_node("scifi_nodes:glass", {
 	},
 	use_texture_alpha = true,
 	paramtype = "light",
+	sounds = default.node_sound_glass_defaults(),
 	groups = {cracky=1}
 })
 
@@ -542,6 +647,7 @@ minetest.register_node("scifi_nodes:whtlightbnd", {
 	},
 	light_source = 10,
 	paramtype = "light",
+	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
 })
 

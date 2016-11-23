@@ -292,11 +292,11 @@ local chest_stuff = {
 	{name="rangedweapons:shell", max = 30},
 	{name="rangedweapons:9mm", max = 30},
 	{name="rangedweapons:boomstick", max = 1},
-	{name="rangedweapons:bereta", max = 1},
+	{name="rangedweapons:scout", max = 1},
 	{name="rangedweapons:steel_shuriken", max = 10},
 	{name="mobs_futuremobs:sword_hotium", max = 1},
 	{name="mobs_futuremobs:sword_zanium", max = 1},
-	{name="'mobs_futuremobs:laser", max = 23},
+	{name="mobs_futuremobs:laser", max = 23},
 }
 
 -- get some random content for a chest
