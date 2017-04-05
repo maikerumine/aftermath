@@ -84,7 +84,7 @@ end
 
 
 -- TODO: determine water level from mapgens?
-local MG_VILLAGES_WATER_LEVEL = -70;
+local MG_VILLAGES_WATER_LEVEL = -7;
 if( minetest.get_modpath( 'mg' )) then
 	MG_VILLAGES_WATER_LEVEL = 0;
 end

@@ -38,6 +38,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_fighter", {
 	water_damage = 100,
 	lava_damage = 10,
 	light_damage = 30,
+	fear_height = 3,
 	attack_type = "dogfight",
 	animation = {
 		speed_normal = 15,
@@ -62,7 +63,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_fighter", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:goodbot_fighter", {"default:wood","default:dry_dirt","group:crumbly"}, 20, 10, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:goodbot_fighter", {"default:wood","pathv7:junglewood","pathv7:stairs"}, 20, 10, 12000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:badbot_fighter", {
 	type = "monster",
@@ -93,6 +94,7 @@ mobs:register_mob("mobs_futuremobs:badbot_fighter", {
 	water_damage = 1,
 	lava_damage = 10,
 	light_damage = 100,
+	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogfight",
 	animation = {
@@ -116,7 +118,7 @@ mobs:register_mob("mobs_futuremobs:badbot_fighter", {
 	step = 1,
 	group_attack = true,
 })
-mobs:register_spawn("mobs_futuremobs:badbot_fighter", {"default:dirt_with_dry_grass","default:dry_dirt","group:crumbly"}, 9, -1, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:badbot_fighter", {"default:dirt_with_rainforest_litter"}, 9, -1, 12000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	type = "npc",
@@ -151,6 +153,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	water_damage = 100,
 	lava_damage = 10,
 	light_damage = 30,
+	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogshoot",
 	dogshoot_switch = 1,
@@ -179,7 +182,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	step = 1,
 	group_attack = true,
 })
-mobs:register_spawn("mobs_futuremobs:goodbot_gunner", {"default:dry_dirt","group:crumbly","default:steelblock"}, 20, 10, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:goodbot_gunner", {"default:dry_dirt","default:steelblock"}, 20, 10, 12000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:badbot_gunner", {
 	type = "monster",
@@ -214,6 +217,7 @@ mobs:register_mob("mobs_futuremobs:badbot_gunner", {
 	water_damage = 100,
 	lava_damage = 10,
 	light_damage = 100,
+	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogshoot",
 	dogshoot_switch = 1,
@@ -242,7 +246,7 @@ mobs:register_mob("mobs_futuremobs:badbot_gunner", {
 	step = 1,
 	group_attack = true,
 })
-mobs:register_spawn("mobs_futuremobs:badbot_gunner", {"default:dirt_with_grass","default:dry_dirt","group:crumbly"}, 9, -1, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:badbot_gunner", {"default:dirt_with_rainforest_litter"}, 9, -1, 12000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:claw_alien", {
 	type = "monster",
@@ -270,6 +274,7 @@ mobs:register_mob("mobs_futuremobs:claw_alien", {
 	water_damage = 6,
 	lava_damage = 2,
 	light_damage = 100,
+	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogfight",
 	animation = {
@@ -295,7 +300,7 @@ mobs:register_mob("mobs_futuremobs:claw_alien", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:claw_alien", {"default:dirt_with_grass","default:dry_dirt"}, 3, -1,25000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:claw_alien", {"default:silver_sand","default:clay"}, 3, -1,25000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:alien", {
 	type = "monster",
@@ -323,6 +328,7 @@ mobs:register_mob("mobs_futuremobs:alien", {
 	water_damage = 2,
 	lava_damage = 2,
 	light_damage = 100,
+	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogfight",
 	animation = {
@@ -348,7 +354,7 @@ mobs:register_mob("mobs_futuremobs:alien", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:alien", {"default:sand","default:dry_dirt"}, 5, -1, 12500, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:alien", {"default:sand","default:silver_sand","default:clay"}, 5, -1, 12500, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:destroyed_bot", {
 	type = "monster",
@@ -385,6 +391,7 @@ mobs:register_mob("mobs_futuremobs:destroyed_bot", {
 	water_damage = 100,
 	lava_damage = 10,
 	light_damage = 30,
+	fear_height = 3,
 	attack_type = "dogfight",
 	animation = {
 		speed_normal = 15,
@@ -410,7 +417,7 @@ mobs:register_mob("mobs_futuremobs:destroyed_bot", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:destroyed_bot", {"default:dry_dirt"}, 7, -1, 16000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:destroyed_bot", {"default:steel_block","default:silver_sand", "default:clay"}, 7, -1, 16000, 1, 31000)
 
 -- Arrows
 

@@ -20,7 +20,7 @@ SHOOTER_ENABLE_CRAFTING = true
 SHOOTER_ENABLE_PARTICLE_FX = true
 SHOOTER_ENABLE_PROTECTION = true
 SHOOTER_EXPLOSION_TEXTURE = "shooter_hit.png"
-SHOOTER_ALLOW_NODES = false
+SHOOTER_ALLOW_NODES = true
 SHOOTER_ALLOW_ENTITIES = true
 SHOOTER_ALLOW_PLAYERS = false
 SHOOTER_OBJECT_RELOAD_TIME = 1
@@ -141,6 +141,8 @@ SHOOTER_ENTITIES = {
 	"mobs_fallout:Zombie_Drogado_E",
 	"mobs_fallout:Zombie_Drogado_F",
 	"mobs_fallout:radbug",
+	"mobs_fallout:moonheron",
+	"mobs_fallout:mudworm",
 	
 }
 
@@ -306,10 +308,11 @@ function shooter:process_round(round)
 			shooter:punch_node(pos, round.def)
 			return 1
 		end
-	elseif SHOOTER_ALLOW_NODES == true then
+	elseif SHOOTER_ALLOW_NODES then
 		local d = round.def.step
 		local p2 = vector.add(p1, vector.multiply(v1, {x=d, y=d, z=d}))
 		local success, pos = minetest.line_of_sight(p1, p2, 1)
+
 		if pos then
 			shooter:punch_node(pos, round.def)
 			return 1
@@ -489,6 +492,11 @@ function shooter:blast(pos, radius, fleshy, distance, user)
 			{x=-0.5, y=5, z=-0.5}, {x=0.5, y=5, z=0.5},
 			0.1, 1, 8, 15, false, "tnt_smoke.png"
 		)
+		minetest.add_particlespawner(50, 0.1,
+			p1, p2, {x=-0, y=-0, z=-0}, {x=0, y=0, z=0},
+			{x=-0.5, y=5, z=-0.5}, {x=0.5, y=5, z=0.5},
+			0.1, 1, 8, 15, false, "fire_basic_flame.png"
+		)
 	end
 	local objects = minetest.get_objects_inside_radius(pos, distance)
 	for _,obj in ipairs(objects) do
@@ -526,7 +534,7 @@ function shooter:blast(pos, radius, fleshy, distance, user)
 							(radius * radius) + pr:next(-radius, radius) then
 						if SHOOTER_ENABLE_PROTECTION then
 							if not minetest.is_protected(vp, name) then
-								data[vi] = c_air
+								--data[vi] = c_air  --commented out due to buggy
 							end
 						else
 							data[vi] = c_air

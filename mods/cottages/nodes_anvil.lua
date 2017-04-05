@@ -299,6 +299,6 @@ minetest.register_craft({
 	recipe = {
                 {cottages.craftitem_steel,cottages.craftitem_steel,cottages.craftitem_steel},
                 {cottages.craftitem_steel,cottages.craftitem_steel,cottages.craftitem_steel},
-                {'',                   cottages.craftitem_stick,      ''                   } }
+                {'default:duct_tape',                   cottages.craftitem_stick,      ''                   } }
 })
 

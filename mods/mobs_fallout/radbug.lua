@@ -36,13 +36,14 @@ mobs:register_mob("mobs_fallout:radbug", {
 		{name = "mobs_fallout:meat_raw",
 		chance = 1, min = 2, max = 3},
 		{name = "default:glue",
-		chance = 1, min = 1, max = 1},
+		chance = 1, min = 1, max = 13},
 	},
 	reach = 2,
 	armor = 90,
 	water_damage = 2,
 	lava_damage = 7,
 	light_damage = 0,
+	fear_height = 13,
 	attack_type = "dogfight",
 	animation = {
 		speed_normal = 20,
@@ -58,4 +59,4 @@ mobs:register_mob("mobs_fallout:radbug", {
 	}
 })
 
-mobs:register_spawn("mobs_fallout:radbug", {"default:dry_dirt"}, 6, -1, 8000, 2, 31000)
+mobs:register_spawn("mobs_fallout:radbug", {"default:dry_dirt", "default:dirt_with_rainforest_litter", "default:clay"}, 6, -1, 8000, 2, 31000)

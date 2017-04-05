@@ -23,21 +23,35 @@ bones.bones_formspec =
 	default.get_hotbar_bg(0,4.85)
 
 --local share_bones_time = tonumber(minetest.setting_get("share_bones_time") or 1200)--ORIGINAL TIME
-local share_bones_time = tonumber(minetest.setting_get("share_bones_time") or 600)--DEBUGGING TIME
+local share_bones_time = tonumber(minetest.setting_get("share_bones_time") or 3)--DEBUGGING TIME
 local share_bones_time_early = tonumber(minetest.setting_get("share_bones_time_early") or (share_bones_time/4))
 
 minetest.register_node("bones:bones", {
 	description = "Bones",
-	tiles = {
-		"bones_top.png",
-		"bones_bottom.png",
-		"bones_side.png",
-		"bones_side.png",
-		"bones_rear.png",
-		"bones_front.png"
+	--physical = true,
+	drawtype = "mesh",
+	--visual = "mesh",
+	mesh = "bones.x",
+	visual_scale = 0.1,
+	wield_image = "bones_front.png",
+	wield_scale = {x=0.3, y=0.3, z=0.3},
+	paramtype = "light",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.1, 0.2, 0.2, 0.2, 1.8}
 	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.1, 0.2, 0.2, 0.2, 1.8}
+	},
+	
+	tiles = {
+		--"herobrines_blody_gost_by_lovehart.png"
+		"zombie_drogado_by_rexyGYM.png"
+	},
+	
 	paramtype2 = "facedir",
-	groups = {cracky = 2, oddly_breakable_by_hand = 2},
+	groups = {cracky = 2, choppy = 2, falling_node = 1},
 --	groups = {dig_immediate=1},
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_gravel_footstep", gain=0.5},

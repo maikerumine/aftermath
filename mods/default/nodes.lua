@@ -275,6 +275,62 @@ minetest.register_node("default:sandstone_block", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("default:sandstonebrick", {
+	description = "Sandstone Brick",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_sandstone_brick.png"},
+	is_ground_content = false,
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:sandstone_block", {
+	description = "Sandstone Block",
+	tiles = {"default_sandstone_block.png"},
+	is_ground_content = false,
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:desert_sandstone", {
+	description = "Desert Sandstone",
+	tiles = {"default_desert_sandstone.png"},
+	groups = {crumbly = 1, cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+
+minetest.register_node("default:silver_sandstone", {
+	description = "Silver Sandstone",
+	tiles = {"default_silver_sandstone.png"},
+	groups = {crumbly = 1, cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:silver_sandstone_brick", {
+	description = "Silver Sandstone Brick",
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	tiles = {"default_silver_sandstone_brick.png"},
+	is_ground_content = false,
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:silver_sandstone_block", {
+	description = "Silver Sandstone Block",
+	tiles = {"default_silver_sandstone_block.png"},
+	is_ground_content = false,
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+
+
+
 minetest.register_node("default:obsidian", {
 	description = "Obsidian",
 	tiles = {"default_obsidian.png"},
@@ -368,6 +424,21 @@ minetest.register_node("default:dirt_with_snow", {
 	}),
 })
 
+minetest.register_node("default:dirt_with_rainforest_litter", {
+	description = "Dirt with Rainforest Litter",
+	tiles = {
+		"default_rainforest_litter.png",
+		"default_dirt.png",
+		{name = "default_dirt.png^default_rainforest_litter_side.png",
+			tileable_vertical = false}
+	},
+	groups = {crumbly = 2, soil = 1, spreading_dirt_type = 1},
+	drop = "default:dirt",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.4},
+	}),
+})
+
 
 minetest.register_node("default:sand", {
 	description = "Sand",
@@ -379,6 +450,13 @@ minetest.register_node("default:sand", {
 minetest                                                                                                                                                                                                                                .register_node("default:desert_sand", {
 	description = "Desert Sand",
 	tiles = {"default_desert_sand.png"},
+	groups = {crumbly = 2, falling_node = 1, sand = 1},
+	sounds = default.node_sound_sand_defaults(),
+})
+
+minetest.register_node("default:silver_sand", {
+	description = "Silver Sand",
+	tiles = {"default_silver_sand.png"},
 	groups = {crumbly = 2, falling_node = 1, sand = 1},
 	sounds = default.node_sound_sand_defaults(),
 })
@@ -747,11 +825,11 @@ minetest.register_node("default:acacia_sapling", {
 
 minetest.register_node("default:aspen_tree", {
 	description = "Aspen Tree",
-	tiles = {"default_aspen_tree_top.png", "default_aspen_tree_top.png",
-		"default_aspen_tree.png"},
+	tiles = {"default_aspen_tree_top.png^[colorize:black:120", "default_aspen_tree_top.png^[colorize:black:120",
+		"default_aspen_tree.png^[colorize:black:120"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
+	groups = {tree = 1, choppy = 3, flammable = 3},
 	sounds = default.node_sound_wood_defaults(),
 
 	on_place = minetest.rotate_node
@@ -763,7 +841,7 @@ minetest.register_node("default:aspen_wood", {
 	place_param2 = 0,
 	tiles = {"default_aspen_wood.png"},
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	groups = {choppy = 3,  flammable = 3, wood = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -771,7 +849,7 @@ minetest.register_node("default:aspen_leaves", {
 	description = "Aspen Leaves",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
-	tiles = {"default_aspen_leaves.png"},
+	tiles = {"default_aspen_leaves.png^[colorize:brown:120"},
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
@@ -1116,7 +1194,7 @@ minetest.register_node("default:mese", {
 	light_source = 3,
 })
 --swap mese because of grief
---[[
+
 minetest.register_node("default:junglegrass", {
 	description = "Jungle Grass",
 	drawtype = "plantlike",
@@ -1136,7 +1214,7 @@ minetest.register_node("default:junglegrass", {
 		fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},
 	},
 })
-]]
+
 minetest.register_node("default:grass_1", {
 	description = "Grass",
 	drawtype = "plantlike",
@@ -1237,6 +1315,92 @@ for i = 2, 5 do
 		},
 	})
 end
+
+
+
+
+minetest.register_node("default:bush_stem", {
+	description = "Bush Stem",
+	drawtype = "plantlike",
+	visual_scale = 1.41,
+	tiles = {"default_bush_stem.png"},
+	inventory_image = "default_bush_stem.png",
+	wield_image = "default_bush_stem.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, 0.54, 7 / 16},
+	},
+})
+
+minetest.register_node("default:bush_leaves", {
+	description = "Bush Leaves",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	tiles = {"default_leaves_simple.png^[colorize:brown:120"},
+	paramtype = "light",
+	groups = {snappy = 3, flammable = 2, leaves = 1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+minetest.register_node("default:acacia_bush_stem", {
+	description = "Acacia Bush Stem",
+	drawtype = "plantlike",
+	visual_scale = 1.41,
+	tiles = {"default_acacia_bush_stem.png"},
+	inventory_image = "default_acacia_bush_stem.png",
+	wield_image = "default_acacia_bush_stem.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, 0.54, 7 / 16},
+	},
+})
+
+minetest.register_node("default:acacia_bush_leaves", {
+	description = "Acacia Bush Leaves",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	tiles = {"default_acacia_leaves_simple.png^[colorize:red:120"},
+	paramtype = "light",
+	groups = {snappy = 3, flammable = 2, leaves = 1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+
+--
+-- Corals
+--
+
+minetest.register_node("default:coral_brown", {
+	description = "Brown Coral",
+	tiles = {"default_coral_brown.png"},
+	groups = {cracky = 3},
+	drop = "default:coral_skeleton",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:coral_orange", {
+	description = "Orange Coral",
+	tiles = {"default_coral_orange.png"},
+	groups = {cracky = 3},
+	drop = "default:coral_skeleton",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:coral_skeleton", {
+	description = "Coral Skeleton",
+	tiles = {"default_coral_skeleton.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 
 --
 -- Liquids
@@ -1626,6 +1790,7 @@ minetest.register_node("default:toxic_water_flowing", {
 --MUD
 minetest.register_node("default:mud", {
 	description = "Mud",
+	--drawtype = "liquid",
 	tiles = {"default_mud.png"},
 	liquid_viscosity = 19,
 	liquidtype = "source",
@@ -1640,7 +1805,7 @@ minetest.register_node("default:mud", {
 	diggable = false,
 	buildable_to = true,
 	post_effect_color = { a = 255, r = 43, g = 23, b = 9 },
-	groups = { liquid=3, disable_jump=1,radioactive =2},
+	groups = { liquid=3,water = 3, disable_jump=1,radioactive =2},
 	sounds = default.node_sound_sand_defaults(),
 })
 
@@ -1983,7 +2148,7 @@ minetest.register_node("default:lava_flowing", {
 --
 -- Tools / "Advanced" crafting / Non-"natural"
 --
-
+--[[
 minetest.register_node("default:torch", {
 	description = "Torch",
 	drawtype = "torchlike",
@@ -2034,7 +2199,7 @@ minetest.register_node("default:torch", {
 	legacy_wallmounted = true,
 	sounds = default.node_sound_defaults(),
 })
-
+]]
 
 
 local chest_formspec =
@@ -2090,7 +2255,7 @@ minetest.register_node("default:chest", {
 		"scifi_nodes_box.png"
 	},
 	paramtype2 = "facedir",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2},
+	groups = {choppy = 2,cracky = 2},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_metal_defaults(),
@@ -2141,7 +2306,7 @@ minetest.register_node("default:chest_locked", {
 		"scifi_nodes_box.png^protector_logo.png" --LOCK
 	},
 	paramtype2 = "facedir",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2},
+	groups = {choppy = 2,cracky = 2},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_metal_defaults(),
@@ -2532,7 +2697,7 @@ minetest.register_node("default:obsidian_glass", {
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
 })
 
-
+--[[
 minetest.register_node("default:rail", {
 	description = "Rail",
 	drawtype = "raillike",
@@ -2552,7 +2717,7 @@ minetest.register_node("default:rail", {
 	groups = {bendy = 2, dig_immediate = 2, attached_node = 1,
 		connect_to_raillike = minetest.raillike_group("rail")},
 })
-
+]]
 
 minetest.register_node("default:brick", {
 	description = "Brick Block",
@@ -2575,6 +2740,27 @@ minetest.register_node("default:meselamp", {
 	light_source = default.LIGHT_MAX,
 })
 
+minetest.register_node("default:mese_post_light", {
+	description = "Mese Post Light",
+	tiles = {"default_mese_post_light_top.png", "default_mese_post_light_top.png",
+		"default_mese_post_light_side_dark.png", "default_mese_post_light_side_dark.png",
+		"default_mese_post_light_side.png", "default_mese_post_light_side.png"},
+	wield_image = "default_mese_post_light_side.png",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-2 / 16, -8 / 16, -2 / 16, 2 / 16, 8 / 16, 2 / 16},
+		},
+	},
+	paramtype = "light",
+	light_source = default.LIGHT_MAX,
+	sunlight_propagates = true,
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+})
+
 --
 -- Misc
 --
@@ -2593,6 +2779,51 @@ minetest.register_node("default:inv", {
 	air_equivalent = true,
 	drop = "",
 	groups = {not_in_creative_inventory=1},
+})
+
+minetest.register_node("default:wrecked_car_1", {
+	description = "Wrecked Car -scrap for metal",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		--fixed = {{-1, -0.1, -2, 1, 1.5, 3}},
+		fixed = {{-1, -0.1, -2, 1, 1.5, 3}},
+	},
+			
+	selection_box = {
+		type = "fixed",
+		fixed = {-1, -0.1, -2, 1, 1.5, 3}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-1, -0.1, -2, 1, 1.5, 3}
+	},	
+		
+	tiles = {
+		"scifi_nodes_discs.png^[transform2",
+		"scifi_nodes_mesh.png",
+		"scifi_nodes_blue_metal_stripes.png",
+		"scifi_nodes_blue_metal_stripes.png",
+		"scifi_nodes_lightbox.png",
+		"scifi_nodes_lightstripe.png"
+	},
+	--[[
+	tiles = {
+		"default_wrecked_car1_top.png^[transform2",
+		"default_wrecked_car1_bottom.png",
+		"default_wrecked_car1_side.png",
+		"default_wrecked_car1_side.png",
+		"default_wrecked_car1_rear.png",
+		"default_wrecked_car1_front.png"
+	},
+	]]
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {cracky = 1 ,not_in_creative_inventory=1},
+	sounds = default.node_sound_metal_defaults(),
+	--drop = "default:car_parts 6",
+	
+
 })
 
 

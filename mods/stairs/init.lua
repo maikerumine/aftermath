@@ -106,6 +106,20 @@ function stairs.register_stair(subname, recipeitem, groups, images, description,
 				{recipeitem, recipeitem, recipeitem},
 			},
 		})
+
+		-- Fuel
+		local baseburntime = minetest.get_craft_result({
+			method = "fuel",
+			width = 1,
+			items = {recipeitem}
+		}).time
+		if baseburntime > 0 then
+			minetest.register_craft({
+				type = "fuel",
+				recipe = 'stairs:stair_' .. subname,
+				burntime = math.floor(baseburntime * 0.75),
+			})
+		end
 	end
 end
 
@@ -207,6 +221,20 @@ function stairs.register_slab(subname, recipeitem, groups, images, description, 
 				{recipeitem, recipeitem, recipeitem},
 			},
 		})
+
+		-- Fuel
+		local baseburntime = minetest.get_craft_result({
+			method = "fuel",
+			width = 1,
+			items = {recipeitem}
+		}).time
+		if baseburntime > 0 then
+			minetest.register_craft({
+				type = "fuel",
+				recipe = 'stairs:slab_' .. subname,
+				burntime = math.floor(baseburntime * 0.5),
+			})
+		end
 	end
 end
 
@@ -413,6 +441,66 @@ stairs.register_stair_and_slab(
 	{"default_sandstone_block.png"},
 	"Sandstone Block Stair",
 	"Sandstone Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"desert_sandstone",
+	"default:desert_sandstone",
+	{crumbly = 1, cracky = 3},
+	{"default_desert_sandstone.png"},
+	"Desert Sandstone Stair",
+	"Desert Sandstone Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"desert_sandstone_brick",
+	"default:desert_sandstone_brick",
+	{cracky = 2},
+	{"default_desert_sandstone_brick.png"},
+	"Desert Sandstone Brick Stair",
+	"Desert Sandstone Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"desert_sandstone_block",
+	"default:desert_sandstone_block",
+	{cracky = 2},
+	{"default_desert_sandstone_block.png"},
+	"Desert Sandstone Block Stair",
+	"Desert Sandstone Block Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"silver_sandstone",
+	"default:silver_sandstone",
+	{crumbly = 1, cracky = 3},
+	{"default_silver_sandstone.png"},
+	"Silver Sandstone Stair",
+	"Silver Sandstone Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"silver_sandstone_brick",
+	"default:silver_sandstone_brick",
+	{cracky = 2},
+	{"default_silver_sandstone_brick.png"},
+	"Silver Sandstone Brick Stair",
+	"Silver Sandstone Brick Slab",
+	default.node_sound_stone_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"silver_sandstone_block",
+	"default:silver_sandstone_block",
+	{cracky = 2},
+	{"default_silver_sandstone_block.png"},
+	"Silver Sandstone Block Stair",
+	"Silver Sandstone Block Slab",
 	default.node_sound_stone_defaults()
 )
 

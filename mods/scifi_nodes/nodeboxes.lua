@@ -15,7 +15,7 @@ minetest.register_node("scifi_nodes:gloshroom", {
 	},
 	drawtype = "nodebox",
 	paramtype = "light",
-	light_source = 50,
+	light_source = default.LIGHT_MAX,
 	walkable = false,
 	buildable_to = true,
 	sunlight_propagates = false,
@@ -158,7 +158,7 @@ minetest.register_node("scifi_nodes:lightbar", {
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
-	light_source = 25,
+	light_source = default.LIGHT_MAX,
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -229,7 +229,7 @@ minetest.register_node("scifi_nodes:light_dynamic", {
 		fixed = {-0.5, -0.5, -0.5, -0.45, 0.5, 0.5}
 	},
 	paramtype2 = "wallmounted",
-	light_source = 25,
+	light_source = default.LIGHT_MAX,
 	groups = {cracky=1, oddly_breakable_by_hand=1},
 	sounds = default.node_sound_glass_defaults()
 })
@@ -277,7 +277,7 @@ minetest.register_node("scifi_nodes:lightbars", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	use_texture_alpha = true,
-	light_source = 25,
+	light_source = default.LIGHT_MAX,
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -298,7 +298,7 @@ tiles = {{
 		animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 1.00},
 	}},
 	use_texture_alpha = true,
-	light_source = 15,
+	light_source = default.LIGHT_MAX,
 	drawtype = "nodebox",
 	sunlight_propagates = true,
 	paramtype = "light",
@@ -318,7 +318,7 @@ tiles = {
 		"scifi_nodes_orange.png",
 	},
 	use_texture_alpha = true,
-	light_source = 20,
+	light_source = default.LIGHT_MAX,
 	drawtype = "nodebox",
 	sunlight_propagates = true,
 	paramtype = "light",
@@ -832,7 +832,7 @@ minetest.register_node("scifi_nodes:glassscreen", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	light_source = 15,
+	light_source = default.LIGHT_MAX,
 	sunlight_propagates = true,
 	node_box = {
 		type = "fixed",

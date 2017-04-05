@@ -386,7 +386,7 @@ node.types = {
 	{"monitorwall",      "Wall monitors",       "monitorwall"},
 	{"screen3",      "Wall monitor",       "screen3"},
 	{"doomlight",      "Doom light",       "doomlight", 12},
-	{"bluwllight",      "Blue wall light",       "capsule3", 20},
+	{"bluwllight",      "Blue wall light",       "capsule3", 14},
 	{"fan",      "Fan",       "fan"},
 }
 
@@ -406,12 +406,12 @@ for _, row in ipairs(node.types) do
 end
 
 node.plants = {
-	{"flower1", "Glow Flower", 1,0, 50},
+	{"flower1", "Glow Flower", 1,0, 14},
 	{"flower2", "Pink Flower", 1.5,0, 10},
 	{"flower3", "Triffid", 2,5, 0},
 	{"flower4", "Weeping flower", 1.5,0, 0},
 	{"plant1", "Bulb Plant", 1,0, 0},
-	{"plant2", "Trap Plant", 1.5,0, 30},
+	{"plant2", "Trap Plant", 1.5,0, 14},
 	{"plant3", "Blue Jelly Plant", 1.2,0, 10},
 	{"plant4", "Green Jelly Plant", 1.2,0, 10},
 	{"plant5", "Fern Plant", 1.7,0, 0},
@@ -596,7 +596,7 @@ minetest.register_node("scifi_nodes:lightstp", {
 	tiles = {
 		"scifi_nodes_lightstripe.png"
 	},
-	light_source = 20,
+	light_source = default.LIGHT_MAX,
 	paramtype = "light",
 	sounds = default.node_sound_metal_defaults(),
 	groups = {cracky=1}
@@ -659,3 +659,4 @@ end
 dofile(minetest.get_modpath("scifi_nodes").."/doors.lua")
 dofile(minetest.get_modpath("scifi_nodes").."/nodeboxes.lua")
 dofile(minetest.get_modpath("scifi_nodes").."/models.lua")
+--dofile(minetest.get_modpath("scifi_nodes").."/flowers.lua")

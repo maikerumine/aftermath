@@ -86,7 +86,7 @@ minetest.register_node("seawrecks:ubootchest", {
 		inv:set_size("main", 8*4)
 meta:from_table({
 	inventory = {
-	main = {[1] = "default:gold_ingot 99", [2] = "default:apple 99", [3] = "default:diamond 99", [32] = ""}
+	main = {[1] = "default:gold_ingot 99", [2] = "default:apple 99", [3] = "default:mese_crystal 99", [32] = ""}
 	},
 	fields = {
 	formspec = "size[8,9;]list[context;main;0,0;8,4;]list[current_player;main;0,5;8,4;]",

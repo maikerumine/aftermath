@@ -49,7 +49,7 @@ local remove_far = minetest.setting_getbool("remove_far_mobs")
 local difficulty = tonumber(minetest.setting_get("mob_difficulty")) or 1.0
 
 -- pathfinding settings
-local enable_pathfinding = false
+local enable_pathfinding = true
 local stuck_timeout = 3 -- how long before mob gets stuck in place and starts searching
 local stuck_path_timeout = 10 -- how long will mob follow path before giving up
 
@@ -250,7 +250,7 @@ end
 -- particle effects
 function effect(pos, amount, texture, max_size, radius)
 
-	radius = radius or 2
+	radius = radius or 5
 
 	minetest.add_particlespawner({
 		amount = amount,
@@ -1972,7 +1972,7 @@ local mob_punch = function(self, hitter, tflp, tool_capabilities, dir)
 					meta:set_string("owner", self.name)
 					meta:set_int("bonetime_counter", 0)
 					local timer  = minetest.get_node_timer(spaceforbones)
-					timer:start(60)
+					timer:start(1)
 					print ("("..hitter:get_player_name().. "just killed mob" )
 					end
 					

@@ -304,7 +304,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 			"3d_armor_trans.png",
 				minetest.registered_items["shooter:ammo"].inventory_image,
 			}},
-	visual_size = {x=1, y=.8},
+	visual_size = {x=1, y=1},
 	makes_footstep_sound = true,
 	view_range = 19,
 	walk_velocity = 1.6,

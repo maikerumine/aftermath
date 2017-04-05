@@ -74,7 +74,7 @@ rangedweapons_javelin_ENTITY.on_step = function(self, dtime)
 					minetest.sound_play("rangedweapons_arrow", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 6
+				local damage = 16
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -150,7 +150,7 @@ RANGEDWEAPONS_brick.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:brick" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 5
+					local damage = 15
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -269,7 +269,7 @@ RANGEDWEAPONS_WOODSR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 2
+				local damage = 12
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -357,7 +357,7 @@ RANGEDWEAPONS_STONESR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:stonesr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 4
+					local damage = 14
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -366,7 +366,7 @@ RANGEDWEAPONS_STONESR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 4
+				local damage = 14
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -454,7 +454,7 @@ RANGEDWEAPONS_STEELSR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:steelsr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 6
+					local damage = 26
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -463,7 +463,7 @@ RANGEDWEAPONS_STEELSR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 6
+				local damage = 26
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -551,7 +551,7 @@ RANGEDWEAPONS_BRONZESR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:bronzesr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 6
+					local damage = 36
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -560,7 +560,7 @@ RANGEDWEAPONS_BRONZESR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 6
+				local damage = 36
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -647,7 +647,7 @@ RANGEDWEAPONS_GOLDSR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:goldsr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 7
+					local damage = 17
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -656,7 +656,7 @@ RANGEDWEAPONS_GOLDSR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 7
+				local damage = 17
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -743,7 +743,7 @@ RANGEDWEAPONS_MESESR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:mesesr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 7
+					local damage = 37
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -752,7 +752,7 @@ RANGEDWEAPONS_MESESR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 7
+				local damage = 37
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -840,7 +840,7 @@ RANGEDWEAPONS_DIAMONDSR.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:diamondsr" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 8
+					local damage = 38
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -849,7 +849,7 @@ RANGEDWEAPONS_DIAMONDSR.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 8
+				local damage = 38
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -988,7 +988,7 @@ rangedweapons_jackhammershot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:jackhammershot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 10
+					local damage = 60
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -997,7 +997,7 @@ rangedweapons_jackhammershot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 10
+				local damage = 60
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1135,7 +1135,7 @@ rangedweapons_boomstickshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:boomstickshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 4
+					local damage = 54
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1144,7 +1144,7 @@ rangedweapons_boomstickshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 4
+				local damage = 54
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1263,7 +1263,7 @@ rangedweapons_sawedoffshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:sawedoffshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 5
+					local damage = 45
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1272,7 +1272,7 @@ rangedweapons_sawedoffshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 5
+				local damage = 45
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1380,7 +1380,7 @@ rangedweapons_spas12shot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:spas12shot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 8
+					local damage = 68
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1389,7 +1389,7 @@ rangedweapons_spas12shot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 8
+				local damage = 68
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1490,7 +1490,7 @@ rangedweapons_makarovshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:makarovshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 5
+					local damage = 75
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1499,7 +1499,7 @@ rangedweapons_makarovshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 5
+				local damage = 75
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1585,7 +1585,7 @@ rangedweapons_beretashot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:beretashot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 6
+					local damage = 46
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1594,7 +1594,7 @@ rangedweapons_beretashot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 6
+				local damage = 46
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1681,7 +1681,7 @@ rangedweapons_deagleshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:deagleshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 9
+					local damage = 69
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1690,7 +1690,7 @@ rangedweapons_deagleshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 9
+				local damage = 69
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1792,7 +1792,7 @@ rangedweapons_pythonshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:pythonshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 11
+					local damage = 71
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1801,7 +1801,7 @@ rangedweapons_pythonshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 11
+				local damage = 71
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1888,7 +1888,7 @@ rangedweapons_taurusshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:taurusshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 10
+					local damage = 40
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1897,7 +1897,7 @@ rangedweapons_taurusshot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 10
+				local damage = 40
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -1984,7 +1984,7 @@ rangedweapons_colt45shot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:colt45shot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 12
+					local damage = 42
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -1993,7 +1993,7 @@ rangedweapons_colt45shot.on_step = function(self, dtime)
 					self.object:remove()
 				end
 			else
-				local damage = 12
+				local damage = 42
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -2096,7 +2096,7 @@ rangedweapons_leenfieldshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:leenfieldshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 15
+					local damage = 85
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -2104,7 +2104,7 @@ rangedweapons_leenfieldshot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 15
+				local damage = 85
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -2189,7 +2189,7 @@ rangedweapons_mosinnagantshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:mosinnagantshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 15
+					local damage = 65
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -2197,7 +2197,7 @@ rangedweapons_mosinnagantshot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 15
+				local damage = 65
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -2284,7 +2284,7 @@ rangedweapons_scoutshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:scoutshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 18
+					local damage = 88
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -2292,7 +2292,7 @@ rangedweapons_scoutshot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 18
+				local damage = 88
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -2379,7 +2379,7 @@ rangedweapons_awpshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:awpshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 20
+					local damage = 90
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -2387,7 +2387,7 @@ rangedweapons_awpshot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 20
+				local damage = 90
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},
@@ -2492,7 +2492,7 @@ rangedweapons_electrogunshot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:electrogunshot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 4
+					local damage = 34
 					obj:punch(self.object, 0.1, {
 						full_punch_interval = 0.1,
 						damage_groups= {fleshy = damage},
@@ -2500,7 +2500,7 @@ rangedweapons_electrogunshot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 4
+				local damage = 34
 				obj:punch(self.object, 0.1, {
 					full_punch_interval = 0.1,
 					damage_groups= {fleshy = damage},
@@ -2586,7 +2586,7 @@ rangedweapons_lasershot.on_step = function(self, dtime)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
 				if obj:get_luaentity().name ~= "rangedweapons:lasershot" and obj:get_luaentity().name ~= "__builtin:item" then
-					local damage = 15
+					local damage = 75
 					obj:punch(self.object, 1.0, {
 						full_punch_interval = 1.0,
 						damage_groups= {fleshy = damage},
@@ -2594,7 +2594,7 @@ rangedweapons_lasershot.on_step = function(self, dtime)
 					minetest.sound_play("default_dig_cracky", {pos = self.lastpos, gain = 0.8})
 				end
 			else
-				local damage = 15
+				local damage = 75
 				obj:punch(self.object, 1.0, {
 					full_punch_interval = 1.0,
 					damage_groups= {fleshy = damage},

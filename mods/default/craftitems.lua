@@ -9,6 +9,16 @@ minetest.register_craftitem("default:glue", {
 	inventory_image = "default_glue.png",
 	groups = {sticky=1},
 })
+
+minetest.register_craftitem("default:car_parts", {
+	description = "Car Parts",
+	inventory_image = "scifi_nodes_door1a_rbottom.png",
+	groups = {cracky=1},
+})
+
+
+
+
 --[[
 minetest.register_craftitem("default:health_kit", {
 	description = "Healing Kit",

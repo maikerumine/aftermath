@@ -46,6 +46,7 @@ mobs:register_mob("mobs_fallout:sheep", {
 	water_damage = 1,
 	lava_damage = 50,
 	light_damage = 0,
+	fear_height = 7,
 	animation = {
 		speed_normal = 15,		speed_run = 15,
 		stand_start = 0,		stand_end = 80,

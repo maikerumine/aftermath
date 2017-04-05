@@ -15,7 +15,7 @@ mg_villages.artificial_snow_probability = 0;
 mg_villages.use_soil_snow = false;
 
 -- only place roads if there are at least that many buildings in the village
-mg_villages.MINIMAL_BUILDUNGS_FOR_ROAD_PLACEMENT = 4;
+mg_villages.MINIMAL_BUILDUNGS_FOR_ROAD_PLACEMENT = 14;
 
 
 -- players without the mg_villages priv can only see villages which are less than that many blocks away
@@ -35,14 +35,14 @@ mg_villages.FIRST_VILLAGE_TYPE = 'ruins';
 -- the mapgen will disregard mapchunks where min.y > mg_villages.MAX_HEIGHT_TREATED;
 -- you can set this value to 64 if you have a slow machine and a mapgen which does not create extreme mountains
 -- (or if you don't care if extreme mountains may create burried villages occasionally)
-mg_villages.MAX_HEIGHT_TREATED = 64;
+mg_villages.MAX_HEIGHT_TREATED = 112;
 
 -- choose the debug level you want
 mg_villages.DEBUG_LEVEL = mg_villages.DEBUG_LEVEL_NORMAL
 
 -- if set to true (or anything else but nil or false), highlandpools by paramat (see
 -- https://forum.minetest.net/viewtopic.php?t=8400) will be created
-mg_villages.CREATE_HIGHLANDPOOLS = true
+mg_villages.CREATE_HIGHLANDPOOLS = false
 
 -- background image for the /vmap command
 -- RealTest comes with a diffrent texture
@@ -161,7 +161,7 @@ mg_villages.prices = {
 -- if set to false, villages will not be integrated into the terrain - which looks very bad
 mg_villages.ENABLE_TERRAIN_BLEND = true;
 -- if set to false, holes digged by cavegen and mudflow inside the village will not be repaired; houses will be destroyed
-mg_villages.UNDO_CAVEGEN_AND_MUDFLOW = true;
+mg_villages.UNDO_CAVEGEN_AND_MUDFLOW = false;
 
 -- internal variables for village generation
 
@@ -173,7 +173,7 @@ mg_villages.VILLAGE_CHECK_COUNT = 1
 mg_villages.VILLAGE_CHANCE = 28
 -- min and max size are only used in case of them beeing not provided by the village type (see buildings.lua)
 mg_villages.VILLAGE_MIN_SIZE = 25
-mg_villages.VILLAGE_MAX_SIZE = 90 --55
+mg_villages.VILLAGE_MAX_SIZE = 60 --55
 mg_villages.FIRST_ROADSIZE = 3
 mg_villages.BIG_ROAD_CHANCE = 0
 
