@@ -1,0 +1,2 @@
+
+All more_fire sounds are taken from more_fire (https://github.com/NathanSalapat/more_fire/tree/dev) by NathanSalapat and others, and are distributed as CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/).

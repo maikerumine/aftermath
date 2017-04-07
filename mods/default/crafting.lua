@@ -795,13 +795,40 @@ minetest.register_craft({
 	}
 })
 
---Playing with a new mese recipie
+--Playing with a new mese recipie  mobs_futuremobs:alien_skin
 minetest.register_craft({
-	output = 'default:mese_crystal_fragment_stasis 1',
+	output = 'default:mese_crystal_fragment_stasis 4',
 	recipe = {
+	{'', 'mobs_futuremobs:alien_skin',''},
 		{'default:obsidian_shard', 'default:copper_ingot', 'default:glass'},
 	}
 })
+
+minetest.register_craft({
+	output = 'default:mese_crystal_fragment_stasis 4',
+	recipe = {
+			{'', 'mobs_futuremobs:alien_skin',''},
+		{'default:obsidian_shard', 'default:tin_ingot', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:mese_crystal_fragment_stasis 4',
+	recipe = {
+	{'', 'mobs_futuremobs:alien_skin',''},
+		{'default:obsidian_shard', 'default:silver_ingot', 'default:glass'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:mese_crystal 4',
+	recipe = {
+	{'', 'mobs_futuremobs:claw',''},
+		{'', 'default:mese_crystal_fragment_stasis', ''},
+	}
+})
+
+
 minetest.register_craft({
 	output = 'default:duct_tape 4',
 	recipe = {
@@ -958,6 +985,13 @@ minetest.register_craft({
 --
 -- Cooking recipes
 --
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:mese_crystal",
+	recipe = "default:mese_crystal_fragment_stasis",
+	cooktime = 90,
+})
 
 minetest.register_craft({
 	type = "cooking",

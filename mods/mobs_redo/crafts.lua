@@ -1,6 +1,6 @@
 
 local S = mobs.intllib
-
+--[[
 -- name tag
 minetest.register_craftitem("mobs:nametag", {
 	description = S("Nametag"),
@@ -83,3 +83,4 @@ minetest.register_craft({
 		{'', 'group:stick', 'default:steel_ingot'},
 	}
 })
+]]

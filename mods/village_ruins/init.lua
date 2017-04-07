@@ -14,7 +14,8 @@ village_ruins.replacements_ruins = function( housetype, pr, replacements )
 end
 
 -- add a new village type for all those buildings
-mg_villages.add_village_type( 'ruins', { min = 15, max = 30,  space_between_buildings=1, mods={}, texture = 'default_gravel.png',
+--mg_villages.add_village_type( 'ruins', { min = 15, max = 30,  space_between_buildings=1, mods={}, texture = 'default_gravel.png',
+mg_villages.add_village_type( 'ruins', { min = 5, max = 17,  space_between_buildings=2, mods={}, texture = 'default_gravel.png',
 		replacement_function = village_ruins.replacements_ruins});
 
 local path = minetest.get_modpath( 'village_ruins' )..'/schems/';

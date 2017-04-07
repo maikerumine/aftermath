@@ -7,7 +7,7 @@ minetest.register_alias("mapgen_dirt", "default:dirt")
 minetest.register_alias("mapgen_dirt_with_grass", "default:dry_dirt")
 minetest.register_alias("mapgen_sand", "default:sand")
 minetest.register_alias("mapgen_water_source", "default:mud")
-minetest.register_alias("mapgen_river_water_source", "default:river_water_source")
+minetest.register_alias("mapgen_river_water_source", "default:toxic_water_source")
 minetest.register_alias("mapgen_lava_source", "default:lava_source")
 minetest.register_alias("mapgen_gravel", "default:gravel")
 minetest.register_alias("mapgen_desert_stone", "default:desert_stone")
@@ -1249,30 +1249,85 @@ end
 
 
 --wrecked car
-local function register_grass_decoration(offset, scale, length)
+
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:dry_dirt", "default:sand", "default:dirt_with_dry_grass"},
+		place_on = {"default:dry_dirt", "default:sand", "default:desert_sand", "default:dirt_with_dry_grass","default:clay", "default:stone"},
 		sidelen = 80,
 		noise_params = {
 			offset = 0,
 			scale = 0.00001,
 			spread = {x=1, y=1, z=1},
-			seed = 9,
+			seed = 2,
 			octaves = 3,
-			persist = 0.76
+			persist = 0.16
 		},
 		biomes = {
 			"stone_grassland", "stone_grassland_ocean",
 			"sandstone_grassland", "sandstone_grassland_ocean",
 			"deciduous_forest", "deciduous_forest_ocean",
-			"coniferous_forest", "coniferous_forest_ocean",
+			"coniferous_forest", "coniferous_forest_ocean","savanna","desert",
+		},
+		y_min = 3,
+		y_max = 20,
+		decoration = "default:wrecked_car_1",
+		--flags = "place_center_x",
+		rotation = "random",
+	})
+
+
+
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:dry_dirt", "default:sand", "default:desert_sand", "default:dirt_with_dry_grass","default:clay", "default:stone"},
+		sidelen = 20,
+		noise_params = {
+			offset = 0,
+			scale = 0.0001,
+			spread = {x=1, y=1, z=1},
+			seed = 4,
+			octaves = 3,
+			persist = 0.16
+		},
+		biomes = {
+			"stone_grassland", "stone_grassland_ocean",
+			"sandstone_grassland", "sandstone_grassland_ocean",
+			"deciduous_forest", "deciduous_forest_ocean",
+			"coniferous_forest", "coniferous_forest_ocean","savanna","desert",
+		},
+		y_min = -3,
+		y_max = 80,
+		decoration = "cityscape:car_broken",
+		--flags = "place_center_x",
+		rotation = "random",
+	})
+
+
+
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:dry_dirt", "default:sand", "default:desert_sand", "default:dirt_with_dry_grass","default:clay", "default:stone"},
+		sidelen = 16,
+		noise_params = {
+			offset = 0.003,
+			scale = 0.0001,
+			spread = {x=200, y=200, z=200},
+			seed = 7,
+			octaves = 3,
+			persist = 0.16
+		},
+		biomes = {
+			"stone_grassland", "stone_grassland_ocean",
+			"sandstone_grassland", "sandstone_grassland_ocean",
+			"deciduous_forest", "deciduous_forest_ocean",
+			"coniferous_forest", "coniferous_forest_ocean","savanna","desert",
 		},
 		y_min = 3,
 		y_max = 200,
-		decoration = "default:wrecked_car_1",
+		decoration = "cityscape:small_rocks",
+		--flags = "place_center_x",
+		rotation = "random",
 	})
-end
 
 
 

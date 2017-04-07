@@ -1,0 +1,25 @@
+#    ABOUT SETTINGS
+
+# The degree of neglect and damage to inflict on the city.
+# This varies from one to ten.
+cityscape_desolation (Desolation) int 6
+
+# The chance (in ten) that a given lot will be empty,
+# rather than occupied by a building.
+cityscape_vacancies (Vacancies) int 4
+
+# The number of streets/buildings to divide each block into,
+# Setting each to three gives you nine buildings per block.
+# While you can enter a range of one to four, note that
+# ramps will not work correctly if this is set to one.
+cityscape_divisions_x (Divisions X) int 3
+
+# The number of streets/buildings to divide each block into,
+# Setting each to three gives you nine buildings per block.
+# While you can enter a range of one to four, note that
+# ramps will not work correctly if this is set to one.
+cityscape_divisions_z (Divisions Z) int 3
+
+# If a suburb block can exist, this is the chance in ten
+# that it will be created.
+cityscape_suburbs (Suburbs) int 3

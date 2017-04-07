@@ -45,14 +45,17 @@ minetest.register_craftitem("default:mithril_lump", {
 minetest.register_craftitem("default:tin_ingot", {
 	description = "Tin Ingot",
 	inventory_image = "moreores_tin_ingot.png",
+	stack_max = 500,
 })
 minetest.register_craftitem("default:silver_ingot", {
 	description = "Silver Ingot",
 	inventory_image = "moreores_silver_ingot.png",
+	stack_max = 500,
 })
 minetest.register_craftitem("default:mithril_ingot", {
 	description = "Mithril Ingot",
 	inventory_image = "moreores_mithril_ingot.png",
+	stack_max = 500,
 })
 
 
@@ -185,26 +188,31 @@ minetest.register_craftitem("default:clay_lump", {
 minetest.register_craftitem("default:steel_ingot", {
 	description = "Steel Ingot",
 	inventory_image = "default_steel_ingot.png",
+	stack_max = 500,
 })
 
 minetest.register_craftitem("default:copper_ingot", {
 	description = "Copper Ingot",
 	inventory_image = "default_copper_ingot.png",
+	stack_max = 500,
 })
 
 minetest.register_craftitem("default:bronze_ingot", {
 	description = "Bronze Ingot",
 	inventory_image = "default_bronze_ingot.png",
+	stack_max = 500,
 })
 
 minetest.register_craftitem("default:gold_ingot", {
 	description = "Gold Ingot",
-	inventory_image = "default_gold_ingot.png"
+	inventory_image = "default_gold_ingot.png",
+	stack_max = 500,
 })
 
 minetest.register_craftitem("default:mese_crystal_fragment", {
 	description = "Mese Crystal Fragment",
 	inventory_image = "default_mese_crystal_fragment.png",
+	stack_max = 500,
 })
 
 minetest.register_craftitem("default:clay_brick", {
@@ -215,4 +223,5 @@ minetest.register_craftitem("default:clay_brick", {
 minetest.register_craftitem("default:obsidian_shard", {
 	description = "Obsidian Shard",
 	inventory_image = "default_obsidian_shard.png",
+	stack_max = 500,
 })

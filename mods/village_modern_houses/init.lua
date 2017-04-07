@@ -14,7 +14,8 @@ village_modern_houses.replacements_modern_housees = function( housetype, pr, rep
 end
 
 -- add a new village type for all those buildings
-mg_villages.add_village_type( 'modern_houses', { min = 15, max = 30,  space_between_buildings=1, mods={}, texture = 'default_steelblock.png',
+--mg_villages.add_village_type( 'modern_houses', { min = 15, max = 30,  space_between_buildings=1, mods={}, texture = 'default_steelblock.png',
+mg_villages.add_village_type( 'modern_houses', { min = 5, max = 10,  space_between_buildings=1, mods={}, texture = 'default_steelblock.png',
 		-- the roads are a bit diffrent
 		roadsize_list = {6,6,6,6,6},
 		road_materials = {"default:coalblock", "default:coalblock", "default:coalblock",

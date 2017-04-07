@@ -11,7 +11,7 @@ dofile(minetest.get_modpath("mobs_futuremobs").."/futuremobs_arrow.lua")
 mobs:register_mob("mobs_futuremobs:goodbot_fighter", {
 	type = "npc",
 	pathfinding = true,
-	textures = {{"zombie_drogado_by_rexyGYM.png",	
+	textures = {{"futuremobs_goodbot_fighter.png",	
 				"3d_armor_trans.png",
 				minetest.registered_items["mobs_futuremobs:sword_lightsteel_blue"].inventory_image,
 			}},
@@ -37,7 +37,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_fighter", {
 	drawtype = "front",
 	water_damage = 100,
 	lava_damage = 10,
-	light_damage = 30,
+	light_damage = 0,
 	fear_height = 3,
 	attack_type = "dogfight",
 	animation = {
@@ -73,7 +73,7 @@ mobs:register_mob("mobs_futuremobs:badbot_fighter", {
 	collisionbox = {-0.3,-1.0,-0.3, 0.3,0.8,0.3},
 	visual = "mesh",
 	mesh = "3d_armor_character.x",
-	textures = {{"zombie_drogado_by_rexyGYM.png",	
+	textures = {{"futuremobs_badbot_fighter.png",	
 				"3d_armor_trans.png",
 				minetest.registered_items["mobs_futuremobs:sword_lightsteel_red"].inventory_image,
 			}},
@@ -118,7 +118,7 @@ mobs:register_mob("mobs_futuremobs:badbot_fighter", {
 	step = 1,
 	group_attack = true,
 })
-mobs:register_spawn("mobs_futuremobs:badbot_fighter", {"default:dirt_with_rainforest_litter"}, 9, -1, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:badbot_fighter", {"cityscape:road_broken", "default:dirt_with_rainforest_litter"}, 9, -1, 8000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	type = "npc",
@@ -128,7 +128,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	collisionbox = {-0.3,-1.0,-0.3, 0.3,0.8,0.3},
 	visual = "mesh",
 	mesh = "3d_armor_character.x",
-	textures = {{"zombie_drogado_by_rexyGYM.png",	
+	textures = {{"futuremobs_goodbot_gunner.png",	
 				"3d_armor_trans.png",
 				minetest.registered_items["mobs_futuremobs:lasergun_blue"].inventory_image,
 			}},
@@ -152,7 +152,7 @@ mobs:register_mob("mobs_futuremobs:goodbot_gunner", {
 	drawtype = "front",
 	water_damage = 100,
 	lava_damage = 10,
-	light_damage = 30,
+	light_damage = 0,
 	fear_height = 3,
 	on_rightclick = nil,
 	attack_type = "dogshoot",
@@ -192,7 +192,7 @@ mobs:register_mob("mobs_futuremobs:badbot_gunner", {
 	collisionbox = {-0.3,-1.0,-0.3, 0.3,0.8,0.3},
 	visual = "mesh",
 	mesh = "3d_armor_character.x",
-	textures = {{"zombie_drogado_by_rexyGYM.png",	
+	textures = {{"futuremobs_badbot_gunner.png",	
 				"3d_armor_trans.png",
 				minetest.registered_items["mobs_futuremobs:lasergun_red"].inventory_image,
 			}},
@@ -246,7 +246,7 @@ mobs:register_mob("mobs_futuremobs:badbot_gunner", {
 	step = 1,
 	group_attack = true,
 })
-mobs:register_spawn("mobs_futuremobs:badbot_gunner", {"default:dirt_with_rainforest_litter"}, 9, -1, 12000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:badbot_gunner", {"cityscape:road_broken", "default:dirt_with_rainforest_litter"}, 9, -1, 12000, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:claw_alien", {
 	type = "monster",
@@ -354,7 +354,7 @@ mobs:register_mob("mobs_futuremobs:alien", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:alien", {"default:sand","default:silver_sand","default:clay"}, 5, -1, 12500, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:alien", {"cityscape:road_broken","default:desert_sand", "default:sand","default:silver_sand","default:clay"}, 5, -1, 12500, 1, 31000)
 
 mobs:register_mob("mobs_futuremobs:destroyed_bot", {
 	type = "monster",
@@ -417,7 +417,7 @@ mobs:register_mob("mobs_futuremobs:destroyed_bot", {
 	group_attack = true,
 	step = 1,
 })
-mobs:register_spawn("mobs_futuremobs:destroyed_bot", {"default:steel_block","default:silver_sand", "default:clay"}, 7, -1, 16000, 1, 31000)
+mobs:register_spawn("mobs_futuremobs:destroyed_bot", {"default:steel_block","default:silver_sand", "default:desert_sand","default:clay"}, 7, -1, 16000, 1, 31000)
 
 -- Arrows
 

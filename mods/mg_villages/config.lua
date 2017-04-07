@@ -161,7 +161,7 @@ mg_villages.prices = {
 -- if set to false, villages will not be integrated into the terrain - which looks very bad
 mg_villages.ENABLE_TERRAIN_BLEND = true;
 -- if set to false, holes digged by cavegen and mudflow inside the village will not be repaired; houses will be destroyed
-mg_villages.UNDO_CAVEGEN_AND_MUDFLOW = false;
+mg_villages.UNDO_CAVEGEN_AND_MUDFLOW = true;
 
 -- internal variables for village generation
 

@@ -1,0 +1,12 @@
+
+The cityscape_broken_3.png, cityscape_broken_3_low.png and cityscape_plate_glass.png textures are based on the default minescape textures, and so fall under the LGPL2 license.
+
+The original car texture was created by Melkor, and is distributed under the CC-BY-NC-SA license (see the models directory).
+
+The original crate texture was created for the Ryzom game (ryzom.com), and is distributed under the CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) license.
+
+The original canned food texture was created by Balougador (https://commons.wikimedia.org/wiki/File:CampbellsModif.png) and is distributed under the CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) license.
+
+All more_fire textures are taken from more_fire (https://github.com/NathanSalapat/more_fire/tree/dev) by NathanSalapat and others, and are distributed as CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/).
+
+All other textures are CC0.

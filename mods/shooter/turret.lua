@@ -80,7 +80,7 @@ minetest.register_entity("shooter:turret_entity", {
 		get_turret_entity(self.pos)
 	end,
 	
-	--[[
+	
 	on_rightclick = function(self, clicker)
 		if self.player == nil then
 			clicker:set_attach(self.object, "", {x=0,y=5,z=-8}, {x=0,y=0,z=0})
@@ -100,7 +100,7 @@ minetest.register_entity("shooter:turret_entity", {
 			self.player = nil
 		end
 	end,
-	]]
+	
 	
 	on_step = function(self, dtime)
 		self.timer = self.timer + dtime

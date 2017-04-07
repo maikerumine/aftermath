@@ -21,7 +21,8 @@ village_gambit.replacements_gambit = function( housetype, pr, replacements )
 end
 
 -- add a new village type for all those buildings
-mg_villages.add_village_type( 'gambit', { min = 30, max = 60,  space_between_buildings=2, mods={}, texture = 'default_tree_top.png',
+--mg_villages.add_village_type( 'gambit', { min = 30, max = 60,  space_between_buildings=2, mods={}, texture = 'default_tree_top.png',
+mg_villages.add_village_type( 'gambit', { min = 5, max = 10,  space_between_buildings=2, mods={}, texture = 'default_tree_top.png',
 			    replacement_function = village_gambit.replacements_gambit});
 
 local path = minetest.get_modpath( 'village_gambit' )..'/schems/';

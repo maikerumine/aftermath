@@ -8,9 +8,9 @@
 --REFERENCE
 --function (mod_name_here):spawn_specific(name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height)
 
-mobs.npc_drops = { "shooter:rocket_gun_loaded", "mobs_fallout:meat 4", "shooter:rifle", "default:shovel_steel", "farming:bread", "default:wood","shooter:ammo","default:duct_tape 3", "default:health_kit" }--Added 20151121
+mobs.npc_drops = { "cityscape:canned_food", "shooter:rocket_gun_loaded", "mobs_fallout:meat 4", "shooter:rifle", "default:shovel_steel", "farming:bread", "default:wood","shooter:ammo","default:duct_tape 3", "default:health_kit" }--Added 20151121
 
-mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Bajan", {
 	type = "npc",
 	group_attack = true,
@@ -35,7 +35,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 		chance = 1,
 		min = 1,
 		max = 2,},
-		{name = "shooter:rifle",
+		{name = "cityscape:canned_food",
 		chance = 2,
 		min = 0,
 		max = 1,},
@@ -150,7 +150,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:John", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:John", {"default:dirt_with_grass","cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:John", {
 	type = "npc",
 	group_attack = true,
@@ -175,7 +175,7 @@ mobs:register_mob("mobs_fallout:John", {
 		chance = 1,
 		min = 1,
 		max = 5,},
-		{name = "default:carbon_steelsword",
+		{name = "cityscape:canned_food",
 		chance = 1,
 		min = 0,
 		max = 1,},
@@ -290,7 +290,7 @@ mobs:register_mob("mobs_fallout:John", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:Krock", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Krock", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Krock", {
 	type = "npc",
 	group_attack = true,
@@ -315,7 +315,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 		chance = 1,
 		min = 3,
 		max = 5,},
-		{name = "shooter:rifle",
+		{name = "cityscape:canned_food",
 		chance = 2,
 		min = 0,
 		max = 1,},
@@ -436,7 +436,7 @@ mobs:register_mob("mobs_fallout:Krock", {
 
 
 
-mobs:register_spawn("mobs_fallout:Just_Test_Griefer", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Just_Test_Griefer", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 	type = "npc",
 	group_attack = true,
@@ -461,7 +461,7 @@ mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 		chance = 1,
 		min = 3,
 		max = 5,},
-		{name = "shooter:rifle",
+		{name = "cityscape:canned_food",
 		chance = 2,
 		min = 0,
 		max = 1,},
@@ -577,7 +577,7 @@ mobs:register_mob("mobs_fallout:Just_Test_Griefer", {
 	step = 1,
 
 })
-mobs:register_spawn("mobs_fallout:SepiaSam", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:SepiaSam", {"default:dirt_with_grass","cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:SepiaSam", {
 	type = "npc",
 	group_attack = true,
@@ -717,7 +717,7 @@ mobs:register_mob("mobs_fallout:SepiaSam", {
 	step = 1,
 })
 
-mobs:register_spawn("mobs_fallout:Hobo", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Hobo", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Hobo", {
 	type = "npc",
 	group_attack = true,
@@ -738,7 +738,7 @@ mobs:register_mob("mobs_fallout:Hobo", {
 	run_velocity = 2.3,
 	damage = 4,
 	drops = {
-		{name = "default:apple",
+		{name = "cityscape:canned_food",
 		chance = 1,
 		min = 0,
 		max = 5,},
@@ -862,7 +862,7 @@ mobs:register_mob("mobs_fallout:Hobo", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Simon", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Simon", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, 31000)
 mobs:register_mob("mobs_fallout:Simon", {
 	type = "npc",
 	group_attack = true,
@@ -1003,7 +1003,7 @@ mobs:register_mob("mobs_fallout:Simon", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Infantry_man", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, -10)
+mobs:register_spawn("mobs_fallout:Infantry_man", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 20, 10, 11000, 1, -10)
 mobs:register_mob("mobs_fallout:Infantry_man", {
 	type = "npc",
 	group_attack = true,
@@ -1144,7 +1144,7 @@ mobs:register_mob("mobs_fallout:Infantry_man", {
 
 })
 
-mobs:register_spawn("mobs_fallout:Mage", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble"}, 15, -1,11000, 1, -50)
+mobs:register_spawn("mobs_fallout:Mage", {"default:dirt_with_grass", "cityscape:concrete_broken", "default:stonebrick","default:cobble"}, 15, -1,11000, 1, -50)
 mobs:register_mob("mobs_fallout:Mage", {
 	type = "npc",
 	group_attack = true,
@@ -1169,7 +1169,7 @@ mobs:register_mob("mobs_fallout:Mage", {
 		chance = 2,
 		min = 0,
 		max = 1,},
-		{name = "shooter:rifle",
+		{name = "default:glue",
 		chance = 1,
 		min = 0,
 		max = 1,},

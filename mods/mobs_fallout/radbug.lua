@@ -59,4 +59,4 @@ mobs:register_mob("mobs_fallout:radbug", {
 	}
 })
 
-mobs:register_spawn("mobs_fallout:radbug", {"default:dry_dirt", "default:dirt_with_rainforest_litter", "default:clay"}, 6, -1, 8000, 2, 31000)
+mobs:register_spawn("mobs_fallout:radbug", {"cityscape:floor_ceiling", "cityscape:floor_ceiling_broken", "cityscape:road_broken", "cityscape:concrete_broken","default:dry_dirt", "default:dirt_with_rainforest_litter", "default:clay"}, 6, -1, 8000, 2, 31000)

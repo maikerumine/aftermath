@@ -1,6 +1,6 @@
 -- Parameters
 
-local HSAMP = 0.25 -- Height select amplitude.
+local HSAMP = 0.025 -- Height select amplitude.
 					-- Controls maximum steepness of paths.
 local DEBUG = false -- Print generation time
 

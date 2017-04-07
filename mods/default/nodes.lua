@@ -2807,21 +2807,33 @@ minetest.register_node("default:wrecked_car_1", {
 		"scifi_nodes_lightbox.png",
 		"scifi_nodes_lightstripe.png"
 	},
-	--[[
-	tiles = {
-		"default_wrecked_car1_top.png^[transform2",
-		"default_wrecked_car1_bottom.png",
-		"default_wrecked_car1_side.png",
-		"default_wrecked_car1_side.png",
-		"default_wrecked_car1_rear.png",
-		"default_wrecked_car1_front.png"
-	},
-	]]
+
+	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {cracky = 1 ,not_in_creative_inventory=1},
 	sounds = default.node_sound_metal_defaults(),
-	--drop = "default:car_parts 6",
+		drop = {
+			max_items = 4,
+			items = {
+						{
+							items = {"default:glue 3",},
+							rarity = 1,
+						},
+						{
+							items = {"cityscape:gasoline 2",},
+							rarity = 3,
+						},
+						{
+							items = {"default:copper_ingot",},
+							rarity = 6,
+						},
+						{
+							items = {"default:car_parts 6",},
+							rarity = 6,
+						},
+					},
+				},
 	
 
 })

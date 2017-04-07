@@ -1,0 +1,5 @@
+
+The car model was created by Melkor, and distributed under the CC-BY-NC-SA license:
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+The cars_car.obj model was taken from cheapie's non-laggy cars mod (https://github.com/cheapie/cars/blob/master/README), and is also CC-BY-NC-SA.

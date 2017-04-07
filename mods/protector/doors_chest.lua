@@ -291,7 +291,7 @@ function register_door(name, def)
 end
 
 -- Protected Wooden Door
-
+--[[
 local name = "protector:door_wood"
 
 register_door(name, {
@@ -322,21 +322,21 @@ minetest.register_craft({
 		{"doors:door_wood", "default:copper_ingot"}
 	}
 })
-
+]]
 -- Protected Steel Door
 
 local name = "protector:door_steel"
 
 register_door(name, {
 	description = "Protected Steel Door",
-	inventory_image = "doors_steel.png^protector_logo.png",
+	inventory_image = "scifi_nodes_door1a_inv.png^protector_logo.png",
 	groups = {
 		snappy = 1, bendy = 2, cracky = 1,
 		level = 2, unbreakable = 1, -- door = 1
 	},
-	tiles_bottom = {"doors_steel_b.png^protector_logo.png", "doors_grey.png"},
-	tiles_top = {"doors_steel_a.png", "doors_grey.png"},
-	sounds = default.node_sound_wood_defaults(),
+	tiles_bottom = {"scifi_nodes_door1a_bottom.png^protector_logo.png", "scifi_nodes_mesh.png"},
+	tiles_top = {"scifi_nodes_door1a_top.png", "scifi_nodes_mesh.png"},
+	sounds = default.node_sound_metal_defaults(),
 	sunlight = false,
 })
 
@@ -420,10 +420,10 @@ end
 
 register_trapdoor("protector:trapdoor", {
 	description = "Protected Trapdoor",
-	inventory_image = "doors_trapdoor.png^protector_logo.png",
-	wield_image = "doors_trapdoor.png^protector_logo.png",
-	tile_front = "doors_trapdoor.png^protector_logo.png",
-	tile_side = "doors_trapdoor_side.png",
+	inventory_image = "scifi_nodes_doomengine.png^protector_logo.png",
+	wield_image = "scifi_nodes_doomengine.png^protector_logo.png",
+	tile_front = "scifi_nodes_doomengine.png^protector_logo.png",
+	tile_side = "scifi_nodes_doomengine.png",
 	groups = {
 		snappy = 1, choppy = 2, oddly_breakable_by_hand = 2,
 		unbreakable = 1, --door = 1
@@ -451,15 +451,15 @@ minetest.register_craft({
 
 register_trapdoor("protector:trapdoor_steel", {
 	description = "Protected Steel Trapdoor",
-	inventory_image = "doors_trapdoor_steel.png^protector_logo.png",
-	wield_image = "doors_trapdoor_steel.png^protector_logo.png",
-	tile_front = "doors_trapdoor_steel.png^protector_logo.png",
-	tile_side = "doors_trapdoor_steel_side.png",
+	inventory_image = "scifi_nodes_mesh.png^protector_logo.png",
+	wield_image = "scifi_nodes_mesh.png^protector_logo.png",
+	tile_front = "scifi_nodes_mesh.png^protector_logo.png",
+	tile_side = "scifi_nodes_mesh.png",
 	groups = {
 		snappy = 1, bendy = 2, cracky = 1, melty = 2, level = 2,
 		unbreakable = 1, --door = 1
 	},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default.node_sound_metal_defaults(),
 })
 
 minetest.register_craft({
@@ -482,15 +482,15 @@ minetest.register_craft({
 minetest.register_node("protector:chest", {
 	description = "Protected Chest",
 	tiles = {
-		"default_chest_top.png", "default_chest_top.png",
-		"default_chest_side.png", "default_chest_side.png",
-		"default_chest_side.png", "default_chest_front.png^protector_logo.png"
+		"scifi_nodes_blacktile.png", "scifi_nodes_mesh.png",
+		"scifi_nodes_black_light.png", "scifi_nodes_black_light.png",
+		"scifi_nodes_black_light.png", "scifi_nodes_blackdmgstripe.png^protector_logo.png"
 	},
 	paramtype2 = "facedir",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, unbreakable = 1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default.node_sound_metal_defaults(),
 
 	on_construct = function(pos)
 

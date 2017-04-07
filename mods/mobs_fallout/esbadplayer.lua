@@ -8,7 +8,7 @@
 --REFERENCE
 --function (mod_name_here):spawn_specific(name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height)
 
-mobs:register_spawn("mobs_fallout:Bajan", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -20)
+mobs:register_spawn("mobs_fallout:Bajan", {"cityscape:concrete_broken", "default:dirt_with_grass", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Bajan", {
 	type = "monster",
 	group_attack = true,
@@ -63,7 +63,7 @@ mobs:register_mob("mobs_fallout:Bajan", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Calinou", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Calinou", {"cityscape:concrete_broken", "default:dirt_with_grass", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Calinou", {
 	type = "monster",
 	group_attack = true,
@@ -84,11 +84,11 @@ mobs:register_mob("mobs_fallout:Calinou", {
 	run_velocity = 2,
 	damage = 3,
 	drops = {
-		{name = "default:duct_tape",
+		{name = "default:glue",
 		chance = 7,
 		min = 0,
 		max = 5,},
-		{name = "rangedweapons:spas12",
+		{name = "default:coalblock",
 		chance = 10,
 		min = 1,
 		max = 1,},
@@ -118,7 +118,7 @@ mobs:register_mob("mobs_fallout:Calinou", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Castaway", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Castaway", {"cityscape:concrete_broken",  "default:sand","default:desert_sand", "default:silver_sand", "default:snow"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Castaway", {
 	type = "monster",
 	group_attack = true,
@@ -144,7 +144,7 @@ mobs:register_mob("mobs_fallout:Castaway", {
 		min =1,
 		max = 10,},
 		{name = "shooter:rifle",
-		chance = 4,
+		chance = 8,
 		min = 0,
 		max = 1,},
 		{name = "default:steel_ingot",
@@ -174,7 +174,7 @@ mobs:register_mob("mobs_fallout:Castaway", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:cx384", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -100)
+mobs:register_spawn("mobs_fallout:cx384", {"cityscape:concrete_broken","default:stone", "default:obsidian","default:clay"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:cx384", {
 	type = "monster",
 	group_attack = true,
@@ -199,10 +199,10 @@ mobs:register_mob("mobs_fallout:cx384", {
 		chance = 3,
 		min = 0,
 		max = 1,},
-		{name = "rangedweapons:9mm",
+		{name = "cityscape:canned_food",
 		chance = 3,
 		min = 1,
-		max = 11,},
+		max = 5,},
 		{name = "default:glue",
 			chance = 2,
 			min = 1,
@@ -229,7 +229,7 @@ mobs:register_mob("mobs_fallout:cx384", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:FloatingWraith", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:FloatingWraith", {"cityscape:concrete_broken", "default:stone"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:FloatingWraith", {
 	type = "monster",
 	group_attack = true,
@@ -251,7 +251,7 @@ mobs:register_mob("mobs_fallout:FloatingWraith", {
 	damage = 3,
 	drops = {
 		{name = "shooter:shotgun",
-		chance = 2,
+		chance = 8,
 		min = 0,
 		max = 1,},
 		{name = "default:bronze_ingot",
@@ -259,7 +259,7 @@ mobs:register_mob("mobs_fallout:FloatingWraith", {
 		min = 0,
 		max = 5,},
 		{name = "default:health_kit",
-			chance = 1,
+			chance = 7,
 			min = 1,
 			max=2,},
 
@@ -284,7 +284,7 @@ mobs:register_mob("mobs_fallout:FloatingWraith", {
 		attack = "shooter_shotgun",
 		},
 })
-mobs:register_spawn("mobs_fallout:Ghost", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -250)
+mobs:register_spawn("mobs_fallout:Ghost", {"cityscape:concrete_broken", "default:dirt_with_grass",}, 5, -1, 6000, 1, 3250)
 mobs:register_mob("mobs_fallout:Ghost", {
 	type = "monster",
 	group_attack = true,
@@ -305,25 +305,25 @@ mobs:register_mob("mobs_fallout:Ghost", {
 	run_velocity = 1.5,
 	damage = 3,
 	drops = {
-		{name = "default:duct_tape",
+		{name = "default:glue",
 		chance = 1,
 		min = 3,
-		max = 33,},
+		max = 13,},
 		{name = "shooter:grenade",
-		chance = 2,
+		chance = 8,
 		min = 0,
-		max = 1,},
+		max = 10,},
 		{name = "default:ice",
 			chance = 2,
 			min = 13,
 			max=30,},
 
 	},
-	armor = 100,
+	armor = 80,
 	drawtype = "front",
-	water_damage = 10,
-	lava_damage = 50,
-	light_damage = 100,
+	water_damage = 100,
+	lava_damage = 0,
+	light_damage = 20,
 	on_rightclick = nil,
 	attack_type = "dogfight",
 	animation = {
@@ -339,7 +339,7 @@ mobs:register_mob("mobs_fallout:Ghost", {
 		attack = "shooter_shotgun",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -300)
+mobs:register_spawn("mobs_fallout:Zombie_Rex", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -300)
 mobs:register_mob("mobs_fallout:Zombie_Rex", {
 	type = "monster",
 	group_attack = true,
@@ -394,7 +394,7 @@ mobs:register_mob("mobs_fallout:Zombie_Rex", {
 		attack = "shooter_shotgun",
 		},
 })
-mobs:register_spawn("mobs_fallout:Lovehart", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -430)
+mobs:register_spawn("mobs_fallout:Lovehart", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -430)
 mobs:register_mob("mobs_fallout:Lovehart", {
 	type = "monster",
 	group_attack = true,
@@ -423,7 +423,7 @@ mobs:register_mob("mobs_fallout:Lovehart", {
 		chance = 3,
 		min = 0,
 		max = 1,},
-		{name = "shooter:pistol",
+		{name = "default:glue",
 			chance = 2,
 			min = 0,
 			max=1,},
@@ -449,7 +449,7 @@ mobs:register_mob("mobs_fallout:Lovehart", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Minetestian", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 100)
+mobs:register_spawn("mobs_fallout:Minetestian", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 100)
 mobs:register_mob("mobs_fallout:Minetestian", {
 	type = "monster",
 	group_attack = true,
@@ -475,13 +475,13 @@ mobs:register_mob("mobs_fallout:Minetestian", {
 		min = 3,
 		max = 5,},
 		{name = "rangedweapons:deagle",
-		chance = 6,
+		chance = 8,
 		min = 0,
 		max = 1,},
 		{name = "rangedweapons:375",
-			chance = 4,
+			chance = 8,
 			min = 3,
-			max=30,},
+			max=10,},
 
 	},
 	armor = 100,
@@ -504,7 +504,7 @@ mobs:register_mob("mobs_fallout:Minetestian", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Andromeda", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Andromeda", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Andromeda", {
 	type = "monster",
 	group_attack = true,
@@ -560,7 +560,7 @@ mobs:register_mob("mobs_fallout:Andromeda", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:Phil", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Phil", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Phil", {
 	type = "monster",
 	group_attack = true,
@@ -586,7 +586,7 @@ mobs:register_mob("mobs_fallout:Phil", {
 		min = 0,
 		max = 1,},
 		{name = "default:duct_tape",
-		chance = 1,
+		chance = 8,
 		min = 1,
 		max = 1,},
 		{name = "shooter:ammo",
@@ -616,7 +616,7 @@ mobs:register_mob("mobs_fallout:Phil", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:IvanbotXD", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:IvanbotXD", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:IvanbotXD", {
 	type = "monster",
 	group_attack = true,
@@ -641,14 +641,14 @@ mobs:register_mob("mobs_fallout:IvanbotXD", {
 		chance = 1,
 		min = 1,
 		max = 3,},
-		{name = "rangedweapons:colt45",
+		{name = "default:glue",
 		chance = 5,
 		min = 0,
 		max = 1,},
 		{name = "rangedweapons:9mm",
 			chance = 2,
 			min = 4,
-			max=28,},
+			max=8,},
 
 	},
 	armor = 90,
@@ -673,7 +673,7 @@ mobs:register_mob("mobs_fallout:IvanbotXD", {
 })
 
 
-mobs:register_spawn("mobs_fallout:Orc", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Orc", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Orc", {
 	type = "monster",
 	group_attack = true,
@@ -702,7 +702,7 @@ mobs:register_mob("mobs_fallout:Orc", {
 		chance = 1,
 		min = 0,
 		max = 1,},
-		{name = "rangedweapons:makarov",
+		{name = "default:glue",
 			chance = 4,
 			min = 0,
 			max=1,},
@@ -733,7 +733,7 @@ mobs:register_mob("mobs_fallout:Orc", {
 	step = 1,
 
 })
-mobs:register_spawn("mobs_fallout:Luke", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -150)
+mobs:register_spawn("mobs_fallout:Luke", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -150)
 mobs:register_mob("mobs_fallout:Luke", {
 	type = "monster",
 	group_attack = true,
@@ -755,7 +755,7 @@ mobs:register_mob("mobs_fallout:Luke", {
 	damage = 3,
 	drops = {
 		{name = "default:steelblock",
-		chance = 3,
+		chance = 8,
 		min = 0,
 		max = 2,},
 		{name = "rangedweapons:bereta",
@@ -788,7 +788,7 @@ mobs:register_mob("mobs_fallout:Luke", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Seth_Rollins", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -400)
+mobs:register_spawn("mobs_fallout:Seth_Rollins", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -400)
 mobs:register_mob("mobs_fallout:Seth_Rollins", {
 	type = "monster",
 	group_attack = true,
@@ -843,7 +843,7 @@ mobs:register_mob("mobs_fallout:Seth_Rollins", {
 		attack = "shooter_flare_burn",
 		},
 })
-mobs:register_spawn("mobs_fallout:Sgt_Prf", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -120)
+mobs:register_spawn("mobs_fallout:Sgt_Prf", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -120)
 mobs:register_mob("mobs_fallout:Sgt_Prf", {
 	type = "monster",
 	group_attack = true,
@@ -898,7 +898,7 @@ mobs:register_mob("mobs_fallout:Sgt_Prf", {
 		attack = "shooter_rifle",
 		},
 })
-mobs:register_spawn("mobs_fallout:Willy_Rex", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Willy_Rex", {"cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Willy_Rex", {
 	type = "monster",
 	group_attack = true,
@@ -923,7 +923,7 @@ mobs:register_mob("mobs_fallout:Willy_Rex", {
 		chance = 1,
 		min = 0,
 		max = 2,},
-		{name = "rangedweapons:leenfield",
+		{name = "default:glue",
 		chance = 5,
 		min = 0,
 		max = 1,},
@@ -957,7 +957,7 @@ mobs:register_mob("mobs_fallout:Willy_Rex", {
 		attack = "mobs_slash_attack",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_A", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_A", { "cityscape:concrete_broken", "default:dirt_with_grass", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 	type = "monster",
 	group_attack = true,
@@ -978,7 +978,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 	run_velocity = 4,
 	damage = 6,
 	drops = {
-		{name = "rangedweapons:scout",
+		{name = "default:glue",
 		chance = 1,
 		min = 0,
 		max = 1,},
@@ -1012,7 +1012,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_A", {
 		attack = "shooter_shotgun",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_B", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_B", { "cityscape:concrete_broken", "default:dirt_with_grass", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 	type = "monster",
 	group_attack = true,
@@ -1034,10 +1034,10 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 	damage = 3,
 	drops = {
 		{name = "default:obsidian",
-		chance = 2,
+		chance = 6,
 		min = 0,
 		max = 2,},
-		{name = "rangedweapons:awp",
+		{name = "default:glue",
 		chance = 1,
 		min = 0,
 		max = 1,},
@@ -1067,7 +1067,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_B", {
 		attack = "shooter_pistol",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_C", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -50)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_C", { "cityscape:concrete_broken", "default:dirt_with_grass", "default:stonebrick","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 	type = "monster",
 	group_attack = true,
@@ -1122,7 +1122,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_C", {
 		attack = "shooter_shotgun",
 		},
 })
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_D", {"default:dirt_with_grass","default:stone", "default:stonebrick","default:cobble","default:stone", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 5, -1, 6000, 1, -50)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_D", { "cityscape:concrete_broken"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 	type = "monster",
 	group_attack = true,
@@ -1143,7 +1143,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 	run_velocity = 5,
 	damage = 4,
 	drops = {
-		{name = "default:diamondblock",
+		{name = "default:diamond",
 		chance = 4,
 		min = 1,
 		max = 3,},
@@ -1178,7 +1178,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_D", {
 		},
 })
 
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_E", {"default:dirt_with_grass","default:stone","meru:stone", "default:stonebrick","default:cobble"}, 5, -1, 6000, 1, 31000)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_E", {"cityscape:concrete_broken", "default:desert_sand"}, 5, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_E", {
 	type = "monster",
 	group_attack = true,
@@ -1200,17 +1200,17 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_E", {
 	damage = 4,
 	drops = {
 		{name = "default:cactus",
-		chance = 5,
+		chance = 8,
 		min = 0,
-		max = 3,},
+		max = 1,},
 		{name = "shooter:pistol",
 		chance = 2,
 		min = 1,
 		max = 1,},
 		{name = "rangedweapons:energycharge",
 			chance = 10,
-			min = 6,
-			max=23,},
+			min = 1,
+			max=3,},
 
 	},
 	armor = 80,
@@ -1236,7 +1236,7 @@ mobs:register_mob("mobs_fallout:Zombie_Drogado_E", {
 
 
 
-mobs:register_spawn("mobs_fallout:Zombie_Drogado_F", {"default:sandstone","default:stone", "default:stonebrick","default:cobble","default:dirt"}, 9, -1, 6000, 1, -20)
+mobs:register_spawn("mobs_fallout:Zombie_Drogado_F", { "cityscape:concrete_broken", "default:dirt_with_grass","default:stone", "default:silver_sand","default:cobble", "default:dry_dirt", "default:snow","default:dirt_with_dry_grass"}, 9, -1, 6000, 1, 31000)
 mobs:register_mob("mobs_fallout:Zombie_Drogado_F", {
 	type = "monster",
 	group_attack = true,

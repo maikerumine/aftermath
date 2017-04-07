@@ -1656,8 +1656,8 @@ minetest.register_tool("rangedweapons:deagle", {
 minetest.register_craft({
 	output = 'rangedweapons:deagle',
 	recipe = {
-		{'moreores:silver_ingot', 'moreores:silver_ingot', 'moreores:silver_ingot'},
-		{'', 'default:mese_crystal_fragment', 'moreores:silver_ingot'},
+		{'default:silver_ingot', 'default:silver_ingot', 'default:silver_ingot'},
+		{'', 'default:mese_crystal_fragment', 'default:silver_ingot'},
 		{'', '', 'dye:black'},
 	}
 })
@@ -2467,7 +2467,7 @@ minetest.register_tool("rangedweapons:electrogun", {
 minetest.register_craft({
 	output = 'rangedweapons:electrogun',
 	recipe = {
-		{'default:goldblock', 'moreores:mithril_block', 'default:goldblock'},
+		{'default:goldblock', 'default:mithrilblock', 'default:goldblock'},
 		{'default:diamondblock', 'default:diamondblock', 'default:steelblock'},
 		{'default:mese', 'default:steelblock', 'default:mese'},
 	}
@@ -2562,7 +2562,7 @@ minetest.register_craft({
 	output = 'rangedweapons:laser',
 	recipe = {
 		{'default:steel_ingot', 'default:steel_ingot', 'default:goldblock'},
-		{'moreores:mithril_block', 'default:diamondblock', 'default:goldblock'},
+		{'default:mithrilblock', 'default:diamondblock', 'default:goldblock'},
 		{'default:steel_ingot', 'default:steel_ingot', 'default:gold_ingot'},
 	}
 })
@@ -2630,7 +2630,7 @@ minetest.register_craft({
 	output = 'rangedweapons:energycharge 20',
 	recipe = {
 		{'', 'default:gold_ingot', ''},
-		{'', 'moreores:mithril_ingot', ''},
+		{'', 'default:mithril_ingot', ''},
 		{'', 'default:diamond', ''},
 	}
 })

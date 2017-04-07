@@ -247,7 +247,7 @@ minetest.register_node("cottages:anvil", {
 		inv:set_stack("input", 1, input)
 
 		-- damage the hammer slightly
-		wielded:add_wear( 100 );
+		wielded:add_wear( 4500 );
 		puncher:set_wielded_item( wielded );
 
 		-- do not spam too much
