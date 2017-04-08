@@ -34,9 +34,12 @@ function thirsty.on_dieplayer(player)
     local name = player:get_player_name()
     local pl   = thirsty.players[name]
     -- reset after death
-    PPA.set_value(player, 'thirsty_hydro', 20)
+   PPA.set_value(player, 'thirsty_hydro', 20)
     pl.pending_dmg = 0.0
     pl.thirst_factor = 1.0
+    
+
+    
 end
 
 --[[

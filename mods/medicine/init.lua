@@ -4,7 +4,7 @@ minetest.register_node("medicine:medicine_block", {
 		tiles = {"medicine_block.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
-		light_source = 15,
+		light_source = 14,
 		groups = {snappy = 3, cracky = 4, oddly_breakable_by_hand = 4},
 		sounds = default.node_sound_stone_defaults(),
 })
@@ -14,7 +14,7 @@ minetest.register_node("medicine:medicine_block2", {
 		tiles = {"medicine_block2.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
-		light_source = 15,
+		light_source = 14,
 		groups = {snappy = 3, cracky = 4, oddly_breakable_by_hand = 4},
 		sounds = default.node_sound_stone_defaults(),
 })

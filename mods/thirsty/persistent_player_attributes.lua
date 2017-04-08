@@ -106,6 +106,8 @@ PPA.set_value = function(player, name, value)
     local player_name = player:get_player_name()
     if value > def.max then value = def.max end
     if value < def.min then value = def.min end
-    PPA.read_cache[player_name][name] = value
+     if value == nil then value = def.min end  --if not then end  MAYBE FIXED
+    PPA.read_cache[player_name][name] = value 
+    
     inv:set_stack(name, 1, ItemStack({ name = ":", count = _count_for_val(value, def) }))
 end

@@ -116,9 +116,9 @@ minetest.register_tool("default:pick_mithril", {
 		full_punch_interval = 0.45,
 		max_drop_level=3,
 		groupcaps={
-			cracky = {times = {[1] = 2.25, [2] = 0.55, [3] = 0.35}, uses = 200, maxlevel= 1}
+			cracky = {times = {[1] = 1.25, [2] = 0.55, [3] = 0.35}, uses = 200, maxlevel= 4}
 		},
-		damage_groups = {fleshy=9},
+		damage_groups = {fleshy=19},
 	},
 })
 --
@@ -385,11 +385,11 @@ minetest.register_tool("default:sword_mithril", {
 		max_drop_level=1,
 		groupcaps={
 			sword = {
-				fleshy = {times = {[2] = 0.65, [3] = 0.25}, uses = 200, maxlevel= 1},
-				snappy = {times = {[2] = 0.70, [3] = 0.25}, uses = 200, maxlevel= 1},
+				fleshy = {times = {[2] = 0.65, [3] = 0.25}, uses = 200, maxlevel= 3},
+				snappy = {times = {[2] = 0.70, [3] = 0.25}, uses = 200, maxlevel= 3},
 				choppy = {times = {[3] = 0.65}, uses = 200, maxlevel= 0}
 			}
 		},
-		damage_groups = {fleshy=9},
+		damage_groups = {fleshy=18},
 	},
 })
