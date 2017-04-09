@@ -1899,8 +1899,77 @@ end
 		y_max = 3000,
 		decoration = "scifi_nodes:flower4",
 	})
-	
 
+
+
+--pathogen
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:stone", "default:dry_dirt", "default:snowblock","default:dirt_with_snow", "default:clay" , "default:dirt_with_dry_grass"},
+		sidelen = 80,
+		noise_params = {
+			offset = 0,
+			scale = 0.0002,
+			spread = {x = 1, y = 1, z = 1},
+			seed = 436,
+			octaves = 3,
+			persist = 0.6
+		},
+		y_min = -100,
+		y_max = 3000,
+		decoration = "pathogen:fluid_blood",
+	})	
+
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:stone","default:dry_dirt", "default:snowblock","default:dirt_with_snow", "default:clay" , "default:dirt_with_dry_grass"},
+		sidelen = 80,
+		noise_params = {
+			offset = 0,
+			scale = 0.0002,
+			spread = {x = 1, y = 1, z = 1},
+			seed = 436,
+			octaves = 3,
+			persist = 0.6
+		},
+		y_min = -100,
+		y_max = 3000,
+		decoration = "pathogen:fluid_feces",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:stone","default:dry_dirt", "default:snowblock","default:dirt_with_snow", "default:clay" , "default:dirt_with_dry_grass"},
+		sidelen = 80,
+		noise_params = {
+			offset = 0,
+			scale = 0.0002,
+			spread = {x = 1, y = 1, z = 1},
+			seed = 436,
+			octaves = 3,
+			persist = 0.6
+		},
+		y_min = -100,
+		y_max = 3000,
+		decoration = "pathogen:fluid_vomit",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:stone","default:dry_dirt", "default:snowblock","default:dirt_with_snow", "default:clay" , "default:dirt_with_dry_grass"},
+		sidelen = 80,
+		noise_params = {
+			offset = 0,
+			scale = 0.0002,
+			spread = {x = 1, y = 1, z = 1},
+			seed = 436,
+			octaves = 3,
+			persist = 0.6
+		},
+		y_min = -21,
+		y_max = 3000,
+		decoration = "bones:bones",
+	})
 end
 
 

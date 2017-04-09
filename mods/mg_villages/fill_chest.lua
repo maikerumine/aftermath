@@ -287,7 +287,7 @@ local chest_stuff = {
 	{name="flowers:mushroom_brown", max = 3},
 	{name="flowers:waterlily", max = 3},
 	{name="rangedweapons:375", max = 30},
-	--{name="rangedweapons:bereta", max = 1},
+	{name="cityscape:canned_food", max = 4},
 	{name="rangedweapons:10mm", max = 30},
 	{name="rangedweapons:shell", max = 30},
 	{name="rangedweapons:9mm", max = 30},
@@ -296,7 +296,7 @@ local chest_stuff = {
 	{name="rangedweapons:steel_shuriken", max = 10},
 	{name="mobs_futuremobs:sword_hotium", max = 1},
 	{name="mobs_futuremobs:sword_zanium", max = 1},
-	--{name="mobs_futuremobs:laser", max = 23},
+	{name="cityscape:gasoline", max = 1},
 }
 
 -- get some random content for a chest

@@ -575,6 +575,12 @@ function cityscape.generate(p_minp, p_maxp, seed)
 
 					if cityscape.desolation > 0 then
 						data[ivm] = node("cityscape:car_broken")
+						--data[ivm] = node("pathogen:fluid_blood")
+						--data[ivm] = node("pathogen:fluid_feces")
+						--data[ivm] = node("pathogen:fluid_vomit")
+						--data[ivm] = node("bones:bones")
+
+						
 					else
 						data[ivm] = node("cityscape:car")
 					end

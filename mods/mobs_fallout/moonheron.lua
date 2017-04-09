@@ -18,7 +18,7 @@ mobs:register_mob("mobs_fallout:moonheron", {
 	fall_speed = 0,
 	stepheight = 3,
 	sounds = {
-		random = "moonheron",
+		random = "uloboros",
 		distance =40,
 	},
 	damage = 3,

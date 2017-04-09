@@ -172,7 +172,7 @@ minetest.register_craft({
 	output = "handholds:climbing_pick",
 	recipe = {
 		{'default:diamond', 'default:diamond', 'default:diamond'},
-		{'group:stick', '', ''},
+		{'group:stick', 'default:duct_tape', ''},
 		{'group:stick', '', ''},
 	},
 })

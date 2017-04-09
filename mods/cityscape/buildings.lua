@@ -27,6 +27,51 @@ local function crates(data, pos1, pos2)
 	end
 end
 
+--maikerumine add pathogen
+local function blood(data, pos1, pos2)
+	local y = math.min(pos2.y, pos1.y)
+	for z = pos1.z,pos2.z do
+		for x = pos1.x,pos2.x do
+			if (data[x][y][z] == node("air") or data[x][y][z] == nil) and math.random(100) == 1 then
+				data[x][y][z] = node("pathogen:fluid_blood")
+			end
+		end
+	end
+end
+
+local function feces(data, pos1, pos2)
+	local y = math.min(pos2.y, pos1.y)
+	for z = pos1.z,pos2.z do
+		for x = pos1.x,pos2.x do
+			if (data[x][y][z] == node("air") or data[x][y][z] == nil) and math.random(100) == 1 then
+				data[x][y][z] = node("pathogen:fluid_feces")
+			end
+		end
+	end
+end
+
+local function vomit(data, pos1, pos2)
+	local y = math.min(pos2.y, pos1.y)
+	for z = pos1.z,pos2.z do
+		for x = pos1.x,pos2.x do
+			if (data[x][y][z] == node("air") or data[x][y][z] == nil) and math.random(100) == 1 then
+				data[x][y][z] = node("pathogen:fluid_vomit")
+			end
+		end
+	end
+end
+
+local function corpse(data, pos1, pos2)
+	local y = math.min(pos2.y, pos1.y)
+	for z = pos1.z,pos2.z do
+		for x = pos1.x,pos2.x do
+			if (data[x][y][z] == node("air") or data[x][y][z] == nil) and math.random(200) == 1 then
+				data[x][y][z] = node("bones:bones")
+			end
+		end
+	end
+end
+--end pathogen
 
 local function lights(data, param, pos1, pos2)
 	local y = math.max(pos2.y, pos1.y)
@@ -205,6 +250,11 @@ local function gotham(data, param, dx, dy, dz)
 		stairwell(data, param, {x=2,y=((f-1)*4),z=2}, {x=dx-1,y=(f*4-1),z=dz-1}, (f / 2 == math.floor(f / 2)))
 		lights(data, param, {x=3,y=((f-1)*4),z=3}, {x=dx-2,y=(f*4-1),z=dz-2})
 		crates(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		--maikerumine add pathogen
+		blood(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		feces(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		vomit(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		corpse(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
 	end
 
 	if ra == 0 then
@@ -265,6 +315,11 @@ local function glass_and_steel(data, param, dx, dy, dz)
 		stairwell(data, param, {x=1,y=((f-1)*4),z=1}, {x=dx,y=(f*4-1),z=dz}, (f / 2 == math.floor(f / 2)))
 		lights(data, param, {x=1,y=((f-1)*4),z=1}, {x=dx,y=(f*4-1),z=dz})
 		crates(data, {x=1,y=((f-1)*4+1),z=1}, {x=dx,y=((f-1)*4+1),z=dz})
+				--maikerumine add pathogen
+		blood(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		feces(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		vomit(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		corpse(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
 	end
 
 	if ra == 0 then
@@ -339,6 +394,11 @@ local function simple(data, param, dx, dy, dz, slit)
 		stairwell(data, param, {x=1,y=((f-1)*4),z=1}, {x=dx,y=(f*4-1),z=dz}, (f / 2 == math.floor(f / 2)))
 		lights(data, param, {x=1,y=((f-1)*4),z=1}, {x=dx,y=(f*4-1),z=dz})
 		crates(data, {x=1,y=((f-1)*4+1),z=1}, {x=dx,y=((f-1)*4+1),z=dz})
+				--maikerumine add pathogen
+		blood(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		feces(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		vomit(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
+		corpse(data, {x=3,y=((f-1)*4+1),z=3}, {x=dx-2,y=((f-1)*4+1),z=dz-2})
 	end
 
 	if ra == 0 then
