@@ -2781,6 +2781,32 @@ minetest.register_node("default:inv", {
 	groups = {not_in_creative_inventory=1},
 })
 
+
+minetest.register_node("default:soda", {
+	description = "Atom Soda",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_soda.png"},
+	inventory_image = "default_soda.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+	},
+	groups = {fleshy = 3, dig_immediate = 3},
+	on_use = minetest.item_eat(12),
+	sounds = default.node_sound_glass_defaults(),
+
+	after_place_node = function(pos, placer, itemstack)
+		if placer:is_player() then
+			minetest.set_node(pos, {name = "default:soda", param2 = 1})
+		end
+	end,
+})
+
 minetest.register_node("default:wrecked_car_1", {
 	description = "Wrecked Car -scrap for metal",
 	drawtype = "nodebox",

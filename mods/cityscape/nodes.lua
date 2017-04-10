@@ -403,7 +403,7 @@ local goodies = {
 	{ items = {"default:copper_ingot 3",}, rarity = 10, },
 	{ items = {"default:book 10",}, rarity = 10, },
 	{ items = {"default:paper 30",}, rarity = 10, },
-	{ items = {"default:meselamp",}, rarity = 10, },
+	{ items = {"default:soda",}, rarity = 10, },
 }
 
 if minetest.get_modpath("vessels") then
