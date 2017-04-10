@@ -520,13 +520,15 @@ minetest.register_node("default:snowblock", {
 	}),
 })
 
+
 minetest.register_node("default:ice", {
 	description = "Ice",
 	tiles = {"default_ice.png"},
 	is_ground_content = false,
 	paramtype = "light",
-	groups = {cracky = 1, puts_out_fire = 1},
+	groups = {cracky = 1, puts_out_fire = 1,radioactive =0.5},
 	sounds = default.node_sound_glass_defaults(),
+	
 })
 
 --
@@ -949,7 +951,7 @@ minetest.register_node("default:desert_stone_with_iron", {
 
 minetest.register_node("default:steelblock", {
 	description = "Steel Block",
-	tiles = {"default_steel_block.png"},
+	tiles = {"default_steel_block.png^cityscape_wood_rot.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_metal_defaults(),
@@ -965,7 +967,7 @@ minetest.register_node("default:stone_with_copper", {
 
 minetest.register_node("default:copperblock", {
 	description = "Copper Block",
-	tiles = {"default_copper_block.png"},
+	tiles = {"default_copper_block.png^cityscape_wood_rot.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_metal_defaults(),
@@ -973,7 +975,7 @@ minetest.register_node("default:copperblock", {
 
 minetest.register_node("default:bronzeblock", {
 	description = "Bronze Block",
-	tiles = {"default_bronze_block.png"},
+	tiles = {"default_bronze_block.png^cityscape_wood_rot.png"},
 	is_ground_content = false,
 	groups = {cracky = 1, level = 2},
 	sounds = default.node_sound_metal_defaults(),
@@ -997,7 +999,7 @@ minetest.register_node("default:desert_stone_with_gold", {
 
 minetest.register_node("default:goldblock", {
 	description = "Gold Block",
-	tiles = {"default_gold_block.png"},
+	tiles = {"default_gold_block.png^cityscape_wood_rot.png"},
 	is_ground_content = false,
 	groups = {cracky = 1},
 	sounds = default.node_sound_stone_defaults(),
@@ -2731,7 +2733,8 @@ minetest.register_node("default:brick", {
 minetest.register_node("default:meselamp", {
 	description = "Mese Lamp",
 	drawtype = "glasslike",
-	tiles = {"default_meselamp.png"},
+	--tiles = {"default_meselamp.png"},
+	tiles = {"scifi_nodes_bluwllight.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = false,

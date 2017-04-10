@@ -1,12 +1,14 @@
 
 namegen = {};
 
-namegen.prefixes = {'ac','ast','lang','pen','shep','ship'}
-namegen.suffixes = {'beck','ey','ay','bury','burgh','brough','by','by','caster',
-	'cester','cum','den','don','field','firth','ford','ham','ham','ham',
-	'hope','ing','kirk','hill','law','leigh','mouth','ness','pool','shaw',
-	'stead','ster','tun','ton','ton','ton','ton','wold','worth','worthy',
-	'ville','river','forrest','lake'}
+namegen.prefixes = {'atom','nuke','dead','corpse','toxic'}
+namegen.suffixes = {
+	--'beck','ey','ay','bury','burgh','brough','by','by','caster',
+	--'cester','cum','den','don','field','firth','ford','ham','ham','ham',
+	--'hope','ing','kirk','hill','law','leigh','mouth','ness','pool','shaw',
+	--'stead','ster','tun','ton','ton','ton','ton','wold','worth','worthy',
+	'ville','river','forrest','lake'
+	}
 
 -- people/environmental features
 
@@ -14,33 +16,37 @@ namegen.suffixes = {'beck','ey','ay','bury','burgh','brough','by','by','caster',
 
 
 
-namegen.silben = { 'a', 'an', 'ab', 'ac', 'am', 
-	'be', 'ba', 'bi', 'bl', 'bm', 'bn', 'bo', 'br', 'bst', 'bu', 
-	'ca', 'ce', 'ch', 'ci', 'ck', 'cl', 'cm', 'cn', 'co', 'cv', 
-	'da', 'de', 'df', 'di', 'dl', 'dm', 'dn', 'do', 'dr', 'ds', 'dt', 'du', 'dv',
-	'do','ren','nav','ben','ada','min','org','san','pa','re','ne','en','er','ich',
-	'the','and','tha','ent','ing','ion','tio','for','nde',
-	'has','nce','edt','tis','oft','sth','mem',
-	'ich','ein','und','der','nde','sch','die','den','end','cht',
-	'the','and','tha','ent','ing','ion','for','de',
-	'has','ce','ed','is','ft','sth','mem',
-	'ch','ei','un','der','ie','den','end',
-	'do','ren','nav','ben','ada','min','org','san','pa','re','ne','en','er','ich',
-	'ta','bek','nik','le','lan','nem',
-	'bal','cir','da','en','fan','fir','fern','fa','oak','nut','gen','ga','hu','hi','hal',
-	'in','ig','ir','im','ja','je','jo','kla','kon','ker','log','lag','leg','lil',
-	'lon','las','leve','lere','mes','mir','mon','mm','mer','mig',	
-	'na','nn','nerv','neu','oto','on','opt','oll','ome','ott',
-	'pen','par','pi','pa','po','pel','pig','qu','ren','rig','raf','res','ring',
-	'rib','rast','rost','ru','rum','rem','sem','sim','su','spring',
-	'cotton','cot','wood','palm',
-	'do','na','ik','ke','gen','bra','bn','lla','lle','st','aa','kir',
-	'nn','en','fo','fn','gi','ja','jn','ke','kr','kon','lis','on','ok','or','op',
-	'pp','p','qu','re','ra','rn','ri','so','sn','se','ti','tu',
-	'a','e','i','o','u',
-	're','ro','pe','pn','ci','co','cl',
-	'no','en','wi','we','er','en','ba','ki','nn','va','wu','x','tel','or',
-	'so','me','mi','em','en','eg','ge','kn'};
+namegen.silben = { 
+	'1','2','3','4','5','6','7','8','9','0',
+	--'a', 'an', 'ab', 'ac', 'am', 
+	--'be', 'ba', 'bi', 'bl', 'bm', 'bn', 'bo', 'br', 'bst', 'bu', 
+	--'ca', 'ce', 'ch', 'ci', 'ck', 'cl', 'cm', 'cn', 'co', 'cv', 
+	--'da', 'de', 'df', 'di', 'dl', 'dm', 'dn', 'do', 'dr', 'ds', 'dt', 'du', 'dv',
+	--'do','ren','nav','ben','ada','min','org','san','pa','re','ne','en','er','ich',
+	--'the','and','tha','ent','ing','ion','tio','for','nde',
+	--'has','nce','edt','tis','oft','sth','mem',
+	--'ich','ein','und','der','nde','sch','die','den','end','cht',
+	--'the','and','tha','ent','ing','ion','for','de',
+	--'has','ce','ed','is','ft','sth','mem',
+	--'ch','ei','un','der','ie','den','end',
+	--'do','ren','nav','ben','ada','min','org','san','pa','re','ne','en','er','ich',
+	--'ta','bek','nik','le','lan','nem',
+	--'bal','cir','da','en','fan','fir','fern','fa','oak','nut','gen','ga','hu','hi','hal',
+	--'in','ig','ir','im','ja','je','jo','kla','kon','ker','log','lag','leg','lil',
+	--'lon','las','leve','lere','mes','mir','mon','mm','mer','mig',	
+	--'na','nn','nerv','neu','oto','on','opt','oll','ome','ott',
+	--'pen','par','pi','pa','po','pel','pig','qu','ren','rig','raf','res','ring',
+	--'rib','rast','rost','ru','rum','rem','sem','sim','su','spring',
+	--'cotton','cot','wood','palm',
+	--'do','na','ik','ke','gen','bra','bn','lla','lle','st','aa','kir',
+	--'nn','en','fo','fn','gi','ja','jn','ke','kr','kon','lis','on','ok','or','op',
+	--'pp','p','qu','re','ra','rn','ri','so','sn','se','ti','tu',
+	--'a'
+	--,'e','i','o','u',
+	--'re','ro','pe','pn','ci','co','cl',
+	--'no','en','wi','we','er','en','ba','ki','nn','va','wu','x','tel','or',
+	--'so','me','mi','em','en','eg','ge','kn'
+	};
 
 
 namegen.generate_village_name = function( pr )

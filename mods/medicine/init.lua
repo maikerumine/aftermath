@@ -114,18 +114,18 @@ minetest.register_node("medicine:sign", {
 minetest.register_craft({
     output = 'medicine:medicine_block',
     recipe = {
-      {'default:steel_ingot','default:steel_ingot','default:steel_ingot'},
+      {'default:silver_ingot','default:steel_ingot','default:silver_ingot'},
       {'default:steel_ingot','dye:red','default:steel_ingot'},
-      {'default:steel_ingot','dye:red','default:steel_ingot'},
+      {'default:silver_ingot','dye:red','default:silver_ingot'},
     }
 })
   
 minetest.register_craft({
     output = 'medicine:medicine_block2',
     recipe = {
-      {'default:steel_ingot','default:steel_ingot','default:steel_ingot'},
+      {'default:silver_ingot','default:steel_ingot','default:silver_ingot'},
       {'default:steel_ingot','dye:blue','default:steel_ingot'},
-      {'default:steel_ingot','dye:blue','default:steel_ingot'},
+      {'default:silver_ingot','dye:blue','default:silver_ingot'},
     }
 })
   

@@ -298,6 +298,10 @@ local chest_stuff = {
 	{name="mobs_futuremobs:sword_zanium", max = 1},
 	{name="cityscape:gasoline", max = 1},
 	{name="default:soda", max = 1},
+	{name="medicine:filling_syringe", max = 1},
+	{name="medicine:tablet", max = 1},
+	{name="medicine:alcohol", max = 1},
+	{name="medicine:filling_syringe", max = 1},
 }
 
 -- get some random content for a chest

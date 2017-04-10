@@ -35,7 +35,7 @@ mg_villages.FIRST_VILLAGE_TYPE = 'ruins';
 -- the mapgen will disregard mapchunks where min.y > mg_villages.MAX_HEIGHT_TREATED;
 -- you can set this value to 64 if you have a slow machine and a mapgen which does not create extreme mountains
 -- (or if you don't care if extreme mountains may create burried villages occasionally)
-mg_villages.MAX_HEIGHT_TREATED = 112;
+mg_villages.MAX_HEIGHT_TREATED = 220;  --higher number the more bore hole through mountain above.
 
 -- choose the debug level you want
 mg_villages.DEBUG_LEVEL = mg_villages.DEBUG_LEVEL_NORMAL

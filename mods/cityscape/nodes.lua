@@ -339,7 +339,7 @@ minetest.register_node("cityscape:car", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drop = {
-		max_items = 3,
+		max_items = 4,
 		items = {
 		{
 			items = {"default:car_parts 3",},
@@ -352,6 +352,18 @@ minetest.register_node("cityscape:car", {
 		{
 			items = {"default:copper_ingot",},
 			rarity = 6,
+		},		
+		{
+			items = {"vehicles:wheel",},
+			rarity = 6,
+		},
+		{
+			items = {"vehicles:engine",},
+			rarity = 8,
+		},
+		{
+			items = {"vehicles:body",},
+			rarity = 3,
 		},
 	},
 },

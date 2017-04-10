@@ -74,7 +74,11 @@ minetest.register_node("mg_villages:torch", {
 minetest.register_node("mg_villages:plotmarker", {
 	description = "Plot marker",
 	drawtype = "nodebox",
-	tiles = {"default_stone_brick.png"},
+	--tiles = {"default_stone_brick.png"},
+		tiles = {{
+		name="scifi_nodes_black_lights.png",
+		animation={type="vertical_frames", aspect_w=16, aspect_h=16, length=0.50},
+	}},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {

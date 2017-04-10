@@ -36,6 +36,8 @@ minetest.register_node("bones:bones", {
 	wield_image = "bones_front.png",
 	wield_scale = {x=0.3, y=0.3, z=0.3},
 	paramtype = "light",
+	
+	--[[
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.2, -0.1, 0.2, 0.2, 0.2, 1.8}
@@ -44,6 +46,26 @@ minetest.register_node("bones:bones", {
 		type = "fixed",
 		fixed = {-0.2, -0.1, 0.2, 0.2, 0.2, 1.8}
 	},
+	]]	
+	
+
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.25, -0.5, 0.5, 0, 0.5}
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.25, -0.5, 0.5, 0, 0.5}
+	},
+
+	--[[
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.25, -0.5, 0.5, 0, 0.5},
+		},
+]]
+	
+	
 	
 	tiles = {
 		--"herobrines_blody_gost_by_lovehart.png"

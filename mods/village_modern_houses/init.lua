@@ -15,11 +15,11 @@ end
 
 -- add a new village type for all those buildings
 --mg_villages.add_village_type( 'modern_houses', { min = 15, max = 30,  space_between_buildings=1, mods={}, texture = 'default_steelblock.png',
-mg_villages.add_village_type( 'modern_houses', { min = 5, max = 10,  space_between_buildings=1, mods={}, texture = 'default_steelblock.png',
+mg_villages.add_village_type( 'modern_houses', { min = 5, max = 20,  space_between_buildings=1, mods={}, texture = 'default_steel_block.png',
 		-- the roads are a bit diffrent
 		roadsize_list = {6,6,6,6,6},
-		road_materials = {"default:coalblock", "default:coalblock", "default:coalblock",
-				"default:coalblock", "default:coalblock", "default:coalblock", "default:coalblock"},
+		road_materials = {"default:dry_dirt", "default:dry_dirt", "default:dry_dirt",
+				"default:dry_dirt", "default:dry_dirt", "default:dry_dirt", "default:dry_dirt"},
 		replacement_function = village_modern_houses.replacements_modern_houses});
 
 local path = minetest.get_modpath( 'village_modern_houses' )..'/schems/';

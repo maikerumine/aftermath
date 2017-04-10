@@ -351,6 +351,30 @@ minetest.register_craft({
 })
 --==========================================
 
+--vehicles
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 110,
+	output = "default:steel_ingot 22",
+	recipe = "vehicles:body",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 160,
+	output = "default:steelblock 1",
+	recipe = "vehicles:engine",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 20,
+	output = "default:steel_ingot 1",
+	recipe = "vehicles:wheel",
+})
+
+
+--===========================================
 --buckets, doors, etc
 
 minetest.register_craft({

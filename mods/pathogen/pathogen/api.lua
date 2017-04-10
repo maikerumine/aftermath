@@ -46,15 +46,24 @@ pathogen.register_fluid = function( name )
   pathogen.fluids[ name ] = node_name
   minetest.register_node( node_name, {
     description= name,
-    drawtype = "signlike",
+	drawtype = "nodebox",
+		node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5+2/16, -0.5, -0.5+2/16,  0.5-2/16, -0.5+1/16, 0.5-2/16},
+		},
+	},
+    --drawtype = "signlike",
     inventory_image = texture,
     tiles = { texture },
     paramtype = "light",
     paramtype2 = "wallmounted",
-    walkable = false,
+	paramtype2 = "facedir",
+    --walkable = false,
     sunlight_propagates = true,
     drop = "",
-    groups = { oddly_breakable_by_hand = 2, crumbly = 2 },
+    groups = { oddly_breakable_by_hand = 3, snappy = 3, crumbly = 3 },
+	sounds = default.node_sound_leaves_defaults(),
     on_punch = function(pos, node, puncher, pointed_thing)
       local meta = minetest.get_meta( pos )
       local pathogen_name = meta:get_string( "pathogen" )

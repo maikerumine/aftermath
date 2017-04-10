@@ -335,7 +335,9 @@ mg_villages.get_replacement_list = function( housetype, pr )
   -- else some grass would never (re)grow (if it's below a roof)
 --   table.insert( replacements, {'default:dirt',            dirt_with_grass_replacement });
 --   table.insert( replacements, {'default:dirt_with_grass', dirt_with_grass_replacement });
-   table.insert( replacements, {'default:dirt',            'default:dirt_with_grass' });
+   --table.insert( replacements, {'default:dirt',            'default:dirt_with_grass' });
+   table.insert( replacements, {'default:dirt',            'default:dry_dirt' });
+   table.insert( replacements, {'default:dirt_with_grass',            'default:dirt_with_dry_grass' });
 
    -- realtest lacks quite a lot from default
    if( mg_villages.realtest_trees ) then
@@ -378,10 +380,11 @@ mg_villages.replacements_taoki = function( housetype, pr, replacements )
          wood_type = mg_villages.replace_materials( replacements, pr,
 		{'default:wood'},
 		{''},
-		{'default:wood', 'default:junglewood', 'default:pine_wood', 'default:acacia_wood', 'mg:pinewood', 'mg:savannawood',
+		{'default:wood', 'default:junglewood', 'default:pine_wood', 'default:acacia_wood', 'default:aspen_wood', 'mg:savannawood',
 		'default:clay', 'default:brick', 'default:sandstone', 
 		'default:stonebrick', 'default:desert_stonebrick','default:sandstonebrick', 'default:sandstone','default:stone','default:desert_stone',
-		'default:coalblock','default:steelblock','default:goldblock', 'default:bronzeblock', 'default:copperblock', 'wool:white',
+		--'default:coalblock','default:steelblock','default:goldblock', 'default:bronzeblock', 'default:copperblock', 'wool:white',
+		'scifi_nodes:rfloor','scifi_nodes:bfloor','scifi_nodes:gblock3', 'scifi_nodes:bfloor', 'scifi_nodes:metal', 'scifi_nodes:mesh',
 		'default:stone_flat', 'default:desert_stone_flat', -- realtest
 		'darkage:adobe', 'darkage:basalt', 'darkage:basalt_cobble', 'darkage:chalk',
 		'darkage:gneiss', 'darkage:gneiss_cobble', 'darkage:marble', 'darkage:marble_tile',
@@ -570,7 +573,8 @@ end
 
 
 mg_villages.replacements_tent = function( housetype, pr, replacements )
-      table.insert( replacements, { "glasspanes:wool_pane",  "cottages:wool_tent" });
+      --table.insert( replacements, { "glasspanes:wool_pane",  "cottages:wool_tent" });
+      table.insert( replacements, { "default:glass",  "default:wood" });
       table.insert( replacements, { "default:gravel",        "default:sand"       });
       -- realtest needs diffrent fence posts and doors
       if( mg_villages.realtest_trees ) then

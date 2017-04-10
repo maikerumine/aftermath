@@ -642,7 +642,7 @@ mg_villages.village_area_get_height = function( village_area, villages, minp, ma
 		if( village.optimal_height ) then
 		-- villages above a size of 40 are *always* place at a convenient height of 1
 		elseif( village.vs >= 40 and not(village.is_single_house)) then
-			village.optimal_height = 2;
+			village.optimal_height = 2;  --was2
 		elseif( village.vs >= 30 and not(village.is_single_house)) then
 			village.optimal_height = 41 - village.vs;
 		elseif( village.vs >= 25 and not(village.is_single_house)) then

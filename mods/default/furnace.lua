@@ -310,5 +310,6 @@ minetest.register_node("default:furnace_active", {
 	allow_metadata_inventory_put = allow_metadata_inventory_put,
 	allow_metadata_inventory_move = allow_metadata_inventory_move,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
+	drop = "default:cobble 6",
 })
 

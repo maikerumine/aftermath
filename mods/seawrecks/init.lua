@@ -3,7 +3,7 @@
 
 minetest.register_node("seawrecks:woodship", {
 	description = "Sand for the wooden ship",
-	tiles = {"default_sand.png"},
+	tiles = {"default_mud.png"},
 	is_ground_content = true,
 	groups = {crumbly=3, falling_node=1, sand=1, soil=1, not_in_creative_inventory=1},
 	sounds = default.node_sound_sand_defaults(),
@@ -11,7 +11,7 @@ minetest.register_node("seawrecks:woodship", {
 
 minetest.register_node("seawrecks:uboot", {
 	description = "Dirt for the U-boot",
-	tiles = {"default_dirt.png"},
+	tiles = {"default_mud.png"},
 	is_ground_content = true,
 	groups = {crumbly=3,soil=1, not_in_creative_inventory=1},
 	sounds = default.node_sound_dirt_defaults(),
@@ -38,7 +38,7 @@ minetest.register_node("seawrecks:woodshipchest", {
 		inv:set_size("main", 8*4)
 meta:from_table({
 	inventory = {
-	main = {[1] = "default:tree 99", [2] = "default:jungletree 99", [3] = "default:wood 99", [4] = "default:junglewood 99", [5] = "default:sapling 99", [6] = "default:junglesapling 99", [7] = "default:grass_1 99", [8] = "default:junglegrass 99", [32] = ""}
+	main = {[1] = "scifi_nodes:rfloor 2", [2] = "default:jungletree 9", [3] = "scifi_nodes:gblock 9", [4] = "default:junglewood 9", [5] = "default:sapling 9", [6] = "default:junglesapling 9", [7] = "default:grass_1 9", [8] = "default:junglegrass 9", [32] = ""}
 	},
 	fields = {
 	formspec = "size[8,9;]list[context;main;0,0;8,4;]list[current_player;main;0,5;8,4;]",
@@ -86,7 +86,7 @@ minetest.register_node("seawrecks:ubootchest", {
 		inv:set_size("main", 8*4)
 meta:from_table({
 	inventory = {
-	main = {[1] = "default:gold_ingot 99", [2] = "default:apple 99", [3] = "default:mese_crystal 99", [32] = ""}
+	main = {[1] = "default:gold_ingot 9", [2] = "default:apple 99", [3] = "default:mese_crystal 19", [32] = ""}
 	},
 	fields = {
 	formspec = "size[8,9;]list[context;main;0,0;8,4;]list[current_player;main;0,5;8,4;]",
@@ -119,10 +119,10 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "seawrecks:woodship",
 	wherein        = "default:mud",
-	clust_scarcity = 32*32*32,
+	clust_scarcity = 52*52*52,
 	clust_num_ores = 1,
-	clust_size     = 12,
-	y_max     = 6,
+	clust_size     = 1,
+	y_max     = 4,
 	y_min     = -31000,
 })
 --[[
@@ -141,9 +141,9 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "seawrecks:uboot",
 	wherein        = "default:mud",
-	clust_scarcity = 30*30*30,
+	clust_scarcity = 130*130*130,
 	clust_num_ores = 1,
-	clust_size     = 12,
+	clust_size     = 1,
 	y_max     = 2,
 	y_min     = -31000,
 })
@@ -206,7 +206,7 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 11 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 		end
 
 		pos.z = pos.z + 1
@@ -214,7 +214,7 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 9 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 		end
 
 		pos.z = pos.z - 2
@@ -222,7 +222,7 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 9 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 		end
 
 
@@ -232,7 +232,7 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 7 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 		end
 
 		pos.z = pos.z + 4
@@ -240,38 +240,38 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 7 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 		end
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x - 2
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 		pos.z = pos.z + 2
 		pos.x = pos.x - 8
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 2
-		minetest.add_node(pos, {name = "default:tree"})
+		minetest.add_node(pos, {name = "scifi_nodes:rfloor"})
 
 
 		pos.y = pos.y + 1
@@ -279,7 +279,7 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 7 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z + 4
@@ -287,61 +287,61 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 7 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 1	
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z + 2
 		pos.x = pos.x - 8
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 4
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z + 1
 		pos.x = pos.x + 3
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.y = pos.y + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.y = pos.y - 2
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.y = pos.y + 3
 		pos.z = pos.z - 4
 
 		for a = 1, 7 do
 		pos.z = pos.z + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z - 3
 
 		for a = 1, 2 do
 		pos.y = pos.y + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
@@ -349,12 +349,12 @@ local yp = {x = pos.x, y = pos.y + 3, z = pos.z}
 
 		for a = 1, 5 do
 		pos.z = pos.z + 1
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
 		pos.z = pos.z - 2
-		minetest.add_node(pos, {name = "default:wood"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.y = pos.y - 7
 		pos.z = pos.z + 1
@@ -507,58 +507,58 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 		minetest.add_node(pos, {name = "default:copperblock"})
 
 		pos.y = pos.y + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x + 32
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x - 32
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x + 28
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z + 3
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x - 28
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z + 1
 		pos.x = pos.x + 2
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
 		minetest.add_node(pos, {name = "default:obsidian_glass"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x + 22
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
 		minetest.add_node(pos, {name = "default:obsidian_glass"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z + 1
 		pos.x = pos.x - 2
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -566,7 +566,7 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -574,7 +574,7 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -582,30 +582,30 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 9 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z - 6
 		pos.x = pos.x - 3
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
 		minetest.add_node(pos, {name = "default:obsidian_glass"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.x = pos.x + 22
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		pos.x = pos.x + 1
 		minetest.add_node(pos, {name = "default:obsidian_glass"})
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 
 		pos.z = pos.z - 1
 		pos.x = pos.x - 2
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -613,7 +613,7 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -621,7 +621,7 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 3 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
@@ -629,7 +629,7 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 
 		for a = 1, 9 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
@@ -846,39 +846,39 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 		pos.z = pos.z - 3
 		for a = 1, 6 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.z = pos.z + 5
 		pos.x = pos.x - 1
 		for a = 1, 6 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
 		for a = 1, 4 do
 		pos.z = pos.z - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 5
 		pos.z = pos.z - 1
 		for a = 1, 4 do
 		pos.z = pos.z + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		for a = 1, 4 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x + 1
 		pos.z = pos.z - 3
 		for a = 1, 4 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
@@ -886,26 +886,26 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 		pos.z = pos.z - 1
 		for a = 1, 4 do
 		pos.z = pos.z + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x + 5
 		pos.z = pos.z + 1
 		for a = 1, 4 do
 		pos.z = pos.z - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		for a = 1, 4 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
 		pos.z = pos.z + 3
 		for a = 1, 4 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y + 1
@@ -913,14 +913,14 @@ local yp = {x = pos.x, y = pos.y + 8, z = pos.z}
 		pos.z = pos.z - 1
 		for a = 1, 2 do
 		pos.x = pos.x - 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.x = pos.x - 1
 		pos.z = pos.z - 1
 		for a = 1, 2 do
 		pos.x = pos.x + 1
-		minetest.add_node(pos, {name = "default:steelblock"})
+		minetest.add_node(pos, {name = "scifi_nodes:gblock"})
 		end
 
 		pos.y = pos.y - 7

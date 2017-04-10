@@ -142,6 +142,60 @@ minetest.register_abm({
 		default.cool_lava(...)
 	end,
 })
+--[[
+--
+-- waterfreezing
+--
+
+default.cool_water = function(pos, node)
+	if node.name == "default:water_source" then
+		minetest.set_node(pos, {name = "default:ice"})
+	else -- Lava flowing
+		minetest.set_node(pos, {name = "default:ice"})
+	end
+	--minetest.sound_play("default_cool_lava",
+	--	{pos = pos, max_hear_distance = 16, gain = 0.25})
+end
+
+minetest.register_abm({
+	label = "Water cooling",
+	nodenames = {"default:water_source"},
+	neighbors = { "default:ice"},
+	interval = 1,
+	chance = 2,
+	catch_up = false,
+	action = function(...)
+		default.cool_water(...)
+	end,
+})
+
+--
+-- icemelting
+--
+
+default.melt_ice = function(pos, node)
+	if node.name == "default:ice" then
+		minetest.set_node(pos, {name = "default:toxic_water_source"})
+	else -- Lava flowing
+		minetest.set_node(pos, {name = "default:toxic_water_flowing"})
+	end
+	--minetest.sound_play("default_cool_lava",
+	--	{pos = pos, max_hear_distance = 16, gain = 0.25})
+end
+
+minetest.register_abm({
+	label = "Ice Melting",
+	nodenames = {"default:ice"},
+	neighbors = { "default:toxic_water_source"},
+	interval = 1,
+	chance = 2,
+	catch_up = false,
+	action = function(...)
+		default.melt_ice(...)
+	end,
+})
+
+]]
 
 
 --
