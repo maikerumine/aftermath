@@ -65,6 +65,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:stick 6',
+	recipe = {
+		{'default:dry_shrub', 'default:dry_shrub', 'default:dry_shrub'},
+		{'default:dry_shrub', 'default:dry_shrub', 'default:dry_shrub'},
+		{'default:dry_shrub', 'default:dry_shrub', 'default:dry_shrub'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:sign_wall_steel 3',
 	recipe = {
 		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},

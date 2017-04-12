@@ -39,6 +39,7 @@ local default_path = minetest.get_modpath("default")
 
 dofile(default_path.."/functions.lua")
 dofile(default_path.."/trees.lua")
+dofile(default_path.."/crushingfurnace.lua")
 --dofile(default_path.."/flowers.lua")
 dofile(default_path.."/nodes.lua")
 dofile(default_path.."/furnace.lua")

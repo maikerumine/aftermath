@@ -405,7 +405,7 @@ minetest.register_node("default:dirt_with_dry_grass", {
 		"default_dirt.png",
 		{name = "default_dirt.png^default_dry_grass_side.png^[colorize:gray:90",
 			tileable_vertical = false}},
-	groups = {crumbly = 1, soil = 0},
+	groups = {crumbly = 1, soil = 0 , spreading_dirt_type = 1},
 	drop = 'default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_grass_footstep", gain = 0.4},
@@ -417,7 +417,7 @@ minetest.register_node("default:dirt_with_snow", {
 	tiles = {"default_snow.png", "default_dirt.png",
 		{name = "default_dirt.png^default_snow_side.png",
 			tileable_vertical = false}},
-	groups = {crumbly = 1, soil = 0},
+	groups = {crumbly = 1, soil = 0 , spreading_dirt_type = 1 , snowy = 1},
 	drop = 'default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.25},
@@ -583,6 +583,23 @@ minetest.register_node("default:sapling", {
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
 		attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
+	
+		on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(2400,4800))
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			"default:sapling",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -2, y = 1, z = -2},
+			{x = 2, y = 6, z = 2},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end
 })
 
 minetest.register_node("default:leaves", {
@@ -701,6 +718,23 @@ minetest.register_node("default:junglesapling", {
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
 		attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
+	
+		on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(2400,4800))
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			"default:junglesapling",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -2, y = 1, z = -2},
+			{x = 2, y = 15, z = 2},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end,
 })
 
 
@@ -762,6 +796,24 @@ minetest.register_node("default:pine_sapling", {
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
 		attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
+	
+		on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(2400,4800))
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			"default:pine_sapling",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -2, y = 1, z = -2},
+			{x = 2, y = 12, z = 2},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end,
+	
 })
 
 
@@ -823,6 +875,24 @@ minetest.register_node("default:acacia_sapling", {
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
 		attached_node = 1, sapling = 1},
 	sounds = default.node_sound_leaves_defaults(),
+	
+		on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(2400,4800))
+	end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			"default:acacia_sapling",
+			-- minp, maxp to be checked, relative to sapling pos
+			-- minp_relative.y = 1 because sapling pos has been checked
+			{x = -4, y = 1, z = -4},
+			{x = 4, y = 6, z = 4},
+			-- maximum interval of interior volume check
+			4)
+
+		return itemstack
+	end,
+	
 })
 
 minetest.register_node("default:aspen_tree", {

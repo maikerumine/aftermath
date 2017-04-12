@@ -9,7 +9,7 @@ mg_villages.ENABLE_VILLAGES = true;
 mg_villages.INVERSE_HOUSE_DENSITY = 5;
 
 -- cover some villages with artificial snow; probability: 1/mg_villages.artificial_snow_probability
-mg_villages.artificial_snow_probability = 0;
+mg_villages.artificial_snow_probability = 1;
 
 -- if set to true, soil around villaes will get special soil-snow instead of plant + snow cover
 mg_villages.use_soil_snow = false;
@@ -30,7 +30,8 @@ mg_villages.REQUIRE_PRIV_FOR_TELEPORT = true;
 mg_villages.ENABLE_PROTECTION = false;
 
 -- the first village - the one the player spawns in - will be of this type
-mg_villages.FIRST_VILLAGE_TYPE = 'ruins';
+--mg_villages.FIRST_VILLAGE_TYPE = 'ruins';
+mg_villages.FIRST_VILLAGE_TYPE = 'taoki';
 
 -- the mapgen will disregard mapchunks where min.y > mg_villages.MAX_HEIGHT_TREATED;
 -- you can set this value to 64 if you have a slow machine and a mapgen which does not create extreme mountains
