@@ -387,7 +387,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "fuel",
 	recipe = "doors:trapdoor",
-	burntime = 26,
+	burntime = 16,
 })
 
 minetest.register_craft({
@@ -399,10 +399,16 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 60,
-	output = "doors:steel_ingot 4",
+	output = "default:steel_ingot 4",
 	recipe = "doors:door_steel",
 })
 
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 30,
+	output = "default:steel_ingot 4",
+	recipe = "doors:trapdoor_steel",
+})
 
 minetest.register_craft({
 	type = "cooking",

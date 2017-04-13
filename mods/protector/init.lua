@@ -354,7 +354,7 @@ minetest.register_craft({
 		{"default:stone", "default:stone", "default:stone"},
 	}
 })
---[[
+
 --= Protection Logo
 
 minetest.register_node("protector:protect2", {
@@ -435,7 +435,7 @@ minetest.register_craft({
 		{"default:stone", "default:bronze_ingot", "default:stone"},
 	}
 })
-]]
+
 -- If name entered or button press
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)

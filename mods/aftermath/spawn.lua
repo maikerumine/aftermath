@@ -1,6 +1,6 @@
 
 vault_spawn = {}
-vault_spawn.pos = {x=-189, y=3, z=67}
+vault_spawn.pos = {x=-116, y=-98, z=-39}
 vault_spawn.pos2 = {x=0, y=-100, z=0}
 
 if minetest.setting_get_pos("static_spawnpoint") then
