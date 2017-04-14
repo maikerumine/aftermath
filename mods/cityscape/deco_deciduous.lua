@@ -153,7 +153,7 @@ for i = 1,#leaves do
 		--})
 	end
 end
-
+--[[
 -- Place the schematic when a sapling grows.
 function default.grow_new_apple_tree(pos, bad)
 	local schem = cityscape.schematics.deciduous_trees[math.random(1,#cityscape.schematics.deciduous_trees)]
@@ -162,3 +162,4 @@ function default.grow_new_apple_tree(pos, bad)
 	             z = pos.z - math.floor(schem.size.z / 2)}
 	minetest.place_schematic(adj, schem, 'random', nil, true)
 end
+]]
