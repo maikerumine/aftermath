@@ -178,7 +178,8 @@ skycolor = {
 	},
 
 }
-
+--maikerumine turned this off to use skybox instead
+--[[
 local timer = 0
 minetest.register_globalstep(function(dtime)
 	if skycolor.active ~= true or #minetest.get_connected_players() == 0 then
@@ -211,3 +212,4 @@ minetest.register_on_joinplayer(function(player)
 		skycolor.update_sky_color({player})
 	end
 end)
+]]
