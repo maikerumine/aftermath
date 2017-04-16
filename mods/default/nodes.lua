@@ -447,7 +447,7 @@ minetest.register_node("default:sand", {
 	sounds = default.node_sound_sand_defaults(),
 })
 
-minetest                                                                                                                                                                                                                                .register_node("default:desert_sand", {
+minetest.register_node("default:desert_sand", {
 	description = "Desert Sand",
 	tiles = {"default_desert_sand.png"},
 	groups = {crumbly = 2, falling_node = 1, sand = 1},
@@ -608,8 +608,8 @@ minetest.register_node("default:leaves", {
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 1.3,
-	tiles = {"default_dry_shrub.png"},
-	special_tiles = {"default_dry_shrub.png"},
+	tiles = {"a-leavedead.png"},
+	special_tiles = {"a-leavedead.png"},
 	paramtype = "light",
 	is_ground_content = false,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
@@ -685,8 +685,8 @@ minetest.register_node("default:jungleleaves", {
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 1.3,
-	tiles = {"default_dry_shrub.png"},
-	special_tiles = {"default_dry_shrub.png"},
+	tiles = {"a-leavedead.png"},
+	special_tiles = {"a-leavedead.png"},
 	paramtype = "light",
 	is_ground_content = false,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
@@ -844,7 +844,7 @@ minetest.register_node("default:acacia_leaves", {
 	description = "Acacia Leaves",
 	drawtype = "plantlike",
 	visual_scale = 1.3,
-	tiles = {"default_dry_shrub.png"},
+	tiles = {"a-leavedead.png"},
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
@@ -1912,7 +1912,7 @@ minetest.register_node("default:mud_flowing", {
 		},
 	},
 
-	alpha = 250,
+	--alpha = 250,
 	paramtype = "light",
 	paramtype2 = "flowingliquid",
 	walkable = false,
@@ -2011,7 +2011,7 @@ minetest.register_node("default:water_flowing", {
 			},
 		},
 	},
-	alpha = 160,
+	--alpha = 160,
 	paramtype = "light",
 	paramtype2 = "flowingliquid",
 	walkable = false,

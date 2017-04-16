@@ -95,7 +95,8 @@ skycolor = {
 	update_transition_sky_color = function()
 		if #skycolor.layer_names == 0 then
 			skycolor.active = false
-			skycolor.set_default_sky()
+			skycolor.set_default_sky()			
+		
 			return
 		end
 
