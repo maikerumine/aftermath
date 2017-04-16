@@ -121,11 +121,15 @@ function minetest.is_protected(pos, player_name)
     local node = minetest.get_node(pos);
     --can dig asphalt only from corners
     if node.name == "asphalt:asphalt" then
+        --tnt and other things also cannot destroy asphalt
+        if player_name == nil then
+            return true
+        end
         -- Delprotect privilege (works only if declared by protection mod)
         if minetest.get_player_privs(player_name).delprotect then
             local player = minetest.get_player_by_name(player_name);
             if player:get_player_control().sneak then
-                return true
+                return false
             end
         end
         if not can_dig_asphalt(pos) then

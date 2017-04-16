@@ -1,7 +1,7 @@
 -- Aftermath created by maikerumine and Aiden Garvin
 -- Minetest 0.4.14 game: "Aftermath"
 -- namespace: aftermath
--- (c) 2015 by: maikerumine and Aiden Garvin
+-- (c) 2015-2017 by: maikerumine and Aiden Garvin
 -- https://github.com/maikerumine
 -- LGPLv2.1  (SEE BOTTOM)
 -- Inspired by Blockmen's Wasteland game[/size][/color][/b].  https://github.com/BlockMen/Wasteland/releases/tag/0.5
@@ -29,6 +29,13 @@ Maikerumine: for the "hack-coding"
 Aiden Garvin: for the idea for gameplay
 Blockmen: for the original minetest concept in his Wasteland game
 And read the readme's in the mod section for all other contributors
+toby109tt for creating the textures:
+Header logo -aftermath
+New wood textures
+new dead leaves
+new canned food
+new atom soda texture
+and many more!!
 
 NOTES:
 There are NO diamond or Mese tools in game.  Let's be realistic folks, any crystal would shatter and a complete diamond tool would be unrealistic.  Mese can be used to craft guns- see crafting guide in game.
