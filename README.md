@@ -1,18 +1,14 @@
--- Aftermath 
-created by maikerumine and Aiden Garvin
-
-Minetest 0.4.14 game: "Aftermath"
-
-namespace: aftermath
-
-(c) 2015-2017 by: maikerumine and Aiden Garvin
-
-https://github.com/maikerumine
-
-LGPLv2.1  (SEE BOTTOM)
-
-Inspired by Blockmen's Wasteland game.  https://github.com/BlockMen/Wasteland/releases/tag/0.5
+Aftermath 
 =======================
+--Created by maikerumine and Aiden Garvin
+--Minetest 0.4.14/4.15 game: "Aftermath"
+--namespace: aftermath
+--(c) 2015-2017 by: maikerumine and Aiden Garvin
+--https://github.com/maikerumine/aftermath
+--LGPLv2.1  (SEE BOTTOM)
+--Inspired by Blockmen's Wasteland game.  
+https://github.com/BlockMen/Wasteland/releases/tag/0.5
+
 _____________
 INTRODUCTION:
 　
