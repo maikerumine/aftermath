@@ -1791,7 +1791,7 @@ minetest.register_node("default:toxic_water_source", {
 			backface_culling = false,
 		},
 	},
-	alpha = 240,
+	--alpha = 240,
 	paramtype = "light",
 	--light_source = default.LIGHT_MAX - 1,
 	walkable = false,
@@ -1810,7 +1810,7 @@ minetest.register_node("default:toxic_water_source", {
 	damage_per_second = 3*2,
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
 	--groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = (state == "source" and 2 or 2),},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, radioactive = 2},
+	groups = {water = 3, liquid = 3, radioactive = 2, hot = 3},  --, puts_out_fire = 1
 })
 
 minetest.register_node("default:toxic_water_flowing", {
@@ -1840,7 +1840,7 @@ minetest.register_node("default:toxic_water_flowing", {
 			},
 		},
 	},
-	alpha = 240,
+	--alpha = 240,
 	paramtype = "light",
 	--light_source = default.LIGHT_MAX - 1,
 	paramtype2 = "flowingliquid",
@@ -1860,7 +1860,7 @@ minetest.register_node("default:toxic_water_flowing", {
 	post_effect_color = {a = 255, r = 30, g = 60, b = 90},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
 		--not_in_creative_inventory = 1, radioactive = (state == "source" and 2 or 2),},
-		not_in_creative_inventory = 1, radioactive =2},
+		not_in_creative_inventory = 1, radioactive =2, hot = 3},
 })
 
 --MUD

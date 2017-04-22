@@ -31,7 +31,7 @@ minetest.register_globalstep(function(dtime)
 
 	       if minetest.get_player_by_name(name) then
 			--player:set_sky({}, "skybox", spaceskybox) -- Sets skybox
-			skybox.set(player, 4)--ADDED SKYBOX
+			skybox.set(player, 1)--ADDED SKYBOX
 		end
 	end
 	end
