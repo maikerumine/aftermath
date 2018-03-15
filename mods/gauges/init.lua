@@ -1,5 +1,6 @@
 -- Adds health bars above players.
 -- Code by 4aiman, textures by Calinou. Licensed under CC0.
+-- Modified for aftermath game by Austin Pachano (SonosFuer) 03/15/2018
 
 local hp_bar = {
 	physical = false,
@@ -36,11 +37,11 @@ function add_HP_gauge(pl)
 		end
 end
 
-if minetest.setting_getbool("health_bars") ~= false -- “If not defined or set to true then”
-and minetest.setting_getbool("enable_damage") then -- Health bars only display when damage is enabled.
+if minetest.setting:get_bool("health_bars") ~= false -- “If not defined or set to true then”
+and minetest.setting:get_bool("enable_damage") then -- Health bars only display when damage is enabled.
 	minetest.register_on_joinplayer(add_HP_gauge)
 end
 
-if minetest.setting_getbool("log_mods") then
+if minetest.setting:get_bool("log_mods") then
 	minetest.log("action", "Carbone: [gauges] loaded.")
 end
