@@ -1,6 +1,6 @@
 creative = {}
 
-local creative_mode_cache = minetest.setting_getbool("creative_mode")
+local creative_mode_cache = minetest.settings:get_bool("creative_mode")
 
 function creative.is_enabled_for(name)
 	return creative_mode_cache
@@ -8,7 +8,7 @@ end
 
 dofile(minetest.get_modpath("creative") .. "/inventory.lua")
 
-if minetest.setting_getbool("creative_mode") then
+if creative_mode_cache then
 	-- Dig time is modified according to difference (leveldiff) between tool
 	-- 'maxlevel' and node 'level'. Digtime is divided by the larger of
 	-- leveldiff and 1.
@@ -55,8 +55,7 @@ function minetest.handle_node_drops(pos, drops, digger)
 	local inv = digger:get_inventory()
 	if inv then
 		for _, item in ipairs(drops) do
-			item = ItemStack(item):get_name()
-			if not inv:contains_item("main", item) then
+			if not inv:contains_item("main", item, true) then
 				inv:add_item("main", item)
 			end
 		end

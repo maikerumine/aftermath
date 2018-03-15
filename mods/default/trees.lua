@@ -463,7 +463,7 @@ function default.sapling_on_place(itemstack, placer, pointed_thing,
 			player_name,
 			interval) then
 		minetest.set_node(pos, {name = sapling_name})
-		if not minetest.setting_getbool("creative_mode") then
+		if not minetest.settings:get_bool("creative_mode") then
 			itemstack:take_item()
 		end
 	else

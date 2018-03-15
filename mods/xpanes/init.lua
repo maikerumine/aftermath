@@ -160,11 +160,11 @@ xpanes.register_pane("pane", {
 
 xpanes.register_pane("bar", {
 	description = "Iron bar",
-	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_space.png"},
+	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_bar_top.png"},
 	inventory_image = "xpanes_bar.png",
 	wield_image = "xpanes_bar.png",
 	groups = {cracky=2},
-	sounds = default.node_sound_stone_defaults(),
+	sounds = default.node_sound_metal_defaults(),
 	recipe = {
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}

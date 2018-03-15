@@ -7,9 +7,27 @@ if eth then
 	minetest.register_alias("farming_plus:banana_leaves", "ethereal:bananaleaves")
 	minetest.register_alias("farming_plus:banana", "ethereal:banana")
 else
+	minetest.register_node(":ethereal:banana", {
+		description = "Banana",
+		drawtype = "torchlike",
+		tiles = {"banana_single.png"},
+		inventory_image = "banana_single.png",
+		wield_image = "banana_single.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.2, -0.5, -0.2, 0.2, 0.2, 0.2}
+		},
+		groups = {food_banana = 1, fleshy = 3, dig_immediate = 3, flammable = 2},
+		on_use = minetest.item_eat(2),
+		sounds = default.node_sound_leaves_defaults(),
+	})
+
 	minetest.register_alias("farming_plus:banana_sapling", "default:sapling")
 	minetest.register_alias("farming_plus:banana_leaves", "default:leaves")
-	minetest.register_alias("farming_plus:banana", "default:apple")
+	minetest.register_alias("farming_plus:banana", "ethereal:banana")
 end
 
 -- Carrot
@@ -18,10 +36,10 @@ minetest.register_alias("farming_plus:carrot_1", "farming:carrot_1")
 minetest.register_alias("farming_plus:carrot_2", "farming:carrot_4")
 minetest.register_alias("farming_plus:carrot_3", "farming:carrot_6")
 minetest.register_alias("farming_plus:carrot", "farming:carrot_8")
+minetest.register_alias("farming_plus:carrot_item", "farming:carrot")
 
 -- Cocoa
-
-minetest.register_alias("farming_plus:cocoa_sapling", "farming:cocoa_beans")
+minetest.register_alias("farming_plus:cocoa_sapling", "farming:cocoa_2")
 minetest.register_alias("farming_plus:cocoa_leaves", "default:leaves")
 minetest.register_alias("farming_plus:cocoa", "default:apple")
 minetest.register_alias("farming_plus:cocoa_bean", "farming:cocoa_beans")
@@ -30,13 +48,33 @@ minetest.register_alias("farming_plus:cocoa_bean", "farming:cocoa_beans")
 minetest.register_alias("farming_plus:orange_1", "farming:tomato_1")
 minetest.register_alias("farming_plus:orange_2", "farming:tomato_4")
 minetest.register_alias("farming_plus:orange_3", "farming:tomato_6")
-minetest.register_alias("farming_plus:orange", "farming:tomato_8")
+--minetest.register_alias("farming_plus:orange", "farming:tomato_8")
 
 if eth then
 	minetest.register_alias("farming_plus:orange_item", "ethereal:orange")
+	minetest.register_alias("farming_plus:orange", "ethereal:orange")
 	minetest.register_alias("farming_plus:orange_seed", "ethereal:orange_tree_sapling")
 else
-	minetest.register_alias("farming_plus:orange_item", "default:apple")
+	minetest.register_node(":ethereal:orange", {
+		description = "Orange",
+		drawtype = "plantlike",
+		tiles = {"farming_orange.png"},
+		inventory_image = "farming_orange.png",
+		wield_image = "farming_orange.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.2, -0.3, -0.2, 0.2, 0.2, 0.2}
+		},
+		groups = {food_orange = 1, fleshy = 3, dig_immediate = 3, flammable = 2},
+		on_use = minetest.item_eat(4),
+		sounds = default.node_sound_leaves_defaults(),
+	})
+
+	minetest.register_alias("farming_plus:orange_item", "ethereal:orange")
+	minetest.register_alias("farming_plus:orange", "ethereal:orange")
 	minetest.register_alias("farming_plus:orange_seed", "default:sapling")
 end
 
@@ -49,15 +87,15 @@ minetest.register_alias("farming_plus:potato_seed", "farming:potato")
 
 -- Pumpkin
 minetest.register_alias("farming:pumpkin_seed", "farming:pumpkin_slice")
-minetest.register_alias("farming:pumpkin_face", "farming:pumpkin")
-minetest.register_alias("farming:pumpkin_face_light", "farming:jackolantern")
+minetest.register_alias("farming:pumpkin_face", "farming:jackolantern")
+minetest.register_alias("farming:pumpkin_face_light", "farming:jackolantern_on")
 minetest.register_alias("farming:big_pumpkin", "farming:pumpkin")
 minetest.register_alias("farming:big_pumpkin_side", "air")
 minetest.register_alias("farming:big_pumpkin_corner", "air")
 minetest.register_alias("farming:big_pumpkin_top", "air")
-minetest.register_alias("farming:scarecrow", "farming:pumpkin")
+minetest.register_alias("farming:scarecrow", "farming:jackolantern")
 minetest.register_alias("farming:scarecrow_bottom", "default:fence_wood")
-minetest.register_alias("farming:scarecrow_light", "farming:jackolantern")
+minetest.register_alias("farming:scarecrow_light", "farming:jackolantern_on")
 minetest.register_alias("farming:pumpkin_flour", "farming:pumpkin_dough")
 
 -- Rhubarb
@@ -76,8 +114,16 @@ if eth then
 	minetest.register_alias("farming_plus:strawberry_3", "ethereal:strawberry_5")
 	minetest.register_alias("farming_plus:strawberry", "ethereal:strawberry_7")
 else
-	minetest.register_alias("farming_plus:strawberry_item", "farming:raspberries")
-	minetest.register_alias("farming_plus:strawberry_seed", "farming:raspberries")
+	minetest.register_craftitem(":ethereal:strawberry", {
+		description = "Strawberry",
+		inventory_image = "strawberry.png",
+		wield_image = "strawberry.png",
+		groups = {food_strawberry = 1, flammable = 2},
+		on_use = minetest.item_eat(1),
+	})
+
+	minetest.register_alias("farming_plus:strawberry_item", "ethereal:strawberry")
+	minetest.register_alias("farming_plus:strawberry_seed", "ethereal:strawberry")
 	minetest.register_alias("farming_plus:strawberry_1", "farming:raspberry_1")
 	minetest.register_alias("farming_plus:strawberry_2", "farming:raspberry_2")
 	minetest.register_alias("farming_plus:strawberry_3", "farming:raspberry_3")
@@ -95,3 +141,17 @@ minetest.register_alias("farming_plus:tomato", "farming:tomato_8")
 
 -- Weed
 minetest.register_alias("farming:weed", "default:grass_2")
+
+-- Classic Bushes compatibility
+if minetest.get_modpath("bushes_classic") then
+
+	if eth then
+		minetest.register_alias("bushes:strawberry", "farming:strawberry")
+	else
+		minetest.register_alias("bushes:strawberry", "farming:raspberries")
+	end
+
+	minetest.register_alias("bushes:blueberry", "farming:blueberries")
+	minetest.register_alias("bushes:raspberry", "farming:raspberries")
+
+end

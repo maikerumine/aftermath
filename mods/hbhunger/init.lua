@@ -5,7 +5,7 @@ else
 	S = function ( s ) return s end
 end
 
-if minetest.setting_getbool("enable_damage") then
+if minetest.settings:get_bool("enable_damage") then
 
 hbhunger = {}
 hbhunger.food = {}

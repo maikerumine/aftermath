@@ -1,5 +1,5 @@
-API documentation for the HUD bars mod 1.5.1
-============================================
+API documentation for the HUD bars mod
+======================================
 
 ## Introduction
 This API allows you to add, change, hide and unhide custom HUD bars for this mod.
@@ -95,8 +95,7 @@ the HUD bar will be initially be shown to the player.
 * `start_hidden`: Whether the HUD bar is initially hidden. This is optional, `default_start_hidden` of the registration function will be used as default
 
 #### Return value
-Always `nil`.
-
+`true` on success, `false` otherwise.
 
 
 ## Modifying a HUD bar
@@ -135,7 +134,7 @@ such network optimization for the “styling” parameters, so keep this in mind
 * `new_text_color`: A 3-octet number defining the new color of the text.
 
 #### Return value
-Always `nil`.
+`true` on success, `false` otherwise.
 
 
 ## Hiding and unhiding a HUD bar
@@ -156,7 +155,7 @@ Hides the specified HUD bar from the screen of the specified player.
 * `identifier`: The identifier of the HUD bar type to hide, as specified in `hb.register_hudbar`.
 
 #### Return value
-Always `nil`.
+`true` on success, `false` otherwise.
 
 
 ### `hb.unhide_hudbar(player, identifier)`
@@ -167,11 +166,11 @@ Makes a previously hidden HUD bar visible again to a player.
 * `identifier`: The identifier of the HUD bar type to unhide, as specified in `hb.register_hudbar`.
 
 #### Return value
-Always `nil`.
+`true` on success, `false` otherwise.
 
 
 ## Reading HUD bar information
-It is also possible to read information about an active HUD bar.
+It is also possible to read information about existing HUD bars.
 
 ### `hb.get_hudbar_state(player, identifier)`
 Returns the current state of the active player's HUD bar.
@@ -181,12 +180,17 @@ Returns the current state of the active player's HUD bar.
 * `identifier`: The identifier of the HUD bar type to hide, as specified in `hb.register_hudbar`.
 
 #### Return value
-A table which holds information on the current state of the HUD bar. Note the table is a deep
-copy of the internal HUD bar state, it is *not* a reference; the information hold by the table is
-only true for the moment you called this function. The fields of this table are:
+On success, returns a table which holds information on the current state of the HUD bar. Note
+the table is a deep copy of the internal HUD bar state, it is *not* a reference; the information
+hold by the table is only true for the moment you called this function. The fields of this table are:
 
 * `value`: Current value of HUD bar.
 * `max`: Current maximum value of HUD bar.
 * `hidden`: Boolean denoting whether the HUD bar is hidden.
 * `barlength`: The length of the HUD bar in pixels. This field is meaningless if the HUD bar is currently hidden.
 * `text`: The text shown on the HUD bar. This fiels is meaningless if the HUD bar is currently hidden.
+
+If the player does not exist, returns `nil` instead.
+
+### `hb.get_hudbar_identifiers()`
+Returns a table of all currently registered HUD bar identifiers.

@@ -22,9 +22,9 @@ bones.bones_formspec =
 	"list[current_player;main;0,6.08;8,3;8]"..
 	default.get_hotbar_bg(0,4.85)
 
---local share_bones_time = tonumber(minetest.setting_get("share_bones_time") or 1200)--ORIGINAL TIME
-local share_bones_time = tonumber(minetest.setting_get("share_bones_time") or 3)--DEBUGGING TIME
-local share_bones_time_early = tonumber(minetest.setting_get("share_bones_time_early") or (share_bones_time/4))
+--local share_bones_time = tonumber(minetest.settings:get("share_bones_time") or 1200)--ORIGINAL TIME
+local share_bones_time = tonumber(minetest.settings:get("share_bones_time") or 3)--DEBUGGING TIME
+local share_bones_time_early = tonumber(minetest.settings:get("share_bones_time_early") or (share_bones_time/4))
 
 minetest.register_node("bones:bones", {
 	description = "Bones",
@@ -192,7 +192,7 @@ local function may_replace(pos, player)
 end
 
 minetest.register_on_dieplayer(function(player,hitter)
-	if minetest.setting_getbool("creative_mode") then
+	if minetest.settings:get_bool("creative_mode") then
 		return
 	end
 
