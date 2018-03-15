@@ -80,36 +80,37 @@ minetest.register_tool("fire:flint_and_steel", {
 	sound = {breaks = "default_tool_breaks"},
 
 	on_use = function(itemstack, user, pointed_thing)
-		local pt = pointed_thing
+		local sound_pos = pointed_thing.above or user:get_pos()
 		minetest.sound_play(
 			"fire_flint_and_steel",
-			{pos = pt.above, gain = 0.5, max_hear_distance = 8}
+			{pos = sound_pos, gain = 0.5, max_hear_distance = 8}
 		)
-		if pt.type == "node" then
-			local node_under = minetest.get_node(pt.under).name
+		local player_name = user:get_player_name()
+		if pointed_thing.type == "node" then
+			local node_under = minetest.get_node(pointed_thing.under).name
 			local nodedef = minetest.registered_nodes[node_under]
 			if not nodedef then
 				return
 			end
-			local player_name = user:get_player_name()
-			if minetest.is_protected(pt.under, player_name) then
+			if minetest.is_protected(pointed_thing.under, player_name) then
 				minetest.chat_send_player(player_name, "This area is protected")
 				return
 			end
 			if nodedef.on_ignite then
-				nodedef.on_ignite(pt.under, user)
+				nodedef.on_ignite(pointed_thing.under, user)
 			elseif minetest.get_item_group(node_under, "flammable") >= 1
-					and minetest.get_node(pt.above).name == "air" then
-				minetest.set_node(pt.above, {name = "fire:basic_flame"})
+					and minetest.get_node(pointed_thing.above).name == "air" then
+				minetest.set_node(pointed_thing.above, {name = "fire:basic_flame"})
 			end
 		end
-		if not minetest.setting_getbool("creative_mode") then
+		if not (creative and creative.is_enabled_for
+				and creative.is_enabled_for(player_name)) then
 			-- Wear tool
 			local wdef = itemstack:get_definition()
 			itemstack:add_wear(1000)
 			-- Tool break sound
 			if itemstack:get_count() == 0 and wdef.sound and wdef.sound.breaks then
-				minetest.sound_play(wdef.sound.breaks, {pos = pt.above, gain = 0.5})
+				minetest.sound_play(wdef.sound.breaks, {pos = sound_pos, gain = 0.5})
 			end
 			return itemstack
 		end
@@ -147,7 +148,7 @@ minetest.override_item("default:coalblock", {
 -- Sound
 --
 
-local flame_sound = minetest.setting_getbool("flame_sound")
+local flame_sound = minetest.settings:get_bool("flame_sound")
 if flame_sound == nil then
 	-- Enable if no setting present
 	flame_sound = true
@@ -289,11 +290,16 @@ minetest.register_abm({
 
 -- Enable the following ABMs according to 'enable fire' setting
 
-local fire_enabled = minetest.setting_getbool("enable_fire")
+local fire_enabled = minetest.settings:get_bool("enable_fire")
 if fire_enabled == nil then
-	-- New setting not specified, check for old setting.
-	-- If old setting is also not specified, 'not nil' is true.
-	fire_enabled = not minetest.setting_getbool("disable_fire")
+	-- enable_fire setting not specified, check for disable_fire
+	local fire_disabled = minetest.settings:get_bool("disable_fire")
+	if fire_disabled == nil then
+		-- Neither setting specified, check whether singleplayer
+		fire_enabled = minetest.is_singleplayer()
+	else
+		fire_enabled = not fire_disabled
+	end
 end
 
 if not fire_enabled then
