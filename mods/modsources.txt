@@ -1,0 +1,66 @@
+# This list served to keep track of installed versions of mods
+# as well as the source of the mod. It also keeps track of if
+# the mod has been modified from the source for this game.
+
+
+#Mod Name			Version    Source
+3d_armor		-            -
+aftermath		-            - Created for game
+asphalt			-
+bakedclay		-
+beds			- 03/15/2018 - cloned from minetest_game
+boats			- 03/15/2018 - cloned from minetest_game
+bones			-            - modified from minetest_game
+bucket			- 03/15/2018 - cloned from minetest_game
+carts			- 03/15/2018 - cloned from minetest_game
+cityscape
+cottages
+creative		- 03/15/2018 - cloned from minetest_game
+default			-			 - modified from minetest_game
+doors			- 03/15/2018 - cloned from minetest_game
+dye				- 03/15/2018 - cloned from minetest_game
+farming			-  1.31      - https://github.com/tenplus1/farming
+fire            - 03/15/2018 - cloned from minetest_game
+flowers			- 03/15/2018 - cloned from minetest_game
+gauges
+handholds
+handle_schematics
+hbarmor
+hbhunger
+hudbars
+inventory_plus
+lightning
+medicine
+mg_villages
+minetest-we
+minetest-zcg
+mobs_fallout
+mobs_futuremobs
+mobs_redo   -
+noairblocks -
+pathogen    -
+rangedweapons
+roadvalleys -
+ruins       -
+sscifi_nodes
+screwdriver	-	      - 03/15/2018 - cloned from minetest_game
+seawrecks   -
+sfinv		-	      - 03/15/2018 - cloned from minetest_game
+shooter		-	      -
+skins		-
+skybox		-
+sprint		-
+stairs      -
+thirsty     -
+tnt			-	      - 03/15/2018 - cloned from minetest_game
+vehicles    -
+vessels		-	      - 03/15/2018 - cloned from minetest_game
+village_gambit
+village_modern_houses
+village_ruins
+walls		-		  - 03/15/2018 - cloned from minetest_game
+weather_pack
+wieldview   -
+wool		-		  - 03/15/2018 - cloned from minetest_game
+xban2		-		  -
+xpanes      -   	  - 03/15/2018 - cloned from minetest_game
