@@ -1,2 +1,4 @@
 default
-wool
+intllib?
+lucky_block?
+toolranks?

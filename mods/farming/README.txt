@@ -13,6 +13,15 @@ This mod works by adding your new plant to the {growing=1} group and numbering t
 
 Changelog:
 
+1.31 - Added Pineapple which can be found growing in savannah areas (place pineapple in crafting to obtain 5x rings to eat and a top for re-planting), also Salt which is made from cooking a bucket of water, added food groups so it's more compatible with Ruben's food mods.
+1.30 - Added Garlic, Pepper and Onions thanks to Grizzly Adam for sharing textures
+1.29 - Updating functions so requires Minetest 0.4.16 and above to run
+1.28 - Added chili peppers and bowl of chili, optimized code and fixed a few bugs, added porridge
+1.27 - Added meshoptions to api and wheat plants, added farming.rarity setting to spawn more/less crops on map, have separate cotton/string items (4x cotton = 1x wool, 2x cotton = 2x string)
+1.26 - Added support for [toolranks] mod when using hoe's
+1.25 - Added check for farming.conf setting file to disable specific crops globally (inside mod folder) or world specific (inside world folder)
+1.24 - Added Hemp which can be crafted into fibre, paper, string, rope and oil.
+1.23 - Huge code tweak and tidy done and added barley seeds to be found in dry grass, barley can make flour for bread also.
 1.22 - Added grape bushes at high climates which can be cultivated into grape vines using trellis (9 sticks).
 1.21 - Added auto-refill code for planting crops (thanks crabman77), also fixed a few bugs
 1.20b- Tidied code, made api compatible with new 0.4.13 changes and changed to soil texture overlays
@@ -44,6 +53,9 @@ Changelog:
 0.1 - Fixed growing bug
 0.0 - Initial release
 
+Lucky Blocks: 16
+
+
 License of media (textures):
 ----------------------------
 Created by PilzAdam (License: WTFPL):
@@ -52,6 +64,9 @@ Created by PilzAdam (License: WTFPL):
   farming_soil_wet.png
   farming_soil_wet_side.png
   farming_string.png
+
+Created by Napiophelios (CC BY-SA 3.0):
+  farming_cotton.png
 
 Created by Calinou (License: CC BY-SA):
   farming_tool_bronzehoe.png
@@ -147,3 +162,4 @@ Created by TenPlus1
   farming_rhubarb_3.png
   farming_rhubarb.png
   farming_rhubarb_pie.png
+  farming_hemp*.png
