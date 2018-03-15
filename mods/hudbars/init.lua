@@ -1,6 +1,10 @@
 local S
-if (minetest.get_modpath("intllib")) then
-	S = intllib.Getter()
+if minetest.global_exists("intllib") then
+	if intllib.make_gettext_pair then
+		S = intllib.make_gettext_pair()
+	else
+		S = intllib.Getter()
+	end
 else
 	S = function ( s ) return s end
 end
@@ -20,11 +24,11 @@ hb.settings = {}
 function hb.load_setting(sname, stype, defaultval, valid_values)
 	local sval
 	if stype == "string" then
-		sval = minetest.setting_get(sname)
+		sval = minetest.settings:get(sname)
 	elseif stype == "bool" then
-		sval = minetest.setting_getbool(sname)
+		sval = minetest.settings:get_bool(sname)
 	elseif stype == "number" then
-		sval = tonumber(minetest.setting_get(sname))
+		sval = tonumber(minetest.settings:get(sname))
 	end
 	if sval ~= nil then
 		if valid_values ~= nil then
@@ -48,46 +52,11 @@ function hb.load_setting(sname, stype, defaultval, valid_values)
 	end
 end
 
--- (hardcoded) default settings
-hb.settings.max_bar_length = 160
-hb.settings.statbar_length = 20
+-- Load default settings
+dofile(minetest.get_modpath("hudbars").."/default_settings.lua")
 
--- statbar positions
-hb.settings.pos_left = {}
-hb.settings.pos_right = {}
-hb.settings.start_offset_left = {}
-hb.settings.start_offset_right= {}
-hb.settings.pos_left.x = hb.load_setting("hudbars_pos_left_x", "number", 0.5)
-hb.settings.pos_left.y = hb.load_setting("hudbars_pos_left_y", "number", 1)
-hb.settings.pos_right.x = hb.load_setting("hudbars_pos_right_x", "number", 0.5)
-hb.settings.pos_right.y = hb.load_setting("hudbars_pos_right_y", "number", 1)
-hb.settings.start_offset_left.x = hb.load_setting("hudbars_start_offset_left_x", "number", -175)
-hb.settings.start_offset_left.y = hb.load_setting("hudbars_start_offset_left_y", "number", -86)
-hb.settings.start_offset_right.x = hb.load_setting("hudbars_start_offset_right_x", "number", 15)
-hb.settings.start_offset_right.y = hb.load_setting("hudbars_start_offset_right_y", "number", -86)
-
-hb.settings.vmargin  = hb.load_setting("hudbars_vmargin", "number", 24)
-hb.settings.tick = hb.load_setting("hudbars_tick", "number", 0.1)
-
--- experimental setting: Changing this setting is not officially supported, do NOT rely on it!
-hb.settings.forceload_default_hudbars = hb.load_setting("hudbars_forceload_default_hudbars", "bool", true)
-
--- Misc. settings
-hb.settings.alignment_pattern = hb.load_setting("hudbars_alignment_pattern", "string", "zigzag", {"zigzag", "stack_up", "stack_down"})
-hb.settings.bar_type = hb.load_setting("hudbars_bar_type", "string", "progress_bar", {"progress_bar", "statbar_classic", "statbar_modern"})
-hb.settings.autohide_breath = hb.load_setting("hudbars_autohide_breath", "bool", true)
-
-local sorting = minetest.setting_get("hudbars_sorting")
-if sorting ~= nil then
-	hb.settings.sorting = {}
-	hb.settings.sorting_reverse = {}
-	for k,v in string.gmatch(sorting, "(%w+)=(%w+)") do
-		hb.settings.sorting[k] = tonumber(v)
-		hb.settings.sorting_reverse[tonumber(v)] = k
-	end
-else
-	hb.settings.sorting = { ["health"] = 0, ["breath"] = 1 }
-	hb.settings.sorting_reverse = { [0] = "health", [1] = "breath" }
+local function player_exists(player)
+	return player ~= nil and player:is_player()
 end
 
 -- Table which contains all players with active default HUD bars (only for internal use)
@@ -218,14 +187,18 @@ function hb.register_hudbar(identifier, text_color, label, textures, default_sta
 					number = bgiconnumber,
 					alignment = {x=-1,y=-1},
 					offset = { x = offset.x, y = offset.y },
+					direction = 0,
+					size = {x=24, y=24},
 				})
 			end
 		end
-		local bar_image
+		local bar_image, bar_size
 		if hb.settings.bar_type == "progress_bar" then
 			bar_image = textures.bar
+			bar_size = nil
 		elseif hb.settings.bar_type == "statbar_classic" or hb.settings.bar_type == "statbar_modern" then
 			bar_image = textures.icon
+			bar_size = {x=24, y=24}
 		end
 		ids.bar = player:hud_add({
 			hud_elem_type = "statbar",
@@ -234,6 +207,8 @@ function hb.register_hudbar(identifier, text_color, label, textures, default_sta
 			number = barnumber,
 			alignment = {x=-1,y=-1},
 			offset = offset,
+			direction = 0,
+			size = bar_size,
 		})
 		if hb.settings.bar_type == "progress_bar" then
 			ids.text = player:hud_add({
@@ -285,13 +260,18 @@ function hb.register_hudbar(identifier, text_color, label, textures, default_sta
 end
 
 function hb.init_hudbar(player, identifier, start_value, start_max, start_hidden)
+	if not player_exists(player) then return false end
 	local hudtable = hb.get_hudtable(identifier)
 	hb.hudtables[identifier].add_all(player, hudtable, start_value, start_max, start_hidden)
+	return true
 end
 
 function hb.change_hudbar(player, identifier, new_value, new_max_value, new_icon, new_bgicon, new_bar, new_label, new_text_color)
 	if new_value == nil and new_max_value == nil and new_icon == nil and new_bgicon == nil and new_bar == nil and new_label == nil and new_text_color == nil then
-		return
+		return true
+	end
+	if not player_exists(player) then
+		return false
 	end
 
 	local name = player:get_player_name()
@@ -379,11 +359,14 @@ function hb.change_hudbar(player, identifier, new_value, new_max_value, new_icon
 			end
 		end
 	end
+	return true
 end
 
 function hb.hide_hudbar(player, identifier)
+	if not player_exists(player) then return false end
 	local name = player:get_player_name()
 	local hudtable = hb.get_hudtable(identifier)
+	if hudtable == nil then return false end
 	if(hudtable.hudstate[name].hidden == false) then
 		if hb.settings.bar_type == "progress_bar" then
 			if hudtable.hudids[name].icon ~= nil then
@@ -397,11 +380,14 @@ function hb.hide_hudbar(player, identifier)
 		player:hud_change(hudtable.hudids[name].bar, "number", 0)
 		hudtable.hudstate[name].hidden = true
 	end
+	return true
 end
 
 function hb.unhide_hudbar(player, identifier)
+	if not player_exists(player) then return false end
 	local name = player:get_player_name()
 	local hudtable = hb.get_hudtable(identifier)
+	if hudtable == nil then return false end
 	if(hudtable.hudstate[name].hidden) then
 		local value = hudtable.hudstate[name].value
 		local max = hudtable.hudstate[name].max
@@ -419,9 +405,11 @@ function hb.unhide_hudbar(player, identifier)
 		player:hud_change(hudtable.hudids[name].bar, "number", hb.value_to_barlength(value, max))
 		hudtable.hudstate[name].hidden = false
 	end
+	return true
 end
 
 function hb.get_hudbar_state(player, identifier)
+	if not player_exists(player) then return nil end
 	local ref = hb.get_hudtable(identifier).hudstate[player:get_player_name()]
 	-- Do not forget to update this chunk of code in case the state changes
 	local copy = {
@@ -434,8 +422,16 @@ function hb.get_hudbar_state(player, identifier)
 	return copy
 end
 
+function hb.get_hudbar_identifiers()
+	local ids = {}
+	for id, _ in pairs(hb.hudtables) do
+		table.insert(ids, id)
+	end
+	return ids
+end
+
 --register built-in HUD bars
-if minetest.setting_getbool("enable_damage") or hb.settings.forceload_default_hudbars then
+if minetest.settings:get_bool("enable_damage") or hb.settings.forceload_default_hudbars then
 	hb.register_hudbar("health", 0xFFFFFF, S("Health"), { bar = "hudbars_bar_health.png", icon = "hudbars_icon_health.png", bgicon = "hudbars_bgicon_health.png" }, 20, 20, false)
 	hb.register_hudbar("breath", 0xFFFFFF, S("Breath"), { bar = "hudbars_bar_breath.png", icon = "hudbars_icon_breath.png", bgicon = "hudbars_bgicon_breath.png" }, 10, 10, true)
 end
@@ -449,9 +445,9 @@ end
 
 
 local function custom_hud(player)
-	if minetest.setting_getbool("enable_damage") or hb.settings.forceload_default_hudbars then
+	if minetest.settings:get_bool("enable_damage") or hb.settings.forceload_default_hudbars then
 		local hide
-		if minetest.setting_getbool("enable_damage") then
+		if minetest.settings:get_bool("enable_damage") then
 			hide = false
 		else
 			hide = true
@@ -464,10 +460,14 @@ local function custom_hud(player)
 	end
 end
 
+local function update_health(player)
+	hb.change_hudbar(player, "health", player:get_hp())
+end
 
 -- update built-in HUD bars
 local function update_hud(player)
-	if minetest.setting_getbool("enable_damage") then
+	if not player_exists(player) then return end
+	if minetest.settings:get_bool("enable_damage") then
 		if hb.settings.forceload_default_hudbars then
 			hb.unhide_hudbar(player, "health")
 		end
@@ -480,14 +480,24 @@ local function update_hud(player)
 			hb.unhide_hudbar(player, "breath")
 			hb.change_hudbar(player, "breath", math.min(breath, 10))
 		end
-		
 		--health
-		hb.change_hudbar(player, "health", player:get_hp())
+		update_health(player)
 	elseif hb.settings.forceload_default_hudbars then
 		hb.hide_hudbar(player, "health")
 		hb.hide_hudbar(player, "breath")
 	end
 end
+
+minetest.register_on_player_hpchange(function(player)
+	if hb.players[player:get_player_name()] ~= nil then
+		update_health(player)
+	end
+end)
+
+minetest.register_on_respawnplayer(function(player)
+	update_health(player)
+	hb.hide_hudbar(player, "breath")
+end)
 
 minetest.register_on_joinplayer(function(player)
 	hide_builtin(player)
@@ -507,7 +517,7 @@ minetest.register_globalstep(function(dtime)
 	if main_timer > hb.settings.tick or timer > 4 then
 		if main_timer > hb.settings.tick then main_timer = 0 end
 		-- only proceed if damage is enabled
-		if minetest.setting_getbool("enable_damage") or hb.settings.forceload_default_hudbars then
+		if minetest.settings:get_bool("enable_damage") or hb.settings.forceload_default_hudbars then
 			for _, player in pairs(hb.players) do
 				-- update all hud elements
 				update_hud(player)

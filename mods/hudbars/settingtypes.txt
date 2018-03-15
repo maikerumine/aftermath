@@ -77,16 +77,37 @@ hudbars_pos_right_y (Right HUD bar screen y position) float 1.0 0.0 1.0
 
 # Precise x offset in pixels from the basic screen x position of the HUD bars.
 # For the zig-zag alignment pattern, this is for the left HUD bars.
+# This setting is used for the progress bar HUD bar style.
 hudbars_start_offset_left_x (Left HUD bar x offset) int -175
 # Precise y offset in pixels from the basic screen y position of the HUD bars.
 # For the zig-zag alignment pattern, this is for the left HUD bars.
+# This setting is used for the progress bar HUD bar style.
 hudbars_start_offset_left_y (Left HUD bar y offset) int -86
 # Precise x offset in pixels from the basic screen x position of the right HUD bars.
 # Only used for the zig-zag alignment pattern.
+# This setting is used for the progress bar HUD bar style.
 hudbars_start_offset_right_x (Right HUD bar x offset) int 15
 # Precise y offset in pixels from the basic screen y position of the right HUD bars.
 # Only used for the zig-zag alignment pattern.
+# This setting is used for the progress bar HUD bar style.
 hudbars_start_offset_right_y (Right HUD bar y offset) int -86
+
+# Precise x offset in pixels from the basic screen x position of the HUD statbars.
+# For the zig-zag alignment pattern, this is for the left HUD statbars.
+# This setting is used for the classic and modern statbar styles.
+hudbars_start_statbar_offset_left_x (Left HUD statbar x offset) int -265
+# Precise y offset in pixels from the basic screen y position of the HUD statbars.
+# For the zig-zag alignment pattern, this is for the left HUD statbars.
+# This setting is used for the classic and modern statbar styles.
+hudbars_start_statbar_offset_left_y (Left HUD statbar y offset) int -90
+# Precise x offset in pixels from the basic screen x position of the right HUD statbars.
+# Only used for the zig-zag alignment pattern.
+# This setting is used for the classic and modern statbar styles.
+hudbars_start_statbar_offset_right_x (Right HUD statbar x offset) int 25
+# Precise y offset in pixels from the basic screen y position of the right HUD statbars.
+# Only used for the zig-zag alignment pattern.
+# This setting is used for the classic and modern statbar styles.
+hudbars_start_statbar_offset_right_y (Right HUD statbar y offset) int -90
 
 # The vertical distance between two HUD bars, in pixels.
 hudbars_vmargin (Vertical distance between HUD bars) int 24 0

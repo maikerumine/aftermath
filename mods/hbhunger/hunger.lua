@@ -99,8 +99,16 @@ function hbhunger.item_eat(hunger_change, replace_with_item, poisen, heal, sound
 				poisenp(1, poisen, 0, user)
 			end
 
-			--sound:eat
-			itemstack:add_item(replace_with_item)
+			if itemstack:get_count() == 0 then
+				itemstack:add_item(replace_with_item)
+			else
+				local inv = user:get_inventory()
+				if inv:room_for_item("main", replace_with_item) then
+					inv:add_item("main", replace_with_item)
+				else
+					minetest.add_item(user:getpos(), replace_with_item)
+				end
+			end
 		end
 		return itemstack
 	end
@@ -108,13 +116,7 @@ end
 
 if minetest.get_modpath("default") ~= nil then
 	hbhunger.register_food("default:apple", 2)
-	hbhunger.register_food("default:health_kit", 30,"",0,30)
 end
-if minetest.get_modpath("mobs_fallout") ~= nil then
-		hbhunger.register_food("mobs_fallout:meat", 8)
-		hbhunger.register_food("mobs_fallout:meat_raw", 4,"",3)
-end
-
 if minetest.get_modpath("flowers") ~= nil then
 	hbhunger.register_food("flowers:mushroom_brown", 1)
 	hbhunger.register_food("flowers:mushroom_red", 1, "", 3)

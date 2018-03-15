@@ -23,11 +23,11 @@ farming				-  1.31      - https://github.com/tenplus1/farming
 fire      	        - 03/15/2018 - cloned from minetest_game
 flowers				- 03/15/2018 - cloned from minetest_game
 gauges				- 03/15/2018 - modified from https://forum.minetest.net/viewtopic.php?f=11&t=10250&hilit=gauges
-handholds
+handholds			- 03/15/2018 - https://github.com/Ezhh/handholds
 handle_schematics
-hbarmor
-hbhunger
-hudbars
+hbarmor				-  0.04.0	 - https://forum.minetest.net/viewtopic.php?f=9&t=11337&hilit=hbarmor
+hbhunger			-  0.07.0	 - https://forum.minetest.net/viewtopic.php?f=11&t=11336&hilit=hbarmor
+hudbars				-  1.11.0    - https://forum.minetest.net/viewtopic.php?f=11&t=11153&hilit=hbarmor
 inventory_plus
 lightning
 medicine
